@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 InteractionManager="*uid://e3iewk38uyge"
+SceneChanger="*uid://l8wj2k251dxb"
 
 [display]
 
