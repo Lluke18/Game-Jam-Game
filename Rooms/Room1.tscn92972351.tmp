@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://c1poe3shrtvbk" path="res://scripts/room.gd" id="1_fja4u"]
 [ext_resource type="PackedScene" uid="uid://djvpqjfwmselq" path="res://UI/RoomUI.tscn" id="2_p8p37"]
 [ext_resource type="Texture2D" uid="uid://bieyi4siu2ufr" path="res://Sprites/Placeholders/Rooms/Room1.png" id="2_t1wpb"]
-[ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_477ix"]
-[ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="5_8a8dd"]
 
 [node name="Room1" type="Node2D" unique_id=1138460362]
 script = ExtResource("1_fja4u")
@@ -16,10 +14,5 @@ texture = ExtResource("2_t1wpb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=565787541]
 
-[node name="ItemDropArea" parent="CanvasLayer" unique_id=748105193 instance=ExtResource("5_8a8dd")]
-
 [node name="RoomUI" parent="CanvasLayer" unique_id=895738389 instance=ExtResource("2_p8p37")]
 has_left_arrow = false
-
-[node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("4_477ix")]
-mouse_filter = 2
