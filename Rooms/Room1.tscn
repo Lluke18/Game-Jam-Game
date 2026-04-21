@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://c62mcfe50lkhn"]
 
 [ext_resource type="Script" uid="uid://c1poe3shrtvbk" path="res://Scripts/room.gd" id="1_fja4u"]
-[ext_resource type="PackedScene" uid="uid://djvpqjfwmselq" path="res://UI/RoomUI.tscn" id="2_p8p37"]
 [ext_resource type="Texture2D" uid="uid://bieyi4siu2ufr" path="res://Sprites/Placeholders/Rooms/Room1.png" id="2_t1wpb"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_477ix"]
+[ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="5_1kmgg"]
 [ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="5_8a8dd"]
 
 [node name="Room1" type="Node2D" unique_id=1138460362]
 script = ExtResource("1_fja4u")
-room_right_path = "res://Rooms/Room2.tscn"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=701273391]
 position = Vector2(960, 540)
@@ -18,8 +17,32 @@ texture = ExtResource("2_t1wpb")
 
 [node name="ItemDropArea" parent="CanvasLayer" unique_id=748105193 instance=ExtResource("5_8a8dd")]
 
-[node name="RoomUI" parent="CanvasLayer" unique_id=895738389 instance=ExtResource("2_p8p37")]
-has_left_arrow = false
+[node name="SceneSwitchers" type="Control" parent="CanvasLayer" unique_id=653715160]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="RightArrow" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=1184713934]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -458.0
+offset_top = -65.75
+offset_right = -123.0
+offset_bottom = 65.75
+grow_horizontal = 0
+grow_vertical = 2
+text = "------->
+sageata dreapta"
+script = ExtResource("5_1kmgg")
+destination_room_path = "res://Rooms/Room2.tscn"
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("4_477ix")]
 mouse_filter = 2
+
+[connection signal="pressed" from="CanvasLayer/SceneSwitchers/RightArrow" to="CanvasLayer/SceneSwitchers/RightArrow" method="_on_pressed"]
