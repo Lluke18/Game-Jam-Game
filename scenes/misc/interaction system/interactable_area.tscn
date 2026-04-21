@@ -4,3 +4,6 @@
 
 [node name="InteractableArea" type="Area2D" unique_id=1741734881]
 script = ExtResource("1_fn1yp")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

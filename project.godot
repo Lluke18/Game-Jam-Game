@@ -19,12 +19,12 @@ config/icon="res://icon.svg"
 InteractionManager="*uid://e3iewk38uyge"
 SceneChanger="*uid://l8wj2k251dxb"
 InventoryManager="*uid://b720nbrg4os7l"
+SignalBus="*uid://b8mxpa7hagck5"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=4
 
 [input]
 
@@ -61,7 +61,8 @@ ui_left={
 }
 interact={
 "deadzone": 0.2,
-"events": []
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(200, 5),"global_position":Vector2(212, 65),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
 }
 SceneChanger="*uid://l8wj2k251dxb"
 

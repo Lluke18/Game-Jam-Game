@@ -1,0 +1,3 @@
+extends Node
+
+#HERE WE WILL PUT GLOBAL CUSTOM SIGNALS!
