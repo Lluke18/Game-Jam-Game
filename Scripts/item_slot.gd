@@ -1,3 +1,4 @@
+class_name ItemSlot
 extends Panel
 
 @onready var icon: TextureRect = $Icon
@@ -9,14 +10,19 @@ func _ready() -> void:
 func update_ui() -> void:
 	if not item:
 		icon.texture = null
+		tooltip_text = ""
 		return
 		
 	icon.texture = item.icon
 	tooltip_text = item.item_name
 
+func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
+	return true
+
 func _get_drag_data(at_position: Vector2) -> Variant:
 	#check if the slot is empty
 	if not item:
+		print("Nu are item!")
 		return
 		
 	var preview_image = duplicate()

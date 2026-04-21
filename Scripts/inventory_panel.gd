@@ -1,5 +1,20 @@
 extends Panel
 
+@onready var grid_container: GridContainer = $MarginContainer/GridContainer
+var slots: Array[ItemSlot]
+
+
+
+func init_slots_array():
+	for child in grid_container.get_children():
+		if child is ItemSlot:
+			slots.append(child)
+
+func _ready() -> void:
+	init_slots_array()
+	#update_bar()
+	InventoryManager.inventory_modified.connect(update_bar)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.get_current_cursor_shape() == DisplayServer.CURSOR_FORBIDDEN:
@@ -14,3 +29,19 @@ func _notification(what: int) -> void:
 			if initial_drag_data:
 				initial_drag_data.icon.show()
 				initial_drag_data = null
+				
+func update_bar():
+	var slot_index: int = 0
+	for item in InventoryManager.obtained_items:
+		slots[slot_index].item = item
+		
+		
+		
+		slots[slot_index].update_ui()
+		slot_index += 1
+	
+	#if an item was removed, the last slot need to be emptied
+	if slot_index < InventoryManager.MAX_SIZE:
+		slots[slot_index].item = null
+		slots[slot_index].update_ui()
+		

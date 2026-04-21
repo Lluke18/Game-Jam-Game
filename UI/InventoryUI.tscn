@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://50pjjyamt4ew" path="res://Scripts/inventory_panel.gd" id="1_7cfyf"]
 [ext_resource type="Script" uid="uid://begx5xtvasbnu" path="res://Scripts/item_slot.gd" id="1_la3np"]
 [ext_resource type="Texture2D" uid="uid://djnhajkpwvna2" path="res://Sprites/Placeholders/Items/Item1.png" id="1_xufhh"]
-[ext_resource type="Resource" uid="uid://c7418maqfvfji" path="res://Scripts/Items/Item1.tres" id="3_72myj"]
 
 [node name="InventoryUI" type="Panel" unique_id=629547533]
 anchors_preset = 11
@@ -32,7 +31,6 @@ size_flags_horizontal = 4
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 script = ExtResource("1_la3np")
-item = ExtResource("3_72myj")
 
 [node name="Icon" type="TextureRect" parent="MarginContainer/GridContainer/ItemSlot" unique_id=1708004693]
 layout_mode = 1

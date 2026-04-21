@@ -18,5 +18,5 @@ func _on_d_mirror_body_entered(body: Node3D) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:
-			print("SWITCHING!")
-			SceneChanger.change_scene_to_path(scene_2D_path)
+		print("SWITCHING!")
+		SceneChanger.change_scene_to_path(scene_2D_path)

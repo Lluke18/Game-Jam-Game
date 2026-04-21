@@ -11,5 +11,7 @@ func _drop_data(at_position: Vector2, data: Variant) -> void:
 	node.texture_normal = data.item.world_2d_image
 	
 	get_tree().current_scene.get_node("CanvasLayer").add_child(node)
+	InventoryManager.remove_item(data.item)
+	
 	node.global_position = get_global_mouse_position()
 	data.item = null

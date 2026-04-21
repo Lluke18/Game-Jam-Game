@@ -1,21 +1,38 @@
 [gd_scene format=3 uid="uid://dqjylmtnaee4s"]
 
 [ext_resource type="Script" uid="uid://c1poe3shrtvbk" path="res://Scripts/room.gd" id="1_wt6t0"]
-[ext_resource type="PackedScene" uid="uid://djvpqjfwmselq" path="res://UI/RoomUI.tscn" id="2_hocdy"]
-[ext_resource type="Script" uid="uid://cfk1rleergkqm" path="res://UI/item_drop_area.gd" id="3_gxi2d"]
+[ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="3_ouduj"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="3_vy55m"]
 [ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="4_ouduj"]
 
 [node name="Room3" type="Node2D" unique_id=664680839]
 script = ExtResource("1_wt6t0")
-room_left_path = "res://Rooms/Room2.tscn"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=765953715]
 
 [node name="ItemDropArea" parent="CanvasLayer" unique_id=748105193 instance=ExtResource("4_ouduj")]
-script = ExtResource("3_gxi2d")
 
-[node name="RoomUI" parent="CanvasLayer" unique_id=895738389 instance=ExtResource("2_hocdy")]
-has_right_arrow = false
+[node name="SceneSwitchers" type="Control" parent="CanvasLayer" unique_id=2131005199]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="LeftArrow" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=1308271910]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -65.75
+offset_right = 335.0
+offset_bottom = 65.75
+grow_vertical = 2
+text = "<-------
+sageata stanga"
+script = ExtResource("3_ouduj")
+destination_room_path = "res://Rooms/Room2.tscn"
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("3_vy55m")]
+
+[connection signal="pressed" from="CanvasLayer/SceneSwitchers/LeftArrow" to="CanvasLayer/SceneSwitchers/LeftArrow" method="_on_pressed"]

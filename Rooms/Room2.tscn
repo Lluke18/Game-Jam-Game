@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c7l1ypa7s2h8m"]
 
-[ext_resource type="Script" uid="uid://c1poe3shrtvbk" path="res://scripts/room.gd" id="1_iehj0"]
+[ext_resource type="Script" uid="uid://c1poe3shrtvbk" path="res://Scripts/room.gd" id="1_iehj0"]
 [ext_resource type="Texture2D" uid="uid://cpxrljdpsu3ve" path="res://Sprites/Placeholders/Rooms/Room2.png" id="2_1a11v"]
-[ext_resource type="PackedScene" uid="uid://djvpqjfwmselq" path="res://UI/RoomUI.tscn" id="2_inb3q"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_a5nxq"]
+[ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="4_xiq1f"]
 [ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="5_hfr1f"]
 [ext_resource type="PackedScene" uid="uid://c0vdnne1i4v1n" path="res://scenes/misc/interaction system/interactable_area.tscn" id="6_xiq1f"]
 
@@ -12,8 +12,6 @@ size = Vector2(253, 285)
 
 [node name="Room2" type="Node2D" unique_id=104392886 node_paths=PackedStringArray("mirror")]
 script = ExtResource("1_iehj0")
-room_left_path = "res://Rooms/Room1.tscn"
-room_right_path = "res://Rooms/Room3.tscn"
 room_3d_path = "res://scenes/3d/mainroom.tscn"
 mirror = NodePath("Mirror")
 
@@ -26,7 +24,43 @@ texture = ExtResource("2_1a11v")
 [node name="ItemDropArea" parent="CanvasLayer" unique_id=748105193 instance=ExtResource("5_hfr1f")]
 mouse_filter = 2
 
-[node name="RoomUI" parent="CanvasLayer" unique_id=895738389 instance=ExtResource("2_inb3q")]
+[node name="SceneSwitchers" type="Control" parent="CanvasLayer" unique_id=83785056]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="LeftArrow" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=2105599197]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -65.75
+offset_right = 335.0
+offset_bottom = 65.75
+grow_vertical = 2
+text = "<-------
+sageata stanga"
+script = ExtResource("4_xiq1f")
+destination_room_path = "res://Rooms/Room1.tscn"
+
+[node name="RightArrow" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=1092760468]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -167.5
+offset_top = -131.5
+offset_right = 167.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "------->
+sageata dreapta"
+script = ExtResource("4_xiq1f")
+destination_room_path = "res://Rooms/Room3.tscn"
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("4_a5nxq")]
 mouse_filter = 2
@@ -37,3 +71,6 @@ position = Vector2(498, 376)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror" unique_id=2002972602]
 position = Vector2(116.5, 132.5)
 shape = SubResource("RectangleShape2D_wjqet")
+
+[connection signal="pressed" from="CanvasLayer/SceneSwitchers/LeftArrow" to="CanvasLayer/SceneSwitchers/LeftArrow" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/SceneSwitchers/RightArrow" to="CanvasLayer/SceneSwitchers/RightArrow" method="_on_pressed"]
