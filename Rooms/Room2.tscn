@@ -10,11 +10,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wjqet"]
 size = Vector2(253, 285)
 
-[node name="Room2" type="Node2D" unique_id=104392886]
+[node name="Room2" type="Node2D" unique_id=104392886 node_paths=PackedStringArray("mirror")]
 script = ExtResource("1_iehj0")
 room_left_path = "res://Rooms/Room1.tscn"
 room_right_path = "res://Rooms/Room3.tscn"
 room_3d_path = "res://scenes/3d/mainroom.tscn"
+mirror = NodePath("Mirror")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=2066755265]
 position = Vector2(960, 540)

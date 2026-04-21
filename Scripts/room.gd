@@ -7,7 +7,7 @@ extends Node
 @export var room_3d_path : String
 
 @onready var room_ui : RoomUI = get_node("CanvasLayer/RoomUI")
-@onready var mirror : InteractArea = get_node("Mirror")
+@export var mirror : InteractArea
 
 
 # Called when the node enters the scene tree for the first time.
