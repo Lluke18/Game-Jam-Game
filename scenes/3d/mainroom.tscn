@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bsr0rf2vhggfr"]
 
-[ext_resource type="Script" uid="uid://b52n10npscye6" path="res://Scripts/3D scripts/mainroom.gd" id="1_j7t7n"]
+[ext_resource type="Script" uid="uid://b52n10npscye6" path="res://scripts/3D scripts/mainroom.gd" id="1_j7t7n"]
 [ext_resource type="PackedScene" uid="uid://dm0ycc5x5wtod" path="res://scenes/3d/player3D.tscn" id="1_w1mmj"]
-[ext_resource type="Script" uid="uid://f0vsfhyi55lw" path="res://Scripts/3D scripts/3d_mirror.gd" id="3_ujn77"]
+[ext_resource type="Script" uid="uid://f0vsfhyi55lw" path="res://scripts/3D scripts/3d_mirror.gd" id="3_ujn77"]
+[ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_rfp5g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j7t7n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -14,8 +15,17 @@ sky_material = SubResource("ProceduralSkyMaterial_j7t7n")
 [sub_resource type="Environment" id="Environment_rfp5g"]
 background_mode = 2
 sky = SubResource("Sky_ujn77")
-tonemap_mode = 2
+tonemap_mode = 4
 glow_enabled = true
+fog_sun_scatter = 0.27
+fog_density = 0.0469
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_albedo = Color(0.34664935, 0.8017546, 0.8779845, 1)
+volumetric_fog_anisotropy = 0.11
+volumetric_fog_length = 26.2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ujn77"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w1mmj"]
 albedo_color = Color(7.123351e-06, 0.86968774, 0.50454617, 1)
@@ -35,12 +45,20 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1954821123]
 environment = SubResource("Environment_rfp5g")
+camera_attributes = SubResource("CameraAttributesPractical_ujn77")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="WorldEnvironment" unique_id=1914248222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6053123, 2.1359434, 3.5930464)
+light_energy = 1.988
+light_volumetric_fog_energy = 10.383
+light_size = 0.485
+omni_range = 1.6018165
 
 [node name="Player" parent="." unique_id=2036735905 instance=ExtResource("1_w1mmj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2060118, 1.4667473, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 3.2060118, 1.4667473, 0)
 
 [node name="MirrorSpawnPos" type="Marker3D" parent="." unique_id=1941016669]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3690124, 9.322487, 2.783813)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.596, 1.567, 3.542)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=916398296]
 use_collision = true
@@ -90,5 +108,7 @@ script = ExtResource("3_ujn77")
 transform = Transform3D(1.3550004, 0, 0, 0, 1.3550004, 0, 0, 0, 1.3550004, -0.29120684, 0.5165608, -0.03407359)
 shape = SubResource("BoxShape3D_j7t7n")
 debug_color = Color(0, 0, 0, 0.42)
+
+[node name="InventoryUI" parent="." unique_id=629547533 instance=ExtResource("4_rfp5g")]
 
 [connection signal="body_entered" from="3DMirror" to="." method="_on_d_mirror_body_entered"]
