@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b52n10npscye6" path="res://Scripts/3D scripts/mainroom.gd" id="1_j7t7n"]
 [ext_resource type="PackedScene" uid="uid://dm0ycc5x5wtod" path="res://scenes/3d/player3D.tscn" id="1_w1mmj"]
-[ext_resource type="Script" path="res://Scripts/3D scripts/character_body_3d.gd" id="3_fep6r"]
 [ext_resource type="Script" uid="uid://f0vsfhyi55lw" path="res://Scripts/3D scripts/3d_mirror.gd" id="3_ujn77"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_rfp5g"]
 
@@ -57,7 +56,6 @@ omni_range = 1.6018165
 
 [node name="Player" parent="." unique_id=2036735905 instance=ExtResource("1_w1mmj")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 3.2060118, 1.4667473, 0)
-script = ExtResource("3_fep6r")
 
 [node name="MirrorSpawnPos" type="Marker3D" parent="." unique_id=1941016669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.596, 1.567, 3.542)

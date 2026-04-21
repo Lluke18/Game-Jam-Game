@@ -4,6 +4,8 @@ extends Panel
 @onready var icon: TextureRect = $Icon
 @export var item: ItemData
 
+var is_selected: bool = false
+
 func _ready() -> void:
 	update_ui()
 
@@ -21,8 +23,8 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 
 func _get_drag_data(at_position: Vector2) -> Variant:
 	#check if the slot is empty
-	if not item:
-		print("Nu are item!")
+	print("Incearca drag")
+	if not (item and is_selected):
 		return
 		
 	var preview_image = duplicate()

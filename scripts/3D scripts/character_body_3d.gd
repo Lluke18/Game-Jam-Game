@@ -3,7 +3,6 @@ extends CharacterBody3D
 const SPEED = 2.0
 const SENSITIVITY = 0.003
 
-
 var gravity = 9.8
 @export var camera : Camera3D
 @export var head : Node3D

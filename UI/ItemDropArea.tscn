@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwv575pukbv8s"]
 
-[ext_resource type="Script" uid="uid://cfk1rleergkqm" path="res://Scripts/Items/item_drop_area.gd" id="1_nwp0f"]
+[ext_resource type="Script" path="res://Scripts/Items/item_drop_area.gd" id="1_nwp0f"]
 
 [node name="ItemDropArea" type="Control" unique_id=748105193]
 layout_mode = 3

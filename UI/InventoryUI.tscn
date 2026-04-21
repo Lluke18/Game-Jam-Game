@@ -4,6 +4,13 @@
 [ext_resource type="Script" uid="uid://begx5xtvasbnu" path="res://Scripts/item_slot.gd" id="1_la3np"]
 [ext_resource type="Texture2D" uid="uid://djnhajkpwvna2" path="res://Sprites/Placeholders/Items/Item1.png" id="1_xufhh"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cfyf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
 [node name="InventoryUI" type="Panel" unique_id=629547533]
 anchors_preset = 11
 anchor_left = 1.0
@@ -16,8 +23,9 @@ script = ExtResource("1_7cfyf")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1677735597]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 2.0
+offset_right = 112.0
+offset_bottom = 1046.0
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -177,3 +185,10 @@ grow_horizontal = 2
 grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="SelectionBorder" type="Panel" parent="MarginContainer" unique_id=156680875]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7cfyf")
