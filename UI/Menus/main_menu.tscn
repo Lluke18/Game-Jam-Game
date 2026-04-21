@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://d0rrcq8bkicf1"]
 
-[ext_resource type="Script" uid="uid://b1r36cpqq1uew" path="res://scenes/2d/main_menu.gd" id="1_uvd46"]
-[ext_resource type="Texture2D" uid="uid://c102s4oy47iil" path="res://Sprites/Placeholders/Vrajitor.png" id="2_uvd46"]
+[ext_resource type="Script" uid="uid://b1r36cpqq1uew" path="res://Scripts/UI scripts/main_menu.gd" id="1_n8578"]
+[ext_resource type="Texture2D" uid="uid://c102s4oy47iil" path="res://Sprites/Placeholders/Vrajitor.png" id="2_njn2r"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1780196516]
-script = ExtResource("1_uvd46")
+script = ExtResource("1_n8578")
+start_scene_path = "res://Rooms/Room2.tscn"
+options_menu_path = "res://UI/Menus/Options_menu.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1303395207]
 anchors_preset = -1
@@ -12,7 +14,7 @@ anchor_right = 1.0040001
 anchor_bottom = 1.0
 offset_right = -0.6801758
 offset_bottom = 6.0
-texture = ExtResource("2_uvd46")
+texture = ExtResource("2_njn2r")
 
 [node name="ButtonManager" type="Control" parent="TextureRect" unique_id=789897466]
 anchors_preset = 0

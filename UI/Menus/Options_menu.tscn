@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://qnu0qns26dim"]
+
+[ext_resource type="Script" uid="uid://cjnfxasyli5mb" path="res://Scripts/UI scripts/options_menu.gd" id="1_hrxsy"]
+
+[node name="OptionsMenu" type="Control" unique_id=352797159]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hrxsy")
+main_menu_path = "res://UI/Menus/main_menu.tscn"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=747028311]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 154.00002
+offset_right = 168.1786
+offset_bottom = 255.00002
+scale = Vector2(5.7826915, 5.6647363)
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=252640487]
+layout_mode = 2
+text = "Audio"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=2031854567]
+layout_mode = 2
+text = "Brightness"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1075061364]
+layout_mode = 2
+text = "Go  back"
+
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
