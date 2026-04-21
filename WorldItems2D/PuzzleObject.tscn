@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bvip2aownlgr"]
+
+[ext_resource type="Script" uid="uid://dn2rdmud1mnx2" path="res://Scripts/Items/puzzle_object.gd" id="1_e0xs3"]
+
+[node name="PuzzleObject" type="TextureButton" unique_id=374029610]
+script = ExtResource("1_e0xs3")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
