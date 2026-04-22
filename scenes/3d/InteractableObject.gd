@@ -1,13 +1,12 @@
-extends StaticBody3D
+extends Node3D
 
 class_name InteractableObject
 
-
-@export var area : Area3D
+@export var area : InteractableArea3D
+@export var object : PhysicsBody3D
 #signal interacted
-#var interact : Callable = func() : pass
+var interact : Callable = func() : pass
 
 
-func interact():
-	print("did something!")
-	SceneChanger.change_scene_to_path("res://Rooms/Room2.tscn")
+#func interact():
+#	pass

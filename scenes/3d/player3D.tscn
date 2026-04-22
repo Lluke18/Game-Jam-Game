@@ -30,7 +30,7 @@ attributes = SubResource("CameraAttributesPractical_w1mmj")
 
 [node name="SeeCast" type="RayCast3D" parent="head/Camera3D" unique_id=1389235313]
 unique_name_in_owner = true
-transform = Transform3D(1.9106853e-15, -1.769138e-07, -0.9999998, -0.99999994, -1.7691382e-07, 0, -4.3711385e-08, 4.0473166, -4.3711374e-08, -2.0023872e-08, 0.004252732, -0.22217804)
+transform = Transform3D(1.9106853e-15, -1.3032567e-07, -0.9999998, -0.99999994, -1.3032567e-07, 0, -4.3711385e-08, 2.981504, -4.3711374e-08, -1.9770109e-08, 0.004252732, -0.21637273)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=331923488]
 

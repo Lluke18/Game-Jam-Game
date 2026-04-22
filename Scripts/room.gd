@@ -17,5 +17,6 @@ func _ready() -> void:
 
 func _on_mirror_change():
 	print("SWITCHING!")
+	
 	InteractionManager.unregister_area(mirror) # so it doesnt cause errors in 3d
 	SceneChanger.change_scene_to_path(room_3d_path)

@@ -44,7 +44,7 @@ script = ExtResource("1_j7t7n")
 spawnpos = NodePath("MirrorSpawnPos")
 player = NodePath("Player")
 scene_2D_path = "res://Rooms/Room2.tscn"
-mirror = NodePath("testbody")
+mirror = NodePath("mirror")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1343459481]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -77,29 +77,29 @@ size = Vector3(3.2752686, 0.9609375, 1)
 material = SubResource("StandardMaterial3D_w1mmj")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=321954747]
-transform = Transform3D(1, 0, 0, 0, 1.938775, 0, 0, 0, 23.043703, -8.502685, 7.020936, 0.05818057)
+transform = Transform3D(1, 0, 0, 0, 1.938775, 0, 0, 0, 23.043703, -8.502685, 6.4044485, 0.05818057)
 use_collision = true
-size = Vector3(1, 6.7269897, 1)
+size = Vector3(1, 6.091034, 1)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1698302475]
-transform = Transform3D(-4.371139e-08, 0, -23.043703, 0, 1.938775, 0, 1, 0, -1.0072722e-06, 4.1699176, 6.762989, -10.8038025)
+transform = Transform3D(-4.371139e-08, 0, -23.043703, 0, 1.938775, 0, 1, 0, -1.0072722e-06, 4.1699176, 6.262113, -10.8038025)
 use_collision = true
-size = Vector3(1, 6.7269897, 1.3125)
+size = Vector3(1, 6.2102966, 1.3125)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2092547142]
-transform = Transform3D(-4.371139e-08, 0, -23.043703, 0, 1.938775, 0, 1, 0, -1.0072722e-06, 4.0199084, 6.5211954, 6.855977)
+transform = Transform3D(-4.371139e-08, 0, -23.043703, 0, 1.938775, 0, 1, 0, -1.0072722e-06, 4.0199084, 6.1328545, 6.855977)
 use_collision = true
-size = Vector3(1, 6.7269897, 1.3325195)
+size = Vector3(1, 6.3263855, 1.3325195)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1302048636]
-transform = Transform3D(-4.371139e-08, 0, -23.043703, -1, -8.4746546e-08, 1.0072722e-06, -4.371139e-08, 1.938775, 4.4029267e-14, 4.0199084, 13.546625, -1.9213133)
+transform = Transform3D(-4.371139e-08, 0, -23.043703, -1, -8.4746546e-08, 1.0072722e-06, -4.371139e-08, 1.938775, 4.4029267e-14, 4.0199084, 12.279404, -1.9213133)
 use_collision = true
 size = Vector3(1, 9.8, 1.3325195)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=508186783]
-transform = Transform3D(1, 0, 0, 0, 1.938775, 0, 0, 0, 23.209757, 10.022087, 7.7244973, -0.12966084)
+transform = Transform3D(1, 0, 0, 0, 1.938775, 0, 0, 0, 23.209757, 10.022087, 6.5140944, -0.12966084)
 use_collision = true
-size = Vector3(1, 7.1810913, 1)
+size = Vector3(1, 5.9324646, 1)
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D/CSGBox3D3" unique_id=477816408]
 transform = Transform3D(-2.2965546e-07, -3.3110476, 0, 2.7099097, -7.465048e-08, 0, 0, 0, 0.14265758, 1.7748833, -2.3836212, -0.04456244)
@@ -118,25 +118,29 @@ size = Vector3(1, 0.42626953, 2.6323242)
 
 [node name="InventoryUI" parent="." unique_id=629547533 instance=ExtResource("4_rfp5g")]
 
-[node name="testbody" type="StaticBody3D" parent="." unique_id=974036244 node_paths=PackedStringArray("area") groups=["Interactables"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.851268, 1.9977806, 3.6061573)
+[node name="mirror" type="Node3D" parent="." unique_id=1773823899 node_paths=PackedStringArray("area", "object")]
 script = ExtResource("4_fep6r")
-area = NodePath("InteractableArea3D")
+area = NodePath("testbody/InteractableArea3D")
+object = NodePath("testbody")
+metadata/_custom_type_script = "uid://3hq0fuvsjl70"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="testbody" unique_id=843336616]
+[node name="testbody" type="StaticBody3D" parent="mirror" unique_id=974036244 groups=["Interactables"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.851268, 1.9977806, 3.6061573)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="mirror/testbody" unique_id=843336616]
 transform = Transform3D(0.32286763, 0, 0, 0, 0.64208627, 0, 0, 0, 0.64208627, -0.079562664, -0.025069833, 0)
 mesh = SubResource("SphereMesh_rfp5g")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="testbody" unique_id=1666123090]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mirror/testbody" unique_id=1666123090]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048498392, 0, 0)
 shape = SubResource("SphereShape3D_fep6r")
 
-[node name="InteractableArea3D" parent="testbody" unique_id=563925380 instance=ExtResource("3_rfp5g")]
+[node name="InteractableArea3D" parent="mirror/testbody" unique_id=563925380 instance=ExtResource("3_rfp5g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.59303236, -0.7613945, -0.056808233)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="testbody/InteractableArea3D" unique_id=1447041756]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mirror/testbody/InteractableArea3D" unique_id=1447041756]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3199439, 0.9927367, -0.019042969)
 shape = SubResource("BoxShape3D_rfp5g")
 
 [connection signal="clicked" from="Player" to="." method="_on_player_clicked"]
-[connection signal="body_entered" from="testbody/InteractableArea3D" to="." method="_on_d_mirror_body_entered"]
+[connection signal="body_entered" from="mirror/testbody/InteractableArea3D" to="." method="_on_d_mirror_body_entered"]

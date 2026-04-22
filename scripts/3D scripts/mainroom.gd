@@ -10,15 +10,19 @@ extends Node3D
 
 func _ready() -> void:
 	player.global_position = spawnpos.position
-	#mirror.interact = Callable(self, "_on_mirror_switch")
+	mirror.interact = Callable(self, "_on_mirror_switch")
 
 
 
 func _on_mirror_switch():
 	print("SWITCHING!")
-	mirror.can_interact = false
-	SceneChanger.change_scene_to_path(scene_2D_path)
+	mirror.area.can_interact = false
+	
+	player.set_physics_process(false)
+	
+	SceneChanger.change_scene_to_path.call_deferred(scene_2D_path)
 
 
 func _on_player_clicked(target) -> void:
-	target.interact()
+	if target.area.can_interact:
+		target.interact.call()

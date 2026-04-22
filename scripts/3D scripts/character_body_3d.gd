@@ -29,15 +29,18 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	if seecast.is_colliding():
+	if !is_inside_tree(): return
+	
+	if is_instance_valid(seecast) and seecast.is_colliding():
 		var target = seecast.get_collider()
 		#print(target)
 		if target != null and target.is_in_group("Interactables"): # OR MAKE A GROUP!
 			seetext.show()
 			#print("can see tutorial message!")
 			if Input.is_action_just_pressed("interact"):
-				clicked.emit(target)
+				clicked.emit(target.get_parent())
 				print("DO STUFF!")
+		else: seetext.hide()
 	
 	
 	if not is_on_floor():
