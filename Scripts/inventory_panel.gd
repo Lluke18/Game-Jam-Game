@@ -24,7 +24,7 @@ func init_slots_array():
 
 func _ready() -> void:
 	init_slots_array()
-	update_bar()
+	call_deferred("update_bar")
 	InventoryManager.inventory_modified.connect(update_bar)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,3 +61,9 @@ func update_bar():
 		slots[slot_index].update_ui()
 	
 	call_deferred("update_selection")
+	call_deferred("save_items")
+
+func save_items():
+	SaveManager.save_file_data.obtained_items = InventoryManager.obtained_items
+	SaveManager.save_file_data.selected_item = InventoryManager.selected_item
+	SaveManager.save_file_data.selected_item_index = InventoryManager.selected_item_index

@@ -5,18 +5,29 @@ extends CanvasLayer
 @onready var music_slider  = $OptionsPanel/PanelContainer/MarginContainer/VBoxContainer/MusicSlider
 @onready var sfx_slider    = $OptionsPanel/PanelContainer/MarginContainer/VBoxContainer/SfxSlider
 
+@onready var continue_button: Button = $TextureRect/ButtonManager/Continue
+
 func _ready() -> void:
+	if FileAccess.file_exists("user://SaveFile.tres") == false:
+		continue_button.disabled = true
+	
 	options_panel.visible = false
 	master_slider.value = AudioManager.get_master_volume()
 	music_slider.value  = AudioManager.get_music_volume()
 	sfx_slider.value    = AudioManager.get_sfx_volume()
 
 func _on_start_pressed() -> void:
+	DirAccess.remove_absolute("user://SaveFile.tres")
+	InventoryManager.reset_data()
 	get_tree().change_scene_to_file("res://Rooms/Room2.tscn")
 
 func _on_options_pressed() -> void:
 	options_panel.visible = true
-
+	
+func _on_continue_pressed() -> void:
+	InventoryManager.load_data()
+	get_tree().change_scene_to_file("res://Rooms/Room2.tscn")
+	
 func _on_close_pressed() -> void:
 	options_panel.visible = false
 
