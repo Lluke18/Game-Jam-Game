@@ -7,8 +7,6 @@ extends Node
 @export var mirror : InteractArea
 
 func _ready() -> void:
-	InventoryManager.add_item(InventoryManager.ITEM1)
-	
 	#pt tranzitia de la 3d, ca mouse-ul sa se vada din nou in 2d
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 

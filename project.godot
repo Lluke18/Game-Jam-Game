@@ -26,6 +26,7 @@ SceneChanger="*uid://l8wj2k251dxb"
 InventoryManager="*uid://b720nbrg4os7l"
 SignalBus="*uid://b8mxpa7hagck5"
 AudioManager="*uid://bnstsym7hep34"
+SaveManager="*uid://bq17yn112l8j7"
 
 [display]
 
