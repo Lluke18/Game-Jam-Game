@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-const SPEED = 2.0
+const SPEED = 3.0
 const SENSITIVITY = 0.003
 
 var gravity = 9.8
@@ -22,8 +22,8 @@ signal clicked
 @export var cursor : Resource
 
 func _ready():
-	Input.set_custom_mouse_cursor(cursor)
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#Input.set_custom_mouse_cursor(cursor)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _unhandled_input(event: InputEvent) -> void:

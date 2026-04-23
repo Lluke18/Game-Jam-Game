@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_rfp5g"]
 [ext_resource type="PackedScene" uid="uid://b6k8kxr7125rj" path="res://3D assets/Illusion.blend" id="6_5k5vb"]
 [ext_resource type="PackedScene" uid="uid://mrqt5s35qy47" path="res://3D assets/OGLINDA.tscn" id="6_nq88r"]
+[ext_resource type="PackedScene" uid="uid://bc5pslkwi8ri" path="res://3D assets/meshes/luna.glb" id="9_q48q4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j7t7n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -46,12 +47,19 @@ size = Vector3(1.6264648, 2.9854736, 2.3740234)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5k5vb"]
 size = Vector3(27.173248, 1, 29.495453)
 
-[node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player", "mirror")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_whf7h"]
+size = Vector3(0.625, 0.6057129, 0.77490234)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2vkj2"]
+size = Vector3(1.5373383, 2.2694092, 2.1226807)
+
+[node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player", "mirror", "moon_symbol")]
 script = ExtResource("1_j7t7n")
 spawnpos = NodePath("MirrorSpawnPos")
 player = NodePath("Player")
 scene_2D_path = "res://Rooms/Room2.tscn"
 mirror = NodePath("mirror")
+moon_symbol = NodePath("MoonShape")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1343459481]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -122,12 +130,14 @@ use_collision = true
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=177353906]
 transform = Transform3D(2.2015772, 0, 0, 0, 1.0075973, 0, 0, 0, 2.633994, -7.302683, 2.5, -0.48047614)
+visible = false
 use_collision = true
 radius = 0.234375
 height = 3.588379
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2028381145]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -3.5528908, 0.7449422, -0.81616205)
+visible = false
 size = Vector3(1, 0.42626953, 2.6323242)
 
 [node name="InventoryUI" parent="." unique_id=629547533 instance=ExtResource("4_rfp5g")]
@@ -161,7 +171,7 @@ shape = SubResource("BoxShape3D_rfp5g")
 [node name="Fundal" parent="mirror/testbody" unique_id=1936767386 instance=ExtResource("6_nq88r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038677216, 0.73453784, 0.13780904)
 
-[node name="Illusion" parent="." unique_id=1825233445 instance=ExtResource("6_5k5vb")]
+[node name="Illusion" parent="." unique_id=147018603 instance=ExtResource("6_5k5vb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0560987, 0.666275, -3.7925568)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Illusion" unique_id=707953608]
@@ -170,6 +180,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48167443, -0.48643363, -1.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Illusion/StaticBody3D" unique_id=1396151652]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1324904, 0)
 shape = SubResource("BoxShape3D_5k5vb")
+
+[node name="MoonShape" type="Node3D" parent="." unique_id=336282562 node_paths=PackedStringArray("area", "object")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5652399, 2.927988, 4.489984)
+script = ExtResource("4_fep6r")
+area = NodePath("InteractableArea3D")
+object = NodePath("StaticBody3D")
+metadata/_custom_type_script = "uid://3hq0fuvsjl70"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MoonShape" unique_id=818467150 groups=["Interactables"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MoonShape/StaticBody3D" unique_id=1216844020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1875, 0.19714355, 0.11254883)
+shape = SubResource("BoxShape3D_whf7h")
+debug_color = Color(0, 0.62552637, 0.51651114, 1)
+
+[node name="luna" parent="MoonShape/StaticBody3D" unique_id=603556165 instance=ExtResource("9_q48q4")]
+transform = Transform3D(-0.3171266, 0, 0.12610383, 0, 0.34127915, 0, -0.12610383, 0, -0.3171266, 0.093675256, -0.09763837, 0.19177961)
+
+[node name="InteractableArea3D" parent="MoonShape" unique_id=337735625 instance=ExtResource("3_rfp5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12355518, -0.0886333, -0.06608534)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MoonShape/InteractableArea3D" unique_id=1961359182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056602478, 0.6347046, -0.20123291)
+shape = SubResource("BoxShape3D_2vkj2")
 
 [connection signal="clicked" from="Player" to="." method="_on_player_clicked"]
 [connection signal="body_entered" from="mirror/testbody/InteractableArea3D" to="." method="_on_d_mirror_body_entered"]
