@@ -13,6 +13,10 @@ func _ready() -> void:
 	init_markers_array()
 	init_paintings_array()
 	init_paintings_snapped_array()
+	TextManager.show_once("Magician", [
+		"Tablourile par să fi fost mutate...",
+        "Trebuie să le pun la locurile potrivite."
+	])
 		
 func init_markers_array():
 	for child in snap_markers.get_children():
@@ -52,3 +56,6 @@ func on_try_snapping(painting_index: int):
 			check_if_solved()
 			return
 	paintings_snapped[painting_index] = -1
+
+func _exit_tree() -> void:
+	TextManager.cancel()

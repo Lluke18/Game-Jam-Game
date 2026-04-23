@@ -17,6 +17,9 @@ func _ready() -> void:
 	init_target_markers_array()
 	init_drawing_dots_array()
 	connect_drawing_dots_signals()
+	TextManager.show_once("Star" ,[
+		"Cine vede asta, te pup :*"
+	])
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

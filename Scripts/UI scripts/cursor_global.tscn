@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c05hf5mcrinhd"]
+
+[ext_resource type="Texture2D" uid="uid://ckjm4unb7l4i6" path="res://Sprites/bagheta.png" id="1_i08lt"]
+
+[node name="InterfataCursor" type="CanvasLayer" unique_id=1778982834]
+layer = 100
+
+[node name="Bagheta" type="TextureRect" parent="." unique_id=283750685]
+offset_left = 928.0
+offset_top = 463.0
+offset_right = 1003.0
+offset_bottom = 539.0
+mouse_filter = 2
+texture = ExtResource("1_i08lt")
+expand_mode = 1

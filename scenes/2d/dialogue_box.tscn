@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cmfbnbcffxin4"]
+
+[ext_resource type="Script" uid="uid://bchi7ybfjrmbd" path="res://Scripts/UI scripts/dialogue_box.gd" id="1_di1it"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_di1it"]
+bg_color = Color(0.004019165, 0.004019165, 0.004019165, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 1, 1)
+
+[node name="DialogueBox" type="CanvasLayer" unique_id=108723142]
+script = ExtResource("1_di1it")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=213292219]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -161.0
+offset_right = -112.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_di1it")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1378421250]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1497799384]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1090834797]
+layout_mode = 2
+theme_override_font_sizes/font_size = 52
+text = "* "
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1513629459]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 52
+text = "Da ma da"
+vertical_alignment = 1
