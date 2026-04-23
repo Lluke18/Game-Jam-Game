@@ -1,8 +1,13 @@
+class_name DraggablePuzzleObject
+
 extends TextureButton
 
 var isDragging: bool = false
-var draggable: bool = false
+var draggable: bool = true
 var offset: Vector2 = Vector2(0,0)
+
+@export var index: int = 0
+signal try_snapping(index: int)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -15,3 +20,4 @@ func _on_button_down() -> void:
 
 func _on_button_up() -> void:
 	isDragging = false
+	try_snapping.emit(index)
