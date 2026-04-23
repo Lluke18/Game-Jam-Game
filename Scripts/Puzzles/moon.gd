@@ -10,3 +10,4 @@ func _ready() -> void:
 func end_puzzle():
 	print("The Moon finished!")
 	PuzzleManager.complete_puzzles[PuzzleManager.puzzles.MOON] = true
+	SignalBus.moon_completed.emit()

@@ -90,13 +90,14 @@ light_size = 0.485
 omni_range = 1.6018165
 
 [node name="Player" parent="." unique_id=2036735905 instance=ExtResource("1_w1mmj")]
-transform = Transform3D(3.2, 0, 0, 0, 3.2, 0, 0, 0, 3.2, -5.271773, 3.1448445, 2.6078143)
+transform = Transform3D(3.7, 0, 0, 0, 3.7, 0, 0, 0, 3.7, -5.271773, 3.1448445, 2.6078143)
 cursor = ExtResource("3_okq3e")
 
 [node name="MirrorSpawnPos" type="Marker3D" parent="." unique_id=1941016669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.596, 1.567, 3.542)
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=916398296]
+visible = false
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1243244475]
@@ -254,6 +255,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12355518, -0.0886333, -0.06
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MoonShape/InteractableArea3D" unique_id=1961359182]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056602478, 0.6347046, -0.20123291)
 shape = SubResource("BoxShape3D_2vkj2")
+
+[node name="ZodiacWheel" type="Node3D" parent="." unique_id=2127238582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.450082, 0, -3.0441608)
+script = ExtResource("4_fep6r")
+metadata/_custom_type_script = "uid://3hq0fuvsjl70"
+
+[node name="CypherChest" type="Node3D" parent="." unique_id=2047094176]
+script = ExtResource("4_fep6r")
+metadata/_custom_type_script = "uid://3hq0fuvsjl70"
+
+[node name="Scales" type="Node3D" parent="." unique_id=2129855317]
+script = ExtResource("4_fep6r")
+metadata/_custom_type_script = "uid://3hq0fuvsjl70"
 
 [connection signal="clicked" from="Player" to="." method="_on_player_clicked"]
 [connection signal="body_entered" from="mirror/testbody/InteractableArea3D" to="." method="_on_d_mirror_body_entered"]

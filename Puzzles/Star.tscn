@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://f6qmr6jsfsaw"]
+[gd_scene format=3 uid="uid://bnr36skqtew6q"]
 
 [ext_resource type="Script" uid="uid://b0drdn5m6g7ey" path="res://Scripts/Puzzles/star.gd" id="1_asnyx"]
-[ext_resource type="PackedScene" uid="uid://c1hkjqgxqgyld" path="res://PuzzleObjects/DrawingDot.tscn" id="2_i662l"]
+[ext_resource type="PackedScene" uid="uid://d13uthvbsi416" path="res://PuzzleObjects/DrawingDot.tscn" id="2_i662l"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="4_aad07"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="5_xo56k"]
 

@@ -17,14 +17,15 @@ head = NodePath("head")
 seetext = NodePath("CanvasLayer/BoxContainer/Label")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=925054175]
+visible = false
 mesh = SubResource("CapsuleMesh_fep6r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1049069559]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_5k5vb")
 
 [node name="head" type="Node3D" parent="." unique_id=1090359360]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.4049958, 0)
 
 [node name="Camera3D" type="Camera3D" parent="head" unique_id=1055196709]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8701415, -0.2359147)

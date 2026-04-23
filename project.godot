@@ -34,7 +34,6 @@ PuzzleManager="*uid://clfq0m6sxt40y"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-mouse_cursor/custom_image="uid://ckjm4unb7l4i6"
 window/main_scene="uid://d0rrcq8bkicf1"
 
 [global_group]

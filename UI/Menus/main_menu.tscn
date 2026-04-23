@@ -1,11 +1,11 @@
-[gd_scene format=3 uid="uid://d0rrcq8bkicf1"]
+[gd_scene format=3 uid="uid://c1vmuc4ao4lwo"]
 
 [ext_resource type="Script" uid="uid://b1r36cpqq1uew" path="res://Scripts/UI scripts/main_menu.gd" id="1_n8578"]
 [ext_resource type="Texture2D" uid="uid://c102s4oy47iil" path="res://Sprites/Placeholders/Vrajitor.png" id="2_njn2r"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1780196516]
 script = ExtResource("1_n8578")
-start_scene_path = "res://Rooms/Room2.tscn"
+start_scene_path = "res://Puzzles/Magician.tscn"
 options_menu_path = "res://UI/Menus/Options_menu.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1303395207]

@@ -7,6 +7,7 @@
 
 [node name="Room3" type="Node2D" unique_id=664680839]
 script = ExtResource("1_wt6t0")
+left_room_path = "res://Rooms/Room2.tscn"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=485338877]
 

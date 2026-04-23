@@ -6,6 +6,7 @@
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1780196516]
 script = ExtResource("1_uvd46")
+start_scene_path = "res://Rooms/Room1.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1303395207]
 anchors_preset = -1

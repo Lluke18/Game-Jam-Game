@@ -8,6 +8,7 @@
 
 [node name="Room1" type="Node2D" unique_id=1138460362]
 script = ExtResource("1_fja4u")
+right_room_path = "res://Rooms/Room2.tscn"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=701273391]
 position = Vector2(960, 540)

@@ -92,4 +92,5 @@ func check_if_complete():
 func end_puzzle():
 	print("The Star finished!")
 	PuzzleManager.complete_puzzles[PuzzleManager.puzzles.STAR] = true
+	SignalBus.star_completed.emit()
 	disconnect_drawing_dots_signals()
