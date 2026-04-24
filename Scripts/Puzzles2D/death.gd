@@ -8,7 +8,7 @@ extends Node
 func _ready() -> void:
 	connect_key_signals()
 	TextManager.show_once("Death" , [
-		"sixxxxxxxxx sevennnnnnnnnnnn"
+		"I wonder what the code is[]"
 	])
 
 func connect_key_signals():

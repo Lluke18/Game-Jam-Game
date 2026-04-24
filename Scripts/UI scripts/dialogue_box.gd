@@ -42,3 +42,10 @@ func _type_text() -> void:
 	if not typing:
 		hide()
 		TextManager.dialogue_finished.emit()
+		
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if is_typing:
+			text_label.text = full_text
+			is_typing = false
+			typing = false

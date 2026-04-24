@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmfbnbcffxin4"]
 
-[ext_resource type="Script" uid="uid://bchi7ybfjrmbd" path="res://Scripts/UI scripts/dialogue_box.gd" id="1_di1it"]
+[ext_resource type="Script" path="res://Scripts/UI scripts/dialogue_box.gd" id="1_di1it"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_di1it"]
 bg_color = Color(0.004019165, 0.004019165, 0.004019165, 1)
@@ -34,14 +34,28 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Start" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1090834797]
+custom_minimum_size = Vector2(2, 0)
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_font_sizes/font_size = 52
 text = "* "
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1513629459]
+custom_minimum_size = Vector2(2, 0)
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 1
 theme_override_font_sizes/font_size = 52
-text = "Da ma da"
+text = "Da ma  dsaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+vertical_alignment = 1
+autowrap_mode = 1
+clip_text = true
+
+[node name="End" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1518274552]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 52
+text = "*"
 vertical_alignment = 1
