@@ -11,6 +11,8 @@ enum puzzles{
 }
 
 var moon_symbol_picked_up: bool = false
+var calendar_solved: bool = false
+
 var death_solved : bool = false
 
 const number_of_puzzles: int = 7

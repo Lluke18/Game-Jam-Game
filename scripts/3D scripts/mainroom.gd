@@ -16,7 +16,7 @@ func _ready() -> void:
 	print(mirror.area.can_interact)
 	player.global_position = spawnpos.position
 	mirror.interact = Callable(self, "_on_mirror_switch")
-	zodiac_wheel.interact = Callable(self, "_on_zodiac_click")
+	
 	
 	# Am pus logica fiecarui puzzle intr-un script propriu, in Scripts/Puzzles3D
 	#moon_symbol.interact = Callable(self, "_on_moon_pickup")
@@ -30,10 +30,6 @@ func _on_mirror_switch():
 	player.set_physics_process(false)
 	
 	SceneChanger.change_scene_to_path.call_deferred(scene_2D_path)
-
-func _on_zodiac_click():
-	print("you got the correct zodiac!")
-	zodiac_tile.aries_fall()
 
 func _on_player_clicked(target) -> void:
 	if target.area.can_interact:

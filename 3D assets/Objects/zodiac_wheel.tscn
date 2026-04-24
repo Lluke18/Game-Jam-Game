@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://by17lu4nxjwgw"]
+[gd_scene format=3 uid="uid://j403tq8k44rm"]
 
 [ext_resource type="PackedScene" uid="uid://cr4636s7oduy4" path="res://3D assets/Objects/zodiac_wheel/Zodiac_wheel.glb" id="1_gxnlk"]
+[ext_resource type="Script" uid="uid://cprcdtuksosjh" path="res://zodiac_wheel.gd" id="2_gxnlk"]
 
 [sub_resource type="Animation" id="Animation_bvugf"]
 length = 0.001
@@ -304,11 +305,12 @@ _data = {
 }
 
 [node name="Zodiac_wheel" unique_id=788897303 instance=ExtResource("1_gxnlk")]
+script = ExtResource("2_gxnlk")
 
-[node name="aries_sign" parent="." index="2" unique_id=1320164347]
+[node name="aries_sign" parent="." index="2" unique_id=85423786]
 transform = Transform3D(-5.6873226e-08, -1, -1.1059097e-07, 0.64114773, 4.8405308e-08, -0.76741743, 0.7674175, -1.1455066e-07, 0.6411477, 9.872185, 5.814583, -1.142973)
 
-[node name="The Star" parent="." index="3" unique_id=119193432]
+[node name="The Star" parent="." index="3" unique_id=237058659]
 transform = Transform3D(-2.3029722e-08, 0.5268586, -2.3029722e-08, 0, -2.3029722e-08, -0.5268586, -0.5268586, -2.3029722e-08, 1.0066611e-15, 9.927379, 5.718455, -1.1605314)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4" unique_id=1560217999]
