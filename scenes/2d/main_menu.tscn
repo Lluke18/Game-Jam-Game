@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://pktjg68ny7sg" path="res://scenes/2d/main_menu.gd" id="1_uvd46"]
 [ext_resource type="Texture2D" uid="uid://c102s4oy47iil" path="res://Sprites/Placeholders/Vrajitor.png" id="2_uvd46"]
 [ext_resource type="PackedScene" uid="uid://bhm5xkhsb3n7c" path="res://scenes/2d/options_panel.tscn" id="3_k62s8"]
+[ext_resource type="PackedScene" uid="uid://dep2x6ri76qqs" path="res://UI/cutscene.tscn" id="4_d3yhd"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1780196516]
 script = ExtResource("1_uvd46")
@@ -69,8 +70,14 @@ offset_bottom = -6.1035156e-05
 text = "Quit Game"
 
 [node name="OptionsPanel" parent="." unique_id=355889237 instance=ExtResource("3_k62s8")]
+visible = false
+
+[node name="Cutscene" parent="." unique_id=1860893096 instance=ExtResource("4_d3yhd")]
+visible = false
 
 [connection signal="pressed" from="TextureRect/ButtonManager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonManager/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonManager/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonManager/Quit Game" to="." method="_on_quit_game_pressed"]
+
+[editable path="Cutscene"]

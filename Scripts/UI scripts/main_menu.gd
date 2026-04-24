@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @export var start_scene_path : String
 @export var options_menu_path : String
+@export var cutscene: PackedScene
 
 @onready var continue_button: Button = $TextureRect/ButtonManager/Continue
 

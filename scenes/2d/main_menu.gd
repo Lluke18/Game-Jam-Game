@@ -3,9 +3,14 @@ extends CanvasLayer
 @onready var options_panel = $OptionsPanel
 @onready var continue_button: Button = $TextureRect/ButtonManager/Continue
 @export var start_scene_path : String
-@export var options_menu_path : String
+@export var options_menu_path : String 
+
+@onready var cutscene_node = $Cutscene 
+@onready var anim_player: AnimationPlayer = $Cutscene/CanvasLayer/AnimationPlayer
+
 
 func _ready() -> void:
+	cutscene_node.hide()
 	if FileAccess.file_exists("user://SaveFile.tres") == false:
 		continue_button.disabled = true
 	options_panel.visible = false
@@ -14,6 +19,10 @@ func _on_start_pressed() -> void:
 	DirAccess.remove_absolute("user://SaveFile.tres")
 	InventoryManager.reset_data()
 	PuzzleManager.reset_data()
+	$TextureRect.hide()       
+	cutscene_node.show()
+	anim_player.play("intro")
+	await anim_player.animation_finished
 	SceneChanger.change_scene_to_path(start_scene_path)
 
 func _on_options_pressed() -> void:
