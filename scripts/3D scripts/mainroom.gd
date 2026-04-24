@@ -6,14 +6,16 @@ extends Node3D
 
 #var can_interact : bool = false
 @export var mirror : InteractableObject
-@export var moon_symbol : InteractableObject
+#@export var moon_symbol : InteractableObject
 @export var placeholder_item : ItemData
 
 func _ready() -> void:
 	print(mirror.area.can_interact)
 	player.global_position = spawnpos.position
 	mirror.interact = Callable(self, "_on_mirror_switch")
-	moon_symbol.interact = Callable(self, "_on_moon_pickup")
+	
+	# Am pus logica fiecarui puzzle intr-un script propriu, in Scripts/Puzzles3D
+	#moon_symbol.interact = Callable(self, "_on_moon_pickup")
 
 
 
@@ -31,6 +33,6 @@ func _on_player_clicked(target) -> void:
 		target.interact.call()
 
 
-func _on_moon_pickup():
-	InventoryManager.add_item(InventoryManager.ITEM3)
-	moon_symbol.queue_free()
+#func _on_moon_pickup():
+	#InventoryManager.add_item(InventoryManager.ITEM3)
+	#moon_symbol.queue_free()

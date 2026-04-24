@@ -10,6 +10,8 @@ enum puzzles{
 	WORLD
 }
 
+var moon_symbol_picked_up: bool = false
+
 const number_of_puzzles: int = 7
 var complete_puzzles: Array[bool] = []
 var completed_puzzles : int = 0

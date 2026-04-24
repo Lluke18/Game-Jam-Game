@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bvip2aownlgr"]
 
-[ext_resource type="Script" uid="uid://dn2rdmud1mnx2" path="res://Scripts/Puzzles/draggable_puzzle_object.gd" id="1_2dnpp"]
+[ext_resource type="Script" uid="uid://dn2rdmud1mnx2" path="res://Scripts/Puzzles2D/draggable_puzzle_object.gd" id="1_2dnpp"]
 
 [node name="PuzzleObject" type="TextureButton" unique_id=374029610]
 script = ExtResource("1_2dnpp")

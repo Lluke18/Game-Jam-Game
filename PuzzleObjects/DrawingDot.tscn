@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c1hkjqgxqgyld"]
 
 [ext_resource type="Texture2D" uid="uid://1s05vlcqe8ml" path="res://icon.svg" id="1_fewuh"]
-[ext_resource type="Script" uid="uid://s4moklmuk6bm" path="res://Scripts/Puzzles/drawing_dot.gd" id="2_3hgdh"]
+[ext_resource type="Script" uid="uid://s4moklmuk6bm" path="res://Scripts/Puzzles2D/drawing_dot.gd" id="2_3hgdh"]
 
 [node name="DrawingDot" type="TextureButton" unique_id=1974290463]
 anchors_preset = -1

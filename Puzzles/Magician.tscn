@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://box2ou45css0b"]
 
-[ext_resource type="Script" uid="uid://bse3wjs2c7luj" path="res://Scripts/Puzzles/magician.gd" id="1_6eh2d"]
+[ext_resource type="Script" uid="uid://bse3wjs2c7luj" path="res://Scripts/Puzzles2D/magician.gd" id="1_6eh2d"]
 [ext_resource type="Texture2D" uid="uid://1s05vlcqe8ml" path="res://icon.svg" id="3_prs6s"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="5_d7o1r"]
 [ext_resource type="PackedScene" uid="uid://bvip2aownlgr" path="res://PuzzleObjects/DraggablePuzzleObject.tscn" id="5_ppu18"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://f6qmr6jsfsaw"]
 
-[ext_resource type="Script" uid="uid://b0drdn5m6g7ey" path="res://Scripts/Puzzles/star.gd" id="1_asnyx"]
+[ext_resource type="Script" uid="uid://b0drdn5m6g7ey" path="res://Scripts/Puzzles2D/star.gd" id="1_asnyx"]
 [ext_resource type="PackedScene" uid="uid://c1hkjqgxqgyld" path="res://PuzzleObjects/DrawingDot.tscn" id="2_i662l"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="4_aad07"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_5gbe3"]

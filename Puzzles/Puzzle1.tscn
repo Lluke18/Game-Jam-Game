@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bas6wnhitmmub"]
 
-[ext_resource type="Script" uid="uid://bfberpbmpkk4v" path="res://Scripts/Puzzles/puzzle.gd" id="1_1lbio"]
+[ext_resource type="Script" uid="uid://bfberpbmpkk4v" path="res://Scripts/Puzzles2D/puzzle.gd" id="1_1lbio"]
 [ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="1_7subs"]
 [ext_resource type="Resource" uid="uid://c7418maqfvfji" path="res://Scripts/Items/Item1.tres" id="2_1lbio"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="2_hrlf3"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://baoxv5vjmbtil"]
 
-[ext_resource type="Script" uid="uid://ddjntrex6slnb" path="res://Scripts/Puzzles/moon.gd" id="1_la0u8"]
+[ext_resource type="Script" uid="uid://ddjntrex6slnb" path="res://Scripts/Puzzles2D/moon.gd" id="1_la0u8"]
 [ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="2_mftv0"]
 [ext_resource type="Resource" uid="uid://c7418maqfvfji" path="res://Scripts/Items/Item1.tres" id="3_3pl4i"]
 
