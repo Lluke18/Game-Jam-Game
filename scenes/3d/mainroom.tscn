@@ -13,9 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://ixxg5srbckg2" path="res://3D assets/luna.tscn" id="11_ntof2"]
 [ext_resource type="Script" uid="uid://c1srst7838qj0" path="res://Scripts/Puzzles3D/star_3d.gd" id="12_vl5l8"]
 [ext_resource type="Script" uid="uid://0htjwty3extj" path="res://Scripts/Puzzles3D/temperance_3d.gd" id="13_gnvy8"]
-[ext_resource type="PackedScene" uid="uid://by17lu4nxjwgw" path="res://3D assets/Objects/zodiac_wheel.tscn" id="13_yuerg"]
+[ext_resource type="PackedScene" uid="uid://j403tq8k44rm" path="res://3D assets/Objects/zodiac_wheel.tscn" id="13_yuerg"]
 [ext_resource type="Script" uid="uid://jr6oloa7llj7" path="res://Scripts/Puzzles3D/hierophant_3d.gd" id="14_3epcx"]
-[ext_resource type="Script" uid="uid://cprcdtuksosjh" path="res://zodiac_wheel.gd" id="14_ntof2"]
 [ext_resource type="Script" uid="uid://c5jcpns81oxq3" path="res://scenes/3d/death_3d.gd" id="15_3epcx"]
 [ext_resource type="PackedScene" uid="uid://cp02prp35y6o4" path="res://3D assets/Objects/ouija_board_planchette.tscn" id="15_gnvy8"]
 
@@ -209,7 +208,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14705658, -0.7613945, -0.05
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00671196, 0.9927366, -0.019042969)
 shape = SubResource("BoxShape3D_rfp5g")
 
-[node name="Illusion" parent="." unique_id=1668288730 instance=ExtResource("6_5k5vb")]
+[node name="Illusion" parent="." unique_id=95657958 instance=ExtResource("6_5k5vb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0552967, 0.67229176, -3.7929158)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Illusion" unique_id=707953608]
@@ -313,7 +312,6 @@ object = NodePath(".")
 
 [node name="Zodiac_wheel" parent="Puzzles3D/Star3D/StaticBody3D" unique_id=788897303 node_paths=PackedStringArray("anim_player", "star_card") instance=ExtResource("13_yuerg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.095262, 0.6250768, -3.8107934)
-script = ExtResource("14_ntof2")
 anim_player = NodePath("AnimationPlayer")
 star_card = NodePath("The Star")
 
