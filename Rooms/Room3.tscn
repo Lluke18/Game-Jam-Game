@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="3_ouduj"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="3_vy55m"]
 [ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="4_ouduj"]
+[ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_gxi2d"]
 
 [node name="Room3" type="Node2D" unique_id=664680839]
 script = ExtResource("1_wt6t0")
@@ -37,5 +38,7 @@ script = ExtResource("3_ouduj")
 destination_room_path = "res://Rooms/Room2.tscn"
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("3_vy55m")]
+
+[node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("5_gxi2d")]
 
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/LeftArrow" to="CanvasLayer/SceneSwitchers/LeftArrow" method="_on_pressed"]

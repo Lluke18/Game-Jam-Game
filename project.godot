@@ -29,8 +29,8 @@ AudioManager="*uid://bnstsym7hep34"
 PauseMenu="*uid://fujp0m2jfpul"
 SaveManager="*uid://bq17yn112l8j7"
 PuzzleManager="*uid://clfq0m6sxt40y"
-TextManager="*uid://4aefjcn31okg"
 DialogueBox="*uid://cmfbnbcffxin4"
+TextManager="*uid://4aefjcn31okg"
 
 [display]
 

@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bse3wjs2c7luj" path="res://Scripts/Puzzles/magician.gd" id="1_6eh2d"]
 [ext_resource type="Texture2D" uid="uid://1s05vlcqe8ml" path="res://icon.svg" id="3_prs6s"]
-[ext_resource type="Script" path="res://Scripts/scene_switcher_button.gd" id="5_d7o1r"]
+[ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="5_d7o1r"]
 [ext_resource type="PackedScene" uid="uid://bvip2aownlgr" path="res://PuzzleObjects/DraggablePuzzleObject.tscn" id="5_ppu18"]
+[ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="6_36xyo"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="6_oasne"]
 
 [node name="Magician" type="Node2D" unique_id=726880548]
@@ -184,5 +185,7 @@ destination_room_path = "res://Rooms/Room1.tscn"
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("6_oasne")]
 mouse_filter = 2
+
+[node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("6_36xyo")]
 
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/RightArrow" to="CanvasLayer/SceneSwitchers/RightArrow" method="_on_pressed"]

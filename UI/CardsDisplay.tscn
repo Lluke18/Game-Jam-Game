@@ -1,0 +1,381 @@
+[gd_scene format=3 uid="uid://roet0qnciil5"]
+
+[ext_resource type="Script" uid="uid://xcvw77rnj7nv" path="res://Scripts/UI scripts/cards_display.gd" id="1_52fc6"]
+[ext_resource type="Texture2D" uid="uid://1s05vlcqe8ml" path="res://icon.svg" id="1_jo0pp"]
+[ext_resource type="Script" uid="uid://dias3okb0nhm1" path="res://Scripts/UI scripts/card.gd" id="2_ck1g6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jo0pp"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ck1g6"]
+font_size = 50
+
+[node name="CardsDisplay" type="Control" unique_id=2004390668]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_52fc6")
+
+[node name="SmallCards" type="Panel" parent="." unique_id=1945146268]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -253.0
+offset_bottom = 267.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="Magician" type="TextureRect" parent="SmallCards" unique_id=930246303]
+visible = false
+layout_mode = 0
+offset_left = 29.0
+offset_top = 22.0
+offset_right = 61.0
+offset_bottom = 86.0
+rotation = -0.5235988
+pivot_offset = Vector2(16, 32)
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="SmallCards/Magician" unique_id=1893352414]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 17.0
+offset_right = 52.0
+offset_bottom = 48.0
+text = "0"
+label_settings = SubResource("LabelSettings_jo0pp")
+
+[node name="Moon" type="TextureRect" parent="SmallCards" unique_id=1913472800]
+visible = false
+layout_mode = 0
+offset_left = 103.0
+offset_top = 10.0
+offset_right = 135.0
+offset_bottom = 74.0
+pivot_offset = Vector2(16, 32)
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="SmallCards/Moon" unique_id=1626458762]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 17.0
+offset_right = 52.0
+offset_bottom = 48.0
+text = "1"
+label_settings = SubResource("LabelSettings_jo0pp")
+
+[node name="Death" type="TextureRect" parent="SmallCards" unique_id=1864935124]
+visible = false
+layout_mode = 0
+offset_left = 179.0
+offset_top = 22.0
+offset_right = 211.0
+offset_bottom = 86.0
+rotation = 0.5235988
+pivot_offset = Vector2(16, 32)
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="SmallCards/Death" unique_id=1077351224]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 17.0
+offset_right = 52.0
+offset_bottom = 48.0
+text = "2"
+label_settings = SubResource("LabelSettings_jo0pp")
+
+[node name="Temperance" type="TextureRect" parent="SmallCards" unique_id=1672964449]
+visible = false
+layout_mode = 0
+offset_left = 29.0
+offset_top = 172.0
+offset_right = 61.0
+offset_bottom = 236.0
+rotation = 0.5235988
+pivot_offset = Vector2(16, 32)
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="SmallCards/Temperance" unique_id=1990083807]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 17.0
+offset_right = 52.0
+offset_bottom = 48.0
+text = "3"
+label_settings = SubResource("LabelSettings_jo0pp")
+
+[node name="Star" type="TextureRect" parent="SmallCards" unique_id=394124798]
+visible = false
+layout_mode = 0
+offset_left = 103.0
+offset_top = 183.0
+offset_right = 135.0
+offset_bottom = 247.0
+pivot_offset = Vector2(16, 32)
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="SmallCards/Star" unique_id=1534241118]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 17.0
+offset_right = 52.0
+offset_bottom = 48.0
+text = "4"
+label_settings = SubResource("LabelSettings_jo0pp")
+
+[node name="Hierophant" type="TextureRect" parent="SmallCards" unique_id=1566480094]
+visible = false
+layout_mode = 0
+offset_left = 179.0
+offset_top = 172.0
+offset_right = 211.0
+offset_bottom = 236.0
+rotation = -0.5235988
+pivot_offset = Vector2(16, 32)
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="SmallCards/Hierophant" unique_id=1926822481]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 17.0
+offset_right = 52.0
+offset_bottom = 48.0
+text = "5"
+label_settings = SubResource("LabelSettings_jo0pp")
+
+[node name="World" type="TextureRect" parent="SmallCards" unique_id=2131240729]
+visible = false
+layout_mode = 0
+offset_left = 103.0
+offset_top = 98.0
+offset_right = 135.0
+offset_bottom = 162.0
+pivot_offset = Vector2(16, 32)
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="SmallCards/World" unique_id=1424891268]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 17.0
+offset_right = 52.0
+offset_bottom = 48.0
+text = "6"
+label_settings = SubResource("LabelSettings_jo0pp")
+
+[node name="BigCards" type="Node" parent="." unique_id=227751111]
+
+[node name="Magician" type="TextureRect" parent="BigCards" unique_id=1227189555]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -400.0
+offset_right = 200.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 400)
+size_flags_horizontal = 4
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="BigCards/Magician" unique_id=1084247769]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 692.0
+offset_right = 402.0
+offset_bottom = 752.0
+text = "The Magician"
+label_settings = SubResource("LabelSettings_ck1g6")
+
+[node name="Moon" type="TextureRect" parent="BigCards" unique_id=358000279]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -400.0
+offset_right = 200.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 400)
+size_flags_horizontal = 4
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="BigCards/Moon" unique_id=729374783]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 692.0
+offset_right = 402.0
+offset_bottom = 752.0
+text = "The Moon"
+label_settings = SubResource("LabelSettings_ck1g6")
+
+[node name="Death" type="TextureRect" parent="BigCards" unique_id=2043103308]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -400.0
+offset_right = 200.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 400)
+size_flags_horizontal = 4
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="BigCards/Death" unique_id=1221135914]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 692.0
+offset_right = 402.0
+offset_bottom = 752.0
+text = "Death"
+label_settings = SubResource("LabelSettings_ck1g6")
+
+[node name="Temperance" type="TextureRect" parent="BigCards" unique_id=1705634948]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -400.0
+offset_right = 200.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 400)
+size_flags_horizontal = 4
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="BigCards/Temperance" unique_id=1429789240]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 692.0
+offset_right = 402.0
+offset_bottom = 752.0
+text = "Temperance"
+label_settings = SubResource("LabelSettings_ck1g6")
+
+[node name="Star" type="TextureRect" parent="BigCards" unique_id=2125303659]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -400.0
+offset_right = 200.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 400)
+size_flags_horizontal = 4
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="BigCards/Star" unique_id=1727725297]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 692.0
+offset_right = 402.0
+offset_bottom = 752.0
+text = "The Star"
+label_settings = SubResource("LabelSettings_ck1g6")
+
+[node name="Hierophant" type="TextureRect" parent="BigCards" unique_id=1288756756]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -400.0
+offset_right = 200.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 400)
+size_flags_horizontal = 4
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="BigCards/Hierophant" unique_id=1399638899]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 692.0
+offset_right = 402.0
+offset_bottom = 752.0
+text = "The Hierophant"
+label_settings = SubResource("LabelSettings_ck1g6")
+
+[node name="World" type="TextureRect" parent="BigCards" unique_id=1428704826]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -400.0
+offset_right = 200.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 400)
+size_flags_horizontal = 4
+texture = ExtResource("1_jo0pp")
+expand_mode = 1
+script = ExtResource("2_ck1g6")
+
+[node name="Label" type="Label" parent="BigCards/World" unique_id=911644325]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 692.0
+offset_right = 402.0
+offset_bottom = 752.0
+text = "The World"
+label_settings = SubResource("LabelSettings_ck1g6")

@@ -44,9 +44,9 @@ func end_puzzle():
 		painting.draggable = false
 		painting.try_snapping.disconnect(on_try_snapping)
 	print("The Magician finished!")
-	PuzzleManager.complete_puzzles[PuzzleManager.puzzles.MAGICIAN] = true
+	PuzzleManager.finish_puzzle(PuzzleManager.puzzles.MAGICIAN)
 	SignalBus.magician_completed.emit()
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(4).timeout
 	SceneChanger.change_scene_to_path(room1_path)
 
 func on_try_snapping(painting_index: int):
