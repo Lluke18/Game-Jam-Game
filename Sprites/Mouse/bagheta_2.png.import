@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k5ewo1bakpm5"
-path="res://.godot/imported/creion.png-38046d298cc28f437ea78995660e53ca.ctex"
+uid="uid://hx7c34uexnhc"
+path="res://.godot/imported/bagheta_2.png-413604a89cbff7d970ac58ec16bd2550.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/creion.png"
-dest_files=["res://.godot/imported/creion.png-38046d298cc28f437ea78995660e53ca.ctex"]
+source_file="res://Sprites/Mouse/bagheta_2.png"
+dest_files=["res://.godot/imported/bagheta_2.png-413604a89cbff7d970ac58ec16bd2550.ctex"]
 
 [params]
 

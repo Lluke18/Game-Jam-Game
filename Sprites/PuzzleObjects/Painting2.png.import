@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvfcblubkqpjv"
-path="res://.godot/imported/oglinda.png-755ce342a81b221b269c538673b97b7d.ctex"
+uid="uid://h50u3vfpmwir"
+path="res://.godot/imported/Painting2.png-5247f13429b78aa25cfef1f3ff32e13d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/oglinda.png"
-dest_files=["res://.godot/imported/oglinda.png-755ce342a81b221b269c538673b97b7d.ctex"]
+source_file="res://Sprites/PuzzleObjects/Painting2.png"
+dest_files=["res://.godot/imported/Painting2.png-5247f13429b78aa25cfef1f3ff32e13d.ctex"]
 
 [params]
 

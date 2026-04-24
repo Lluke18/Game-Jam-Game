@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h50u3vfpmwir"
-path="res://.godot/imported/tablou_absolvire.png-c92f511df72318bb0dd36ce8af6048f0.ctex"
+uid="uid://bkl14v3ih0fvu"
+path="res://.godot/imported/Window.png-59aa64aab8b7271ceeb274f2467f9415.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tablou_absolvire.png"
-dest_files=["res://.godot/imported/tablou_absolvire.png-c92f511df72318bb0dd36ce8af6048f0.ctex"]
+source_file="res://Sprites/Background/Window.png"
+dest_files=["res://.godot/imported/Window.png-59aa64aab8b7271ceeb274f2467f9415.ctex"]
 
 [params]
 

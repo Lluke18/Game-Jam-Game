@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://f6qmr6jsfsaw"]
 
 [ext_resource type="Script" uid="uid://b0drdn5m6g7ey" path="res://Scripts/Puzzles2D/star.gd" id="1_asnyx"]
+[ext_resource type="Texture2D" uid="uid://d22t7xl7mbpld" path="res://Sprites/SceneSwitchers/Calendar.png" id="2_3nmne"]
 [ext_resource type="PackedScene" uid="uid://c1hkjqgxqgyld" path="res://PuzzleObjects/DrawingDot.tscn" id="2_i662l"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="4_aad07"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_5gbe3"]
@@ -9,94 +10,87 @@
 [node name="Star" type="Node2D" unique_id=496611057]
 script = ExtResource("1_asnyx")
 
+[node name="Calendar" type="Sprite2D" parent="." unique_id=1426004988]
+position = Vector2(885, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("2_3nmne")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=887561674]
 
-[node name="DrawingDots" type="Node" parent="CanvasLayer" unique_id=238042872]
+[node name="DrawingDots" type="Control" parent="CanvasLayer" unique_id=176715806]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
 
 [node name="DrawingDot0" parent="CanvasLayer/DrawingDots" unique_id=1974290463 instance=ExtResource("2_i662l")]
+layout_mode = 1
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 237.0
-offset_top = 322.0
-offset_right = 365.0
-offset_bottom = 450.0
+offset_left = 391.0
+offset_top = 445.0
+offset_right = 475.0
+offset_bottom = 525.0
+ignore_texture_size = true
+stretch_mode = 0
 target_indexes = Array[int]([1])
 
 [node name="DrawingDot1" parent="CanvasLayer/DrawingDots" unique_id=2061783758 instance=ExtResource("2_i662l")]
+layout_mode = 1
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 632.0
-offset_top = 408.0
-offset_right = 760.0
-offset_bottom = 536.0
+offset_left = 883.0
+offset_top = 534.0
+offset_right = 961.0
+offset_bottom = 612.0
+ignore_texture_size = true
+stretch_mode = 0
 target_indexes = Array[int]([0, 2])
 index = 1
 
 [node name="DrawingDot2" parent="CanvasLayer/DrawingDots" unique_id=1333453841 instance=ExtResource("2_i662l")]
+layout_mode = 1
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1075.0
-offset_top = 646.0
-offset_right = 1203.0
-offset_bottom = 774.0
+offset_left = 1106.0
+offset_top = 611.0
+offset_right = 1184.0
+offset_bottom = 687.0
+ignore_texture_size = true
+stretch_mode = 0
 target_indexes = Array[int]([1, 3])
 index = 2
 
 [node name="DrawingDot3" parent="CanvasLayer/DrawingDots" unique_id=980491821 instance=ExtResource("2_i662l")]
+layout_mode = 1
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1289.0
-offset_top = 855.0
-offset_right = 1417.0
-offset_bottom = 983.0
+offset_left = 1162.0
+offset_top = 769.0
+offset_right = 1250.0
+offset_bottom = 859.0
+ignore_texture_size = true
+stretch_mode = 0
 target_indexes = Array[int]([2])
 index = 3
 
 [node name="TargetMarkers" type="Node" parent="CanvasLayer" unique_id=389890641]
 
 [node name="Marker0" type="Marker2D" parent="CanvasLayer/TargetMarkers" unique_id=1275042861]
-position = Vector2(295, 382)
+position = Vector2(431, 485)
 scale = Vector2(4, 4)
-
-[node name="Label" type="Label" parent="CanvasLayer/TargetMarkers/Marker0" unique_id=1167043000]
-offset_left = -6.5
-offset_top = -12.25
-offset_right = 33.5
-offset_bottom = 10.75
-text = "O"
 
 [node name="Marker1" type="Marker2D" parent="CanvasLayer/TargetMarkers" unique_id=42949806]
-position = Vector2(700, 463)
+position = Vector2(925, 575)
 scale = Vector2(4, 4)
-
-[node name="Label" type="Label" parent="CanvasLayer/TargetMarkers/Marker1" unique_id=514031429]
-offset_left = -6.75
-offset_top = -12.5
-offset_right = 33.25
-offset_bottom = 10.5
-text = "O"
 
 [node name="Marker2" type="Marker2D" parent="CanvasLayer/TargetMarkers" unique_id=1887122023]
-position = Vector2(1137, 700)
+position = Vector2(1145, 657)
 scale = Vector2(4, 4)
-
-[node name="Label" type="Label" parent="CanvasLayer/TargetMarkers/Marker2" unique_id=845185423]
-offset_left = -6.75
-offset_top = -12.0
-offset_right = 33.25
-offset_bottom = 11.0
-text = "O"
 
 [node name="Marker3" type="Marker2D" parent="CanvasLayer/TargetMarkers" unique_id=1702258535]
-position = Vector2(1337, 909)
+position = Vector2(1205, 812)
 scale = Vector2(4, 4)
-
-[node name="Label" type="Label" parent="CanvasLayer/TargetMarkers/Marker3" unique_id=1204354494]
-offset_left = -6.25
-offset_top = -11.75
-offset_right = 33.75
-offset_bottom = 11.25
-text = "O"
 
 [node name="DrawableLines" type="Node" parent="CanvasLayer" unique_id=1542286310]
 

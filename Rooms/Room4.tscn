@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cerucin5td6cb"]
+
+[ext_resource type="Texture2D" uid="uid://cgpd4on4g61bh" path="res://Sprites/Background/Lamp.png" id="1_03h48"]
+[ext_resource type="Texture2D" uid="uid://d0yplelnb0bpt" path="res://Sprites/Background/Bookshelf.png" id="2_qu38w"]
+[ext_resource type="Texture2D" uid="uid://bcyy2ior6ccqw" path="res://Sprites/Background/Books.png" id="3_lstom"]
+[ext_resource type="Texture2D" uid="uid://b2tx0p0rvkme0" path="res://Sprites/Background/CrystalBall.png" id="4_8egnn"]
+[ext_resource type="Texture2D" uid="uid://cmh5dqwaqc86c" path="res://Sprites/Background/Desk.png" id="5_arq0n"]
+[ext_resource type="Texture2D" uid="uid://cu4citckkerp4" path="res://Sprites/Background/LightBulb.png" id="6_wmy7p"]
+[ext_resource type="Texture2D" uid="uid://qjik6804vt6k" path="res://Sprites/Background/Table.png" id="7_oxgl2"]
+[ext_resource type="Texture2D" uid="uid://bkl14v3ih0fvu" path="res://Sprites/Background/Window.png" id="8_3xykw"]
+[ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="9_lmr8f"]
+[ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="10_031wo"]
+[ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="11_pqupb"]
+[ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="12_ijtto"]
+
+[node name="Room4" type="Node2D" unique_id=1276671648]
+
+[node name="BackgorundSprites" type="Node2D" parent="." unique_id=1847405546]
+
+[node name="Background" type="Sprite2D" parent="BackgorundSprites" unique_id=238863162]
+
+[node name="Lamp" type="Sprite2D" parent="BackgorundSprites" unique_id=1826788524]
+position = Vector2(1408, 578)
+texture = ExtResource("1_03h48")
+
+[node name="Bookshelf" type="Sprite2D" parent="BackgorundSprites" unique_id=801917368]
+position = Vector2(1408, 578)
+texture = ExtResource("2_qu38w")
+
+[node name="Books" type="Sprite2D" parent="BackgorundSprites" unique_id=1103919264]
+position = Vector2(1408, 578)
+texture = ExtResource("3_lstom")
+
+[node name="CrystalBall" type="Sprite2D" parent="BackgorundSprites" unique_id=349627469]
+position = Vector2(1408, 578)
+texture = ExtResource("4_8egnn")
+
+[node name="Desk" type="Sprite2D" parent="BackgorundSprites" unique_id=537073320]
+position = Vector2(241, 203)
+texture = ExtResource("5_arq0n")
+
+[node name="LightBulb" type="Sprite2D" parent="BackgorundSprites" unique_id=726986819]
+position = Vector2(1408, 578)
+texture = ExtResource("6_wmy7p")
+
+[node name="Table" type="Sprite2D" parent="BackgorundSprites" unique_id=1314424069]
+position = Vector2(521, 877)
+texture = ExtResource("7_oxgl2")
+
+[node name="Window" type="Sprite2D" parent="BackgorundSprites" unique_id=1715249550]
+position = Vector2(1408, 578)
+texture = ExtResource("8_3xykw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1817150608]
+
+[node name="ItemDropArea" parent="CanvasLayer" unique_id=748105193 instance=ExtResource("9_lmr8f")]
+
+[node name="SceneSwitchers" type="Control" parent="CanvasLayer" unique_id=1753663454]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+
+[node name="LeftArrow" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=271686647]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -65.75
+offset_right = 335.0
+offset_bottom = 65.75
+grow_vertical = 2
+text = "<-------
+sageata stanga"
+script = ExtResource("10_031wo")
+destination_room_path = "res://Rooms/Room2.tscn"
+
+[node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("11_pqupb")]
+
+[node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("12_ijtto")]
+
+[connection signal="pressed" from="CanvasLayer/SceneSwitchers/LeftArrow" to="CanvasLayer/SceneSwitchers/LeftArrow" method="_on_pressed"]

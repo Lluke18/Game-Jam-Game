@@ -1,16 +1,58 @@
 [gd_scene format=3 uid="uid://dqjylmtnaee4s"]
 
 [ext_resource type="Script" uid="uid://c1poe3shrtvbk" path="res://Scripts/room.gd" id="1_wt6t0"]
+[ext_resource type="Texture2D" uid="uid://cgpd4on4g61bh" path="res://Sprites/Background/Lamp.png" id="2_drxiv"]
+[ext_resource type="Texture2D" uid="uid://d0yplelnb0bpt" path="res://Sprites/Background/Bookshelf.png" id="3_a1vuc"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="3_ouduj"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="3_vy55m"]
+[ext_resource type="Texture2D" uid="uid://bcyy2ior6ccqw" path="res://Sprites/Background/Books.png" id="4_diejy"]
 [ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="4_ouduj"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_gxi2d"]
+[ext_resource type="Texture2D" uid="uid://b2tx0p0rvkme0" path="res://Sprites/Background/CrystalBall.png" id="5_nnmqw"]
+[ext_resource type="Texture2D" uid="uid://cmh5dqwaqc86c" path="res://Sprites/Background/Desk.png" id="6_3lhxu"]
+[ext_resource type="Texture2D" uid="uid://cu4citckkerp4" path="res://Sprites/Background/LightBulb.png" id="7_jk8e2"]
+[ext_resource type="Texture2D" uid="uid://qjik6804vt6k" path="res://Sprites/Background/Table.png" id="8_8g0xb"]
+[ext_resource type="Texture2D" uid="uid://bkl14v3ih0fvu" path="res://Sprites/Background/Window.png" id="9_3cfrt"]
 
 [node name="Room3" type="Node2D" unique_id=664680839]
 script = ExtResource("1_wt6t0")
 left_room_path = "res://Rooms/Room2.tscn"
 
-[node name="Background" type="Sprite2D" parent="." unique_id=485338877]
+[node name="BackgorundSprites" type="Node2D" parent="." unique_id=712173666]
+
+[node name="Background" type="Sprite2D" parent="BackgorundSprites" unique_id=485338877]
+
+[node name="Lamp" type="Sprite2D" parent="BackgorundSprites" unique_id=653457560]
+position = Vector2(1408, 578)
+texture = ExtResource("2_drxiv")
+
+[node name="Bookshelf" type="Sprite2D" parent="BackgorundSprites" unique_id=1881867787]
+position = Vector2(1408, 578)
+texture = ExtResource("3_a1vuc")
+
+[node name="Books" type="Sprite2D" parent="BackgorundSprites" unique_id=844263435]
+position = Vector2(1408, 578)
+texture = ExtResource("4_diejy")
+
+[node name="CrystalBall" type="Sprite2D" parent="BackgorundSprites" unique_id=1176055492]
+position = Vector2(1408, 578)
+texture = ExtResource("5_nnmqw")
+
+[node name="Desk" type="Sprite2D" parent="BackgorundSprites" unique_id=782050793]
+position = Vector2(241, 203)
+texture = ExtResource("6_3lhxu")
+
+[node name="LightBulb" type="Sprite2D" parent="BackgorundSprites" unique_id=322619339]
+position = Vector2(1408, 578)
+texture = ExtResource("7_jk8e2")
+
+[node name="Table" type="Sprite2D" parent="BackgorundSprites" unique_id=838655203]
+position = Vector2(521, 877)
+texture = ExtResource("8_8g0xb")
+
+[node name="Window" type="Sprite2D" parent="BackgorundSprites" unique_id=1064108698]
+position = Vector2(1408, 578)
+texture = ExtResource("9_3cfrt")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=765953715]
 

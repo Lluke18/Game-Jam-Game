@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://cpxrljdpsu3ve" path="res://Sprites/Placeholders/Rooms/Room2.png" id="2_1a11v"]
 [ext_resource type="PackedScene" uid="uid://baoxv5vjmbtil" path="res://Puzzles/Moon.tscn" id="3_qsv4v"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_a5nxq"]
+[ext_resource type="Texture2D" uid="uid://brwtj0n2mr6xn" path="res://Sprites/Background/MoonStandEmpty.png" id="4_j8d48"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="4_xiq1f"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="6_qsv4v"]
 [ext_resource type="PackedScene" uid="uid://c0vdnne1i4v1n" path="res://scenes/misc/interaction system/interactable_area.tscn" id="6_xiq1f"]
-[ext_resource type="Texture2D" uid="uid://cvfcblubkqpjv" path="res://Sprites/oglinda.png" id="7_wjqet"]
+[ext_resource type="Texture2D" uid="uid://cvfcblubkqpjv" path="res://Sprites/SceneSwitchers/Mirror.png" id="7_wjqet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wjqet"]
 size = Vector2(253, 285)
@@ -24,6 +25,11 @@ position = Vector2(960, 540)
 texture = ExtResource("2_1a11v")
 
 [node name="Moon" parent="." unique_id=1789782810 instance=ExtResource("3_qsv4v")]
+
+[node name="MoonStandSprite" type="Sprite2D" parent="Moon" unique_id=1777121265]
+position = Vector2(1428, 668)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_j8d48")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=288935036]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hx7c34uexnhc"
-path="res://.godot/imported/bagheta_2.png-c013a6de7a1f0c6887aff5ce57ad08d6.ctex"
+uid="uid://ckjm4unb7l4i6"
+path="res://.godot/imported/bagheta.png-723425bdd809e536d0a63018581d88de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/bagheta_2.png"
-dest_files=["res://.godot/imported/bagheta_2.png-c013a6de7a1f0c6887aff5ce57ad08d6.ctex"]
+source_file="res://Sprites/Mouse/bagheta.png"
+dest_files=["res://.godot/imported/bagheta.png-723425bdd809e536d0a63018581d88de.ctex"]
 
 [params]
 

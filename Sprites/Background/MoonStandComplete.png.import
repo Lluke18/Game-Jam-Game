@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkl14v3ih0fvu"
-path="res://.godot/imported/2ditems.png-3b84881f0b2c5a6d58dd672e345058ac.ctex"
+uid="uid://c7fq4lhklg4dg"
+path="res://.godot/imported/MoonStandComplete.png-2c67577f5a22dae4a86881aefd77aefd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/2ditems.png"
-dest_files=["res://.godot/imported/2ditems.png-3b84881f0b2c5a6d58dd672e345058ac.ctex"]
+source_file="res://Sprites/Background/MoonStandComplete.png"
+dest_files=["res://.godot/imported/MoonStandComplete.png-2c67577f5a22dae4a86881aefd77aefd.ctex"]
 
 [params]
 

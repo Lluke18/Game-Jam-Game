@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://box2ou45css0b"]
 
 [ext_resource type="Script" uid="uid://bse3wjs2c7luj" path="res://Scripts/Puzzles2D/magician.gd" id="1_6eh2d"]
-[ext_resource type="Texture2D" uid="uid://1s05vlcqe8ml" path="res://icon.svg" id="3_prs6s"]
+[ext_resource type="Texture2D" uid="uid://b8f212x0roc8b" path="res://Sprites/PuzzleObjects/Painting0.png" id="3_ppu18"]
+[ext_resource type="Texture2D" uid="uid://7xy1t0nknkd3" path="res://Sprites/PuzzleObjects/Painting1.png" id="4_6qxkk"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="5_d7o1r"]
+[ext_resource type="Texture2D" uid="uid://h50u3vfpmwir" path="res://Sprites/PuzzleObjects/Painting2.png" id="5_oasne"]
 [ext_resource type="PackedScene" uid="uid://bvip2aownlgr" path="res://PuzzleObjects/DraggablePuzzleObject.tscn" id="5_ppu18"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="6_36xyo"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="6_oasne"]
+[ext_resource type="Texture2D" uid="uid://bmurmu88dbd5q" path="res://Sprites/PuzzleObjects/Painting3.png" id="6_x0fmj"]
 
 [node name="Magician" type="Node2D" unique_id=726880548]
 script = ExtResource("1_6eh2d")
@@ -15,7 +18,7 @@ script = ExtResource("1_6eh2d")
 [node name="SnapMarkers" type="Node" parent="CanvasLayer" unique_id=87600555]
 
 [node name="Marker0" type="Marker2D" parent="CanvasLayer/SnapMarkers" unique_id=1810309430]
-position = Vector2(295, 382)
+position = Vector2(115, 399)
 scale = Vector2(4, 4)
 
 [node name="Label" type="Label" parent="CanvasLayer/SnapMarkers/Marker0" unique_id=1283403623]
@@ -24,7 +27,7 @@ offset_bottom = 23.0
 text = "O"
 
 [node name="Marker1" type="Marker2D" parent="CanvasLayer/SnapMarkers" unique_id=787503195]
-position = Vector2(654, 416)
+position = Vector2(495, 337)
 scale = Vector2(4, 4)
 
 [node name="Label" type="Label" parent="CanvasLayer/SnapMarkers/Marker1" unique_id=1625036073]
@@ -33,7 +36,7 @@ offset_bottom = 23.0
 text = "O"
 
 [node name="Marker2" type="Marker2D" parent="CanvasLayer/SnapMarkers" unique_id=1137301116]
-position = Vector2(1045, 420)
+position = Vector2(901, 246)
 scale = Vector2(4, 4)
 
 [node name="Label" type="Label" parent="CanvasLayer/SnapMarkers/Marker2" unique_id=1144366756]
@@ -42,7 +45,7 @@ offset_bottom = 23.0
 text = "O"
 
 [node name="Marker3" type="Marker2D" parent="CanvasLayer/SnapMarkers" unique_id=665969494]
-position = Vector2(1332, 300)
+position = Vector2(1280, 147)
 scale = Vector2(4, 4)
 
 [node name="Label" type="Label" parent="CanvasLayer/SnapMarkers/Marker3" unique_id=1449049094]
@@ -53,111 +56,47 @@ text = "O"
 [node name="Paintings" type="Node" parent="CanvasLayer" unique_id=52144617]
 
 [node name="Painting0" parent="CanvasLayer/Paintings" unique_id=374029610 instance=ExtResource("5_ppu18")]
-offset_left = 287.0
-offset_top = 696.0
-offset_right = 287.0
-offset_bottom = 696.0
-texture_normal = ExtResource("3_prs6s")
-
-[node name="TempVisual" type="Panel" parent="CanvasLayer/Paintings/Painting0" unique_id=1675893831]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 2.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Paintings/Painting0/TempVisual" unique_id=786782262]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "-----------------
-|			Tablou 0			|
------------------"
+offset_left = 827.0
+offset_top = 574.0
+offset_right = 1193.0
+offset_bottom = 1012.0
+pivot_offset = Vector2(183, 219)
+texture_normal = ExtResource("3_ppu18")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Painting1" parent="CanvasLayer/Paintings" unique_id=1430282290 instance=ExtResource("5_ppu18")]
-offset_left = 592.0
-offset_top = 858.0
-offset_right = 592.0
-offset_bottom = 858.0
-texture_normal = ExtResource("3_prs6s")
+offset_left = 277.0
+offset_top = 598.0
+offset_right = 643.0
+offset_bottom = 1036.0
+pivot_offset = Vector2(183, 219)
+texture_normal = ExtResource("4_6qxkk")
+ignore_texture_size = true
+stretch_mode = 5
 index = 1
 
-[node name="TempVisual" type="Panel" parent="CanvasLayer/Paintings/Painting1" unique_id=153625333]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 2.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Paintings/Painting1/TempVisual" unique_id=1303835878]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "-----------------
-|			Tablou 1			|
------------------"
-
 [node name="Painting2" parent="CanvasLayer/Paintings" unique_id=670298556 instance=ExtResource("5_ppu18")]
-offset_left = 1018.0
-offset_top = 834.0
-offset_right = 1018.0
-offset_bottom = 834.0
-texture_normal = ExtResource("3_prs6s")
+offset_left = 1300.0
+offset_top = 603.0
+offset_right = 1666.0
+offset_bottom = 1041.0
+pivot_offset = Vector2(183, 219)
+texture_normal = ExtResource("5_oasne")
+ignore_texture_size = true
+stretch_mode = 5
 index = 2
 
-[node name="TempVisual" type="Panel" parent="CanvasLayer/Paintings/Painting2" unique_id=322732202]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 2.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Paintings/Painting2/TempVisual" unique_id=2033349203]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "-----------------
-|			Tablou 2			|
------------------"
-
 [node name="Painting3" parent="CanvasLayer/Paintings" unique_id=1643409501 instance=ExtResource("5_ppu18")]
-offset_left = 1314.0
-offset_top = 717.0
-offset_right = 1314.0
-offset_bottom = 717.0
-texture_normal = ExtResource("3_prs6s")
+offset_left = 39.0
+offset_top = 475.0
+offset_right = 405.0
+offset_bottom = 913.0
+pivot_offset = Vector2(183, 219)
+texture_normal = ExtResource("6_x0fmj")
+ignore_texture_size = true
+stretch_mode = 5
 index = 3
-
-[node name="TempVisual" type="Panel" parent="CanvasLayer/Paintings/Painting3" unique_id=672554660]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 2.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/Paintings/Painting3/TempVisual" unique_id=1893366980]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "-----------------
-|			Tablou 3			|
------------------"
 
 [node name="SceneSwitchers" type="Control" parent="CanvasLayer" unique_id=69047337]
 layout_mode = 3

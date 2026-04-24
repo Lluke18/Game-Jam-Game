@@ -51,6 +51,7 @@ func on_draw_attempt(origin_dot_index: int):
 	var new_line = Line2D.new()
 	new_line.add_point(target_markers[origin_dot_index].global_position, 0)
 	new_line.add_point(target_markers[origin_dot_index].global_position, 1)
+	new_line.default_color = Color(0.976, 0.337, 0.208)
 	
 	currently_drawn_line = new_line
 	drawable_lines_parent.add_child(currently_drawn_line)

@@ -3,8 +3,15 @@
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="1_ih0fh"]
 [ext_resource type="PackedScene" uid="uid://cr1ewx8nhox8f" path="res://PuzzleObjects/KeyboardKey.tscn" id="1_mhu14"]
 [ext_resource type="Script" uid="uid://dyfqxa1pmfscs" path="res://Scripts/Puzzles2D/death.gd" id="1_o4ymw"]
+[ext_resource type="Texture2D" uid="uid://clkggna7gbhv2" path="res://Sprites/PuzzleObjects/Keyboard.png" id="2_5x7yd"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="2_mhu14"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_indks"]
+
+[sub_resource type="FontVariation" id="FontVariation_5x7yd"]
+spacing_glyph = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_7yjyu"]
+font_size = 25
 
 [sub_resource type="LabelSettings" id="LabelSettings_mhu14"]
 font_color = Color(0, 0, 0, 1)
@@ -13,43 +20,63 @@ font_color = Color(0, 0, 0, 1)
 script = ExtResource("1_o4ymw")
 solution = "DEATH"
 
+[node name="KeyboardSprite" type="Sprite2D" parent="." unique_id=202706118]
+position = Vector2(881.00006, 510)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_5x7yd")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=406309607]
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=597646909]
-offset_left = 300.0
-offset_top = 170.0
-offset_right = 353.43176
-offset_bottom = 210.0
-scale = Vector2(19.42664, 5.1348834)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -505.0
+offset_top = 10.0
+offset_right = 386.0
+offset_bottom = 219.0
+grow_horizontal = 2
+size_flags_horizontal = 4
 
 [node name="Underscores" type="Label" parent="CanvasLayer/Panel" unique_id=132446979]
 layout_mode = 0
-offset_left = 0.10294826
-offset_top = 16.358694
-offset_right = 53.07145
-offset_bottom = 39.358696
+offset_left = 89.48541
+offset_top = 86.131256
+offset_right = 154.48541
+offset_bottom = 102.131256
+scale = Vector2(11, 8)
 text = "_ _ _ _ _"
 
 [node name="Password" type="Label" parent="CanvasLayer/Panel" unique_id=999109147]
 layout_mode = 0
-offset_left = -0.66918737
-offset_top = -15.190222
-offset_right = 53.38031
-offset_bottom = 7.809778
-scale = Vector2(1, 2.246377)
+offset_left = 82.0
+offset_top = 9.0
+offset_right = 196.0
+offset_bottom = 37.0
+scale = Vector2(8, 8)
+theme_override_fonts/font = SubResource("FontVariation_5x7yd")
+label_settings = SubResource("LabelSettings_7yjyu")
 
-[node name="Keyboard" type="Node" parent="CanvasLayer" unique_id=199927995]
+[node name="Keyboard" type="Control" parent="CanvasLayer" unique_id=992440251]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
 
 [node name="Q" parent="CanvasLayer/Keyboard" unique_id=1637735959 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 112.0
-offset_top = 527.0
-offset_right = 240.0
-offset_bottom = 655.0
+offset_left = 339.00003
+offset_top = 242.0
+offset_right = 467.00003
+offset_bottom = 370.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "Q"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/Q" unique_id=591115287]
@@ -63,15 +90,19 @@ text = "Q"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="W" parent="CanvasLayer/Keyboard" unique_id=1866113277 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 257.0
-offset_top = 527.0
-offset_right = 385.0
-offset_bottom = 655.0
+offset_left = 440.0
+offset_top = 243.00003
+offset_right = 568.0
+offset_bottom = 371.00003
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "W"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/W" unique_id=85910244]
@@ -86,15 +117,19 @@ text = "W
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="E" parent="CanvasLayer/Keyboard" unique_id=134406587 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 407.0
-offset_top = 525.0
-offset_right = 535.0
-offset_bottom = 653.0
+offset_left = 535.0
+offset_top = 244.00009
+offset_right = 663.0
+offset_bottom = 372.0001
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "E"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/E" unique_id=1617313887]
@@ -109,15 +144,19 @@ text = "E
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="R" parent="CanvasLayer/Keyboard" unique_id=2064819890 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 558.0
-offset_top = 523.0
-offset_right = 686.0
-offset_bottom = 651.0
+offset_left = 630.00006
+offset_top = 242.00003
+offset_right = 758.00006
+offset_bottom = 370.00003
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "R"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/R" unique_id=673488045]
@@ -131,15 +170,19 @@ text = "R"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="T" parent="CanvasLayer/Keyboard" unique_id=1117926189 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 715.0
-offset_top = 524.0
-offset_right = 843.0
-offset_bottom = 652.0
+offset_left = 725.00006
+offset_top = 244.00009
+offset_right = 853.00006
+offset_bottom = 372.0001
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "T"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/T" unique_id=1845030765]
@@ -153,15 +196,19 @@ text = "T"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="Y" parent="CanvasLayer/Keyboard" unique_id=1506329299 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 869.0
-offset_top = 523.0
-offset_right = 997.0
-offset_bottom = 651.0
+offset_left = 822.0
+offset_top = 244.00003
+offset_right = 950.0
+offset_bottom = 372.00003
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "Y"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/Y" unique_id=1106543749]
@@ -175,15 +222,19 @@ text = "Y"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="U" parent="CanvasLayer/Keyboard" unique_id=2092604592 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1025.0
-offset_top = 519.0
-offset_right = 1153.0
-offset_bottom = 647.0
+offset_left = 919.0
+offset_top = 244.0
+offset_right = 1047.0
+offset_bottom = 372.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "U"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/U" unique_id=24315405]
@@ -197,15 +248,19 @@ text = "U"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="I" parent="CanvasLayer/Keyboard" unique_id=1257669072 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1183.0
-offset_top = 520.0
-offset_right = 1311.0
-offset_bottom = 648.0
+offset_left = 1013.0001
+offset_top = 242.00003
+offset_right = 1141.0001
+offset_bottom = 370.00003
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "I"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/I" unique_id=2054521804]
@@ -219,15 +274,19 @@ text = "I"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="O" parent="CanvasLayer/Keyboard" unique_id=655751327 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1332.0
-offset_top = 516.0
-offset_right = 1460.0
-offset_bottom = 644.0
+offset_left = 1105.0001
+offset_top = 242.00009
+offset_right = 1233.0001
+offset_bottom = 370.0001
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "O"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/O" unique_id=1412013840]
@@ -241,15 +300,19 @@ text = "O"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="P" parent="CanvasLayer/Keyboard" unique_id=1955777732 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1490.0
-offset_top = 517.0
-offset_right = 1618.0
-offset_bottom = 645.0
+offset_left = 1203.0
+offset_top = 243.0
+offset_right = 1331.0
+offset_bottom = 371.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "P"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/P" unique_id=514703694]
@@ -263,15 +326,19 @@ text = "P"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="A" parent="CanvasLayer/Keyboard" unique_id=436756090 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 146.0
-offset_top = 669.0
-offset_right = 274.0
-offset_bottom = 797.0
+offset_left = 362.0
+offset_top = 341.00003
+offset_right = 490.0
+offset_bottom = 469.00003
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "A"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/A" unique_id=2101063498]
@@ -285,15 +352,19 @@ text = "A"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="S" parent="CanvasLayer/Keyboard" unique_id=697094424 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 291.0
-offset_top = 669.0
-offset_right = 419.0
-offset_bottom = 797.0
+offset_left = 460.0
+offset_top = 341.00003
+offset_right = 588.0
+offset_bottom = 469.00003
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "S"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/S" unique_id=423104722]
@@ -308,15 +379,19 @@ text = "S
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="D" parent="CanvasLayer/Keyboard" unique_id=1984522274 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 441.0
-offset_top = 667.0
-offset_right = 569.0
-offset_bottom = 795.0
+offset_left = 560.0
+offset_top = 340.00003
+offset_right = 688.0
+offset_bottom = 468.00003
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "D"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/D" unique_id=1132650266]
@@ -331,15 +406,19 @@ text = "D
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="F" parent="CanvasLayer/Keyboard" unique_id=587570524 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 592.0
-offset_top = 665.0
-offset_right = 720.0
-offset_bottom = 793.0
+offset_left = 654.00006
+offset_top = 339.0
+offset_right = 782.00006
+offset_bottom = 467.00003
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "F"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/F" unique_id=302746660]
@@ -353,15 +432,19 @@ text = "F"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="G" parent="CanvasLayer/Keyboard" unique_id=107498866 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 749.0
-offset_top = 666.0
-offset_right = 877.0
-offset_bottom = 794.0
+offset_left = 748.0
+offset_top = 338.0
+offset_right = 876.0
+offset_bottom = 466.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "G"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/G" unique_id=972091833]
@@ -375,15 +458,19 @@ text = "G"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="H" parent="CanvasLayer/Keyboard" unique_id=649430099 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 903.0
-offset_top = 665.0
-offset_right = 1031.0
-offset_bottom = 793.0
+offset_left = 843.0
+offset_top = 340.0
+offset_right = 971.0
+offset_bottom = 468.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "H"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/H" unique_id=501831527]
@@ -397,15 +484,19 @@ text = "H"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="J" parent="CanvasLayer/Keyboard" unique_id=1315379902 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1059.0
-offset_top = 661.0
-offset_right = 1187.0
-offset_bottom = 789.0
+offset_left = 940.00006
+offset_top = 339.0
+offset_right = 1068.0
+offset_bottom = 467.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "J"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/J" unique_id=1433059395]
@@ -419,15 +510,19 @@ text = "J"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="K" parent="CanvasLayer/Keyboard" unique_id=582135405 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1217.0
-offset_top = 662.0
-offset_right = 1345.0
-offset_bottom = 790.0
+offset_left = 1037.0001
+offset_top = 339.0
+offset_right = 1165.0001
+offset_bottom = 467.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "K"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/K" unique_id=582321442]
@@ -441,15 +536,19 @@ text = "K"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="L" parent="CanvasLayer/Keyboard" unique_id=1801918504 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1366.0
-offset_top = 658.0
-offset_right = 1494.0
-offset_bottom = 786.0
+offset_left = 1136.0001
+offset_top = 341.00003
+offset_right = 1264.0001
+offset_bottom = 469.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "L"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/L" unique_id=1346679853]
@@ -463,15 +562,19 @@ text = "L"
 label_settings = SubResource("LabelSettings_mhu14")
 
 [node name="<-" parent="CanvasLayer/Keyboard" unique_id=1901657903 instance=ExtResource("1_mhu14")]
+layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1541.0
-offset_top = 323.0
-offset_right = 1669.0
-offset_bottom = 451.0
+offset_left = 1421.9999
+offset_top = 342.0
+offset_right = 1650.5846
+offset_bottom = 466.90576
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(0.65183735, 0.6463652)
+ignore_texture_size = true
+stretch_mode = 0
 key_text = "<-"
 
 [node name="Label" type="Label" parent="CanvasLayer/Keyboard/<-" unique_id=1065122220]

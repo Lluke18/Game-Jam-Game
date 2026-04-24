@@ -17,6 +17,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -113.0
+offset_top = 347.0
 grow_horizontal = 0
 grow_vertical = 2
 script = ExtResource("1_7cfyf")
@@ -132,51 +133,6 @@ layout_mode = 2
 script = ExtResource("1_la3np")
 
 [node name="Icon" type="TextureRect" parent="MarginContainer/GridContainer/ItemSlot7" unique_id=596033874]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 5
-
-[node name="ItemSlot8" type="Panel" parent="MarginContainer/GridContainer" unique_id=170296164]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-script = ExtResource("1_la3np")
-
-[node name="Icon" type="TextureRect" parent="MarginContainer/GridContainer/ItemSlot8" unique_id=685811877]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 5
-
-[node name="ItemSlot9" type="Panel" parent="MarginContainer/GridContainer" unique_id=1609187126]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-script = ExtResource("1_la3np")
-
-[node name="Icon" type="TextureRect" parent="MarginContainer/GridContainer/ItemSlot9" unique_id=638421250]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-expand_mode = 1
-stretch_mode = 5
-
-[node name="ItemSlot10" type="Panel" parent="MarginContainer/GridContainer" unique_id=1873210182]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-script = ExtResource("1_la3np")
-
-[node name="Icon" type="TextureRect" parent="MarginContainer/GridContainer/ItemSlot10" unique_id=185216829]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

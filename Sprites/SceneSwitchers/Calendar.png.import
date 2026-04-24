@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckjm4unb7l4i6"
-path="res://.godot/imported/bagheta.png-46dcc3b217b421357e71fd801d47f2cd.ctex"
+uid="uid://d22t7xl7mbpld"
+path="res://.godot/imported/Calendar.png-dfe6cf18e9de0b0b804651242e08ec4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/bagheta.png"
-dest_files=["res://.godot/imported/bagheta.png-46dcc3b217b421357e71fd801d47f2cd.ctex"]
+source_file="res://Sprites/SceneSwitchers/Calendar.png"
+dest_files=["res://.godot/imported/Calendar.png-dfe6cf18e9de0b0b804651242e08ec4d.ctex"]
 
 [params]
 
