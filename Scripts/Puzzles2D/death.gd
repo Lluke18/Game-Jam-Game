@@ -7,9 +7,6 @@ extends Node
 
 func _ready() -> void:
 	connect_key_signals()
-	TextManager.show_once("Death" , [
-		"sixxxxxxxxx sevennnnnnnnnnnn"
-	])
 
 func connect_key_signals():
 	for key in keyboard.get_children():
