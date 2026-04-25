@@ -1,8 +1,10 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dhkl5spggl2ln"]
 
 [ext_resource type="Script" uid="uid://s4iq5hfdsch5" path="res://Scripts/Items/item_data.gd" id="1_hdfki"]
+[ext_resource type="Texture2D" uid="uid://e8xwkt8b62xe" path="res://Sprites/Items/BluePot.png" id="1_kekjl"]
 
 [resource]
 script = ExtResource("1_hdfki")
 item_name = "BluePot"
+icon = ExtResource("1_kekjl")
 metadata/_custom_type_script = "uid://s4iq5hfdsch5"

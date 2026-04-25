@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cr1ewx8nhox8f" path="res://PuzzleObjects/KeyboardKey.tscn" id="1_mhu14"]
 [ext_resource type="Script" uid="uid://dyfqxa1pmfscs" path="res://Scripts/Puzzles2D/death.gd" id="1_o4ymw"]
 [ext_resource type="Texture2D" uid="uid://clkggna7gbhv2" path="res://Sprites/PuzzleObjects/Keyboard.png" id="2_5x7yd"]
+[ext_resource type="Texture2D" uid="uid://ck5no70bq1i2k" path="res://Sprites/Background/Floor.png" id="2_7yjyu"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="2_mhu14"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_indks"]
 
@@ -19,6 +20,10 @@ font_color = Color(0, 0, 0, 1)
 [node name="Death" type="Node2D" unique_id=325628759]
 script = ExtResource("1_o4ymw")
 solution = "DEATH"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1116046557]
+position = Vector2(960, 540)
+texture = ExtResource("2_7yjyu")
 
 [node name="KeyboardSprite" type="Sprite2D" parent="." unique_id=202706118]
 position = Vector2(881.00006, 510)

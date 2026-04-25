@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://box2ou45css0b"]
 
 [ext_resource type="Script" uid="uid://bse3wjs2c7luj" path="res://Scripts/Puzzles2D/magician.gd" id="1_6eh2d"]
+[ext_resource type="Texture2D" uid="uid://catwiuebv55f2" path="res://Sprites/Background/Wall.png" id="2_d7o1r"]
+[ext_resource type="Texture2D" uid="uid://c24jabx3sxlp4" path="res://Sprites/Background/PaintingSlot.png" id="3_oasne"]
 [ext_resource type="Texture2D" uid="uid://b8f212x0roc8b" path="res://Sprites/PuzzleObjects/Painting0.png" id="3_ppu18"]
 [ext_resource type="Texture2D" uid="uid://7xy1t0nknkd3" path="res://Sprites/PuzzleObjects/Painting1.png" id="4_6qxkk"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="5_d7o1r"]
@@ -12,6 +14,31 @@
 
 [node name="Magician" type="Node2D" unique_id=726880548]
 script = ExtResource("1_6eh2d")
+snap_max_distance = 150.0
+
+[node name="Background" type="Sprite2D" parent="." unique_id=880769567]
+position = Vector2(960, 540)
+texture = ExtResource("2_d7o1r")
+
+[node name="PaintingSlot0" type="Sprite2D" parent="Background" unique_id=561964298]
+position = Vector2(-692.00006, 68)
+scale = Vector2(1.2400049, 1.2800001)
+texture = ExtResource("3_oasne")
+
+[node name="PaintingSlot1" type="Sprite2D" parent="Background" unique_id=1960265963]
+position = Vector2(-311.00003, 8)
+scale = Vector2(1.2400049, 1.2800001)
+texture = ExtResource("3_oasne")
+
+[node name="PaintingSlot2" type="Sprite2D" parent="Background" unique_id=640967604]
+position = Vector2(94.99999, -83)
+scale = Vector2(1.2400049, 1.2800001)
+texture = ExtResource("3_oasne")
+
+[node name="PaintingSlot3" type="Sprite2D" parent="Background" unique_id=2064881832]
+position = Vector2(472.99997, -182)
+scale = Vector2(1.2400049, 1.2800001)
+texture = ExtResource("3_oasne")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=355521650]
 
@@ -21,45 +48,25 @@ script = ExtResource("1_6eh2d")
 position = Vector2(115, 399)
 scale = Vector2(4, 4)
 
-[node name="Label" type="Label" parent="CanvasLayer/SnapMarkers/Marker0" unique_id=1283403623]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "O"
-
 [node name="Marker1" type="Marker2D" parent="CanvasLayer/SnapMarkers" unique_id=787503195]
 position = Vector2(495, 337)
 scale = Vector2(4, 4)
-
-[node name="Label" type="Label" parent="CanvasLayer/SnapMarkers/Marker1" unique_id=1625036073]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "O"
 
 [node name="Marker2" type="Marker2D" parent="CanvasLayer/SnapMarkers" unique_id=1137301116]
 position = Vector2(901, 246)
 scale = Vector2(4, 4)
 
-[node name="Label" type="Label" parent="CanvasLayer/SnapMarkers/Marker2" unique_id=1144366756]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "O"
-
 [node name="Marker3" type="Marker2D" parent="CanvasLayer/SnapMarkers" unique_id=665969494]
 position = Vector2(1280, 147)
 scale = Vector2(4, 4)
 
-[node name="Label" type="Label" parent="CanvasLayer/SnapMarkers/Marker3" unique_id=1449049094]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "O"
-
 [node name="Paintings" type="Node" parent="CanvasLayer" unique_id=52144617]
 
 [node name="Painting0" parent="CanvasLayer/Paintings" unique_id=374029610 instance=ExtResource("5_ppu18")]
-offset_left = 827.0
-offset_top = 574.0
-offset_right = 1193.0
-offset_bottom = 1012.0
+offset_left = 812.0
+offset_top = 577.0
+offset_right = 1178.0
+offset_bottom = 1015.0
 pivot_offset = Vector2(183, 219)
 texture_normal = ExtResource("3_ppu18")
 ignore_texture_size = true

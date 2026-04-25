@@ -18,14 +18,14 @@
 [ext_resource type="Script" path="res://scenes/3d/death_3d.gd" id="15_3epcx"]
 [ext_resource type="PackedScene" uid="uid://cp02prp35y6o4" path="res://3D assets/Objects/ouija_board_planchette.tscn" id="15_gnvy8"]
 [ext_resource type="PackedScene" uid="uid://b236em5apfa8c" path="res://3D assets/scenes/chest scene/cypher_only.tscn" id="15_ntof2"]
-[ext_resource type="PackedScene" uid="uid://bsjcgc8gqe3tg" path="res://scenes/3d/zoom_camera.tscn" id="16_3wu1q"]
+[ext_resource type="PackedScene" path="res://scenes/3d/zoom_camera.tscn" id="16_3wu1q"]
+[ext_resource type="PackedScene" uid="uid://bb05nxvtgq347" path="res://3D assets/Objects/bluepot.tscn" id="17_3wu1q"]
 [ext_resource type="Texture2D" uid="uid://b1s1gig8fcge5" path="res://Sprites/runes/rune_0.jpg" id="17_736gg"]
+[ext_resource type="PackedScene" uid="uid://dhtaksq2mt8o1" path="res://3D assets/Objects/greenpot.tscn" id="18_4aj2b"]
 [ext_resource type="Texture2D" uid="uid://upl2fg165wol" path="res://Sprites/runes/rune_1.jpg" id="18_83icm"]
+[ext_resource type="PackedScene" uid="uid://bmw0bken33ymw" path="res://3D assets/Objects/yellowpot.tscn" id="19_1o1v0"]
 [ext_resource type="Texture2D" uid="uid://d2jk24xroqfyi" path="res://Sprites/runes/rune_3.jpg" id="19_10edp"]
 [ext_resource type="Texture2D" uid="uid://bhl774fxqn772" path="res://Sprites/runes/rune_2.jpg" id="20_sbgw4"]
-[ext_resource type="PackedScene" uid="uid://bb05nxvtgq347" path="res://3D assets/Objects/bluepot.tscn" id="17_3wu1q"]
-[ext_resource type="PackedScene" uid="uid://dhtaksq2mt8o1" path="res://3D assets/Objects/greenpot.tscn" id="18_4aj2b"]
-[ext_resource type="PackedScene" uid="uid://bmw0bken33ymw" path="res://3D assets/Objects/yellowpot.tscn" id="19_1o1v0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j7t7n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -110,6 +110,11 @@ size = Vector3(1.7891235, 3.2866821, 1.564209)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_736gg"]
 size = Vector3(6.427246, 2.241455, 5.492218)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_sbgw4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vg578"]
+size = Vector3(10.301453, 1, 9.803528)
 
 [node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player", "mirror", "zodiac_wheel", "zodiac_tile", "zoom_camera")]
 script = ExtResource("1_j7t7n")
@@ -507,6 +512,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3266296, 1.6882858, -7.560
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.010498, 0.4979248, 2.246109)
 shape = SubResource("BoxShape3D_736gg")
 debug_color = Color(0, 0.44313726, 0.5176471, 1)
+
+[node name="CookingPot" type="Node3D" parent="Puzzles3D/Hierophant3D" unique_id=1844371774]
+
+[node name="CookingStaticBody3D" type="StaticBody3D" parent="Puzzles3D/Hierophant3D/CookingPot" unique_id=693344568 node_paths=PackedStringArray("area", "object") groups=["Interactables"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40366638, 0.025342941, -2.0393384)
+script = ExtResource("4_fep6r")
+area = NodePath("../CookingInteractableArea3D3")
+object = NodePath(".")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Hierophant3D/CookingPot/CookingStaticBody3D" unique_id=343981763]
+transform = Transform3D(2.52, 0, 0, 0, 2.52, 0, 0, 0, 2.52, 0, 1.8935531, 0.7545955)
+shape = SubResource("CylinderShape3D_sbgw4")
+debug_color = Color(0.63529414, 0, 0.11372549, 1)
+
+[node name="CookingInteractableArea3D3" parent="Puzzles3D/Hierophant3D/CookingPot" unique_id=2093073686 instance=ExtResource("3_rfp5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43072128, 1.1427844, -1.5932269)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Hierophant3D/CookingPot/CookingInteractableArea3D3" unique_id=1946080740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22927856, 0.39008045, -0.28346252)
+shape = SubResource("BoxShape3D_vg578")
+debug_color = Color(0, 0, 0, 1)
 
 [node name="Death3D" type="Node" parent="Puzzles3D" unique_id=414329513 node_paths=PackedStringArray("ouija_table")]
 script = ExtResource("15_3epcx")

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b0drdn5m6g7ey" path="res://Scripts/Puzzles2D/star.gd" id="1_asnyx"]
 [ext_resource type="Texture2D" uid="uid://d22t7xl7mbpld" path="res://Sprites/SceneSwitchers/Calendar.png" id="2_3nmne"]
+[ext_resource type="Texture2D" uid="uid://catwiuebv55f2" path="res://Sprites/Background/Wall.png" id="2_aad07"]
 [ext_resource type="PackedScene" uid="uid://c1hkjqgxqgyld" path="res://PuzzleObjects/DrawingDot.tscn" id="2_i662l"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="4_aad07"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_5gbe3"]
@@ -9,6 +10,10 @@
 
 [node name="Star" type="Node2D" unique_id=496611057]
 script = ExtResource("1_asnyx")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1045640180]
+position = Vector2(960, 540)
+texture = ExtResource("2_aad07")
 
 [node name="Calendar" type="Sprite2D" parent="." unique_id=1426004988]
 position = Vector2(885, 216)
