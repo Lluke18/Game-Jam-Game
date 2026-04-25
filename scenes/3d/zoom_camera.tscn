@@ -11,7 +11,7 @@ transform = Transform3D(0.048483744, 0, -0.998824, 0, 1, 0, 0.998824, 0, 0.04848
 fov = 43.8
 script = ExtResource("1_8wvtw")
 canvas = NodePath("CanvasLayer")
-texture_array = Array[Texture]([ExtResource("2_cdv7l"), ExtResource("3_ygdcu"), ExtResource("4_svo3w"), ExtResource("5_r7il7")])
+texture_array = Array[Texture]([ExtResource("2_cdv7l"), ExtResource("3_ygdcu"), ExtResource("5_r7il7"), ExtResource("4_svo3w")])
 sol_arr = Array[int]([0, 1, 2, 3])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1383525204]
@@ -28,21 +28,21 @@ offset_left = 541.0
 offset_top = 465.0
 offset_right = 607.0
 offset_bottom = 492.0
-texture_normal = ExtResource("3_ygdcu")
+texture_normal = ExtResource("2_cdv7l")
 
 [node name="Button3" type="TextureButton" parent="CanvasLayer" unique_id=47177555]
 offset_left = 676.0
 offset_top = 467.0
 offset_right = 742.0
 offset_bottom = 494.0
-texture_normal = ExtResource("4_svo3w")
+texture_normal = ExtResource("2_cdv7l")
 
 [node name="Button4" type="TextureButton" parent="CanvasLayer" unique_id=415488530]
 offset_left = 817.0
 offset_top = 462.0
 offset_right = 882.0
 offset_bottom = 489.0
-texture_normal = ExtResource("5_r7il7")
+texture_normal = ExtResource("2_cdv7l")
 
 [node name="Exit" type="Button" parent="CanvasLayer" unique_id=836941342]
 offset_right = 8.0

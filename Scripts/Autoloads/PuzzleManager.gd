@@ -14,6 +14,7 @@ var moon_symbol_picked_up: bool = false
 var pencil_picked_up: bool = false
 var calendar_solved: bool = false
 var chest_opened : bool = false
+var temperance_solved : bool = false
 
 var blue_pot_picked_up: bool = false
 var green_pot_picked_up: bool = false

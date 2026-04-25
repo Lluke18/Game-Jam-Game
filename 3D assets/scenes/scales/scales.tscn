@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://drtrf8lmpshik"]
+
+[ext_resource type="PackedScene" uid="uid://c5706bl335f0o" path="res://3D assets/Objects/scales/Scales.glb" id="1_jt8af"]
+[ext_resource type="Script" uid="uid://c2ms2tdkravr8" path="res://3D assets/scenes/scales/scales.gd" id="2_dwmq3"]
+
+[node name="Scales" unique_id=948355917 node_paths=PackedStringArray("anim_player") instance=ExtResource("1_jt8af")]
+script = ExtResource("2_dwmq3")
+anim_player = NodePath("AnimationPlayer")
+
+[node name="BézierCurve" parent="." index="0" unique_id=405595200]
+transform = Transform3D(-0.008561862, -0.2098254, 1.2251405e-08, -6.258488e-09, 1.2516976e-08, 0.21000001, -0.2098254, 0.008561862, -6.763611e-09, -0.06810516, 1.9664185, 0.053520888)
+
+[node name="Cylinder" parent="." index="1" unique_id=2108348906]
+transform = Transform3D(-0.008561862, 0, 0.2098254, 0, 0.21000001, 0, -0.2098254, 0, -0.008561862, -0.06810516, 0.08236265, 0.053520888)
+
+[node name="BézierCurve_001" parent="." index="2" unique_id=1487322211]
+transform = Transform3D(0.00856185, 0.2098254, -3.675422e-08, -1.8775463e-08, 3.7550926e-08, 0.21000001, 0.2098254, -0.00856185, 2.0290832e-08, -0.06810516, 1.9664185, 0.053520888)
+
+[node name="Torus_004" parent="BézierCurve_001" index="1" unique_id=655853788]
+transform = Transform3D(5.127405e-08, 0, 0.28674522, -1.110223e-16, 0.28674522, 0, -0.28674522, -1.5654145e-14, 5.1274057e-08, 4.178496, -3.2782555e-06, -0.20859146)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3" unique_id=402414535]

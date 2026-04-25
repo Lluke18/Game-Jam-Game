@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dac0nstm4o4l5"]
+
+[ext_resource type="PackedScene" uid="uid://uu0ebrby8u5u" path="res://3D assets/Objects/sacks/Sacks.glb" id="1_xwciy"]
+
+[node name="Sacks" unique_id=1356336768 instance=ExtResource("1_xwciy")]
+
+[node name="midsack" parent="." index="0" unique_id=1851919461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2976365, 0, 0.24903297)
+
+[node name="bigsack" parent="." index="1" unique_id=61809162]
+transform = Transform3D(1.5539651, 0, 0, 0, 1.5539651, 0, 0, 0, 1.5539651, -0.2976365, 0, -0.25203064)
+
+[node name="smallsack" parent="." index="2" unique_id=798706911]
+transform = Transform3D(0.48340344, 0, 0, 0, 0.48340344, 0, 0, 0, 0.48340344, -0.2976365, 0.11881465, 0.06541413)
