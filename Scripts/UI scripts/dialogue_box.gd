@@ -2,50 +2,46 @@ extends CanvasLayer
 
 @onready var text_label : Label = $PanelContainer/MarginContainer/HBoxContainer/Label
 
+var _typing_speed : float = 60.0
+var _typing_time : float = 0.0
 var is_typing : bool = false
-var full_text : String = ""
-var typing : bool = false
 
 func _ready() -> void:
 	hide()
 	TextManager.start_dialogue.connect(_on_start_dialogue)
-	print("DialogueBox ready, connected to TextManager")
 
 func _on_start_dialogue(text: String) -> void:
-	print("_on_start_dialogue apelat cu: ", text)
-	typing = false
+	typing_stopped()
 	await get_tree().process_frame
 	show()
-	full_text = text
-	text_label.text = ""
+	display_text(text)
+
+func display_text(text: String) -> void:
+	text_label.text = text
+	text_label.visible_characters = 0
+	_typing_time = 0.0
 	is_typing = true
-	_type_text()
+	while text_label.visible_characters < text_label.get_total_character_count():
+		_typing_time += get_process_delta_time()
+		text_label.visible_characters = _typing_speed * _typing_time as int
+		await get_tree().process_frame
+	is_typing = false
+	await get_tree().create_timer(2.0).timeout
+	if not is_typing:
+		hide()
+		TextManager.dialogue_finished.emit()
+
+func typing_stopped() -> void:
+	is_typing = false
+	text_label.visible_characters = -1
 
 func clear() -> void:
 	hide()
 	text_label.text = ""
+	text_label.visible_characters = 0
 	is_typing = false
-	full_text = ""
 
-func _type_text() -> void:
-	typing = true
-	var i = 0
-	while i<full_text.length():
-		if not typing:
-			break
-		text_label.text += full_text[i]
-		i += 1
-		await get_tree().create_timer(0.05).timeout
-	typing = false
-	is_typing = false
-	await get_tree().create_timer(2.0).timeout
-	if not typing:
-		hide()
-		TextManager.dialogue_finished.emit()
-		
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if is_typing:
-			text_label.text = full_text
-			is_typing = false
-			typing = false
+			typing_stopped()

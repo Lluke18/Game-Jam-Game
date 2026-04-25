@@ -14,6 +14,10 @@ var currently_drawn_line: Line2D = null
 @export var snap_max_distance: float = 100.0
 
 func _ready() -> void:
+	if PuzzleManager.pencil_picked_up == false:
+		InventoryManager.add_item(InventoryManager.PENCIL)
+		PuzzleManager.pencil_picked_up = true
+		SaveManager.save_file_data.pencil_picked_up = PuzzleManager.pencil_picked_up
 	init_target_markers_array()
 	init_drawing_dots_array()
 	connect_drawing_dots_signals()

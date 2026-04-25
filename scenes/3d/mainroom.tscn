@@ -3,19 +3,19 @@
 [ext_resource type="Script" uid="uid://b52n10npscye6" path="res://Scripts/3D scripts/mainroom.gd" id="1_j7t7n"]
 [ext_resource type="PackedScene" uid="uid://dm0ycc5x5wtod" path="res://scenes/3d/player3D.tscn" id="1_w1mmj"]
 [ext_resource type="Texture2D" uid="uid://hx7c34uexnhc" path="res://Sprites/Mouse/bagheta_2.png" id="3_okq3e"]
-[ext_resource type="PackedScene" uid="uid://bwg407mxqbuw" path="res://scenes/3d/interactable_area_3d.tscn" id="3_rfp5g"]
+[ext_resource type="PackedScene" path="res://scenes/3d/interactable_area_3d.tscn" id="3_rfp5g"]
 [ext_resource type="Script" uid="uid://3hq0fuvsjl70" path="res://scenes/3d/InteractableObject.gd" id="4_fep6r"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_rfp5g"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_whf7h"]
 [ext_resource type="PackedScene" uid="uid://d35qijl2l5jdx" path="res://3D assets/Illusion.blend" id="6_5k5vb"]
 [ext_resource type="Script" uid="uid://5dn58dedj0g6" path="res://Scripts/Puzzles3D/moon_3d.gd" id="10_2vkj2"]
-[ext_resource type="PackedScene" uid="uid://ixxg5srbckg2" path="res://3D assets/luna.tscn" id="11_ntof2"]
+[ext_resource type="PackedScene" path="res://3D assets/luna.tscn" id="11_ntof2"]
 [ext_resource type="Script" uid="uid://c1srst7838qj0" path="res://Scripts/Puzzles3D/star_3d.gd" id="12_vl5l8"]
 [ext_resource type="Script" uid="uid://0htjwty3extj" path="res://Scripts/Puzzles3D/temperance_3d.gd" id="13_gnvy8"]
 [ext_resource type="PackedScene" uid="uid://j403tq8k44rm" path="res://3D assets/Objects/zodiac_wheel.tscn" id="13_yuerg"]
 [ext_resource type="Script" uid="uid://jr6oloa7llj7" path="res://Scripts/Puzzles3D/hierophant_3d.gd" id="14_3epcx"]
 [ext_resource type="PackedScene" uid="uid://22hbh3dme6n0" path="res://3D assets/scenes/chest scene/cypher_chest.tscn" id="14_yuerg"]
-[ext_resource type="Script" uid="uid://c5jcpns81oxq3" path="res://scenes/3d/death_3d.gd" id="15_3epcx"]
+[ext_resource type="Script" path="res://scenes/3d/death_3d.gd" id="15_3epcx"]
 [ext_resource type="PackedScene" uid="uid://cp02prp35y6o4" path="res://3D assets/Objects/ouija_board_planchette.tscn" id="15_gnvy8"]
 [ext_resource type="PackedScene" uid="uid://b236em5apfa8c" path="res://3D assets/scenes/chest scene/cypher_only.tscn" id="15_ntof2"]
 [ext_resource type="PackedScene" uid="uid://bsjcgc8gqe3tg" path="res://scenes/3d/zoom_camera.tscn" id="16_3wu1q"]
@@ -23,6 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://upl2fg165wol" path="res://Sprites/runes/rune_1.jpg" id="18_83icm"]
 [ext_resource type="Texture2D" uid="uid://d2jk24xroqfyi" path="res://Sprites/runes/rune_3.jpg" id="19_10edp"]
 [ext_resource type="Texture2D" uid="uid://bhl774fxqn772" path="res://Sprites/runes/rune_2.jpg" id="20_sbgw4"]
+[ext_resource type="PackedScene" uid="uid://bb05nxvtgq347" path="res://3D assets/Objects/bluepot.tscn" id="17_3wu1q"]
+[ext_resource type="PackedScene" uid="uid://dhtaksq2mt8o1" path="res://3D assets/Objects/greenpot.tscn" id="18_4aj2b"]
+[ext_resource type="PackedScene" uid="uid://bmw0bken33ymw" path="res://3D assets/Objects/yellowpot.tscn" id="19_1o1v0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j7t7n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -85,10 +88,10 @@ size = Vector3(1, 4.1474, 0.8808594)
 size = Vector3(2.557251, 1, 1.078125)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_whf7h"]
-size = Vector3(0.625, 0.6057129, 0.77490234)
+size = Vector3(1.4213867, 0.6057129, 1.2042694)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2vkj2"]
-size = Vector3(1.5373383, 2.2694092, 2.1226807)
+size = Vector3(2.7555504, 1.7099304, 2.8981628)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ntof2"]
 size = Vector3(0.5234375, 1.7374916, 1.3297691)
@@ -103,6 +106,12 @@ size = Vector3(1.0214844, 1.2754211, 1)
 size = Vector3(4.500122, 4.30719, 5.249878)
 
 [node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player", "mirror", "zodiac_wheel", "zodiac_tile", "zoom_camera")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_1o1v0"]
+size = Vector3(1.7891235, 3.2866821, 1.564209)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_736gg"]
+size = Vector3(6.427246, 2.241455, 5.492218)
+
 script = ExtResource("1_j7t7n")
 spawnpos = NodePath("MirrorSpawnPos")
 player = NodePath("Player")
@@ -306,6 +315,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12355518, -0.0886333, -0.06
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Moon3D/StaticBody3D/InteractableArea3D" unique_id=1961359182]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.056602478, 0.6347046, -0.20123291)
 shape = SubResource("BoxShape3D_2vkj2")
+debug_color = Color(0, 0.47058824, 0.5529412, 1)
 
 [node name="luna" parent="Puzzles3D/Moon3D/StaticBody3D" unique_id=1692874708 instance=ExtResource("11_ntof2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47433567, 0.16618538, 0.31009436)
@@ -425,6 +435,78 @@ text = "EXIT
 
 [node name="Hierophant3D" type="Node" parent="Puzzles3D" unique_id=1521141426]
 script = ExtResource("14_3epcx")
+
+[node name="BluePot" type="Node3D" parent="Puzzles3D/Hierophant3D" unique_id=283924667]
+
+[node name="BlueStaticBody3D" type="StaticBody3D" parent="Puzzles3D/Hierophant3D/BluePot" unique_id=1052639667 node_paths=PackedStringArray("area", "object") groups=["Interactables"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.61283, 1.3226688, -7.9926257)
+script = ExtResource("4_fep6r")
+area = NodePath("../BlueInteractableArea3D")
+object = NodePath(".")
+
+[node name="bluepot" parent="Puzzles3D/Hierophant3D/BluePot/BlueStaticBody3D" unique_id=55907318 instance=ExtResource("17_3wu1q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18039513, -0.30845284, 0.15846014)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Hierophant3D/BluePot/BlueStaticBody3D" unique_id=2009316445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19247437, 1.1433411, 0.2821045)
+shape = SubResource("BoxShape3D_1o1v0")
+debug_color = Color(0, 0.5372549, 0.627451, 1)
+
+[node name="BlueInteractableArea3D" parent="Puzzles3D/Hierophant3D/BluePot" unique_id=1368088010 instance=ExtResource("3_rfp5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3266296, 1.6882858, -7.5607142)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Hierophant3D/BluePot/BlueInteractableArea3D" unique_id=242505155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.010498, 0.4979248, 2.246109)
+shape = SubResource("BoxShape3D_736gg")
+debug_color = Color(0, 0.44313726, 0.5176471, 1)
+
+[node name="GreenPot" type="Node3D" parent="Puzzles3D/Hierophant3D" unique_id=978890430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1149096, -0.06547761, 2.53463)
+
+[node name="GreenStaticBody3D" type="StaticBody3D" parent="Puzzles3D/Hierophant3D/GreenPot" unique_id=1476279752 node_paths=PackedStringArray("area", "object") groups=["Interactables"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.61283, 1.3226688, -7.9926257)
+script = ExtResource("4_fep6r")
+area = NodePath("../../BluePot/BlueInteractableArea3D")
+object = NodePath(".")
+
+[node name="greenpot" parent="Puzzles3D/Hierophant3D/GreenPot/GreenStaticBody3D" unique_id=1222744295 instance=ExtResource("18_4aj2b")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Hierophant3D/GreenPot/GreenStaticBody3D" unique_id=927261563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19247437, 1.1433411, 0.2821045)
+shape = SubResource("BoxShape3D_1o1v0")
+debug_color = Color(0, 0.5372549, 0.627451, 1)
+
+[node name="GreenInteractableArea3D2" parent="Puzzles3D/Hierophant3D/GreenPot" unique_id=1685431828 instance=ExtResource("3_rfp5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3266296, 1.6882858, -7.5607142)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Hierophant3D/GreenPot/GreenInteractableArea3D2" unique_id=544122001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.010498, 0.4979248, 2.246109)
+shape = SubResource("BoxShape3D_736gg")
+debug_color = Color(0, 0.44313726, 0.5176471, 1)
+
+[node name="YellowPot" type="Node3D" parent="Puzzles3D/Hierophant3D" unique_id=1640451311]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3198571, -0.071055174, 4.189965)
+
+[node name="YellowStaticBody3D" type="StaticBody3D" parent="Puzzles3D/Hierophant3D/YellowPot" unique_id=721327788 node_paths=PackedStringArray("area", "object") groups=["Interactables"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.61283, 1.3226688, -7.9926257)
+script = ExtResource("4_fep6r")
+area = NodePath("../../BluePot/BlueInteractableArea3D")
+object = NodePath(".")
+
+[node name="yellowpot" parent="Puzzles3D/Hierophant3D/YellowPot/YellowStaticBody3D" unique_id=132788889 instance=ExtResource("19_1o1v0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Hierophant3D/YellowPot/YellowStaticBody3D" unique_id=1144927041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19247437, 1.1433411, 0.2821045)
+shape = SubResource("BoxShape3D_1o1v0")
+debug_color = Color(0, 0.5372549, 0.627451, 1)
+
+[node name="YellowInteractableArea3D3" parent="Puzzles3D/Hierophant3D/YellowPot" unique_id=940890452 instance=ExtResource("3_rfp5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3266296, 1.6882858, -7.5607142)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Hierophant3D/YellowPot/YellowInteractableArea3D3" unique_id=1492353245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.010498, 0.4979248, 2.246109)
+shape = SubResource("BoxShape3D_736gg")
+debug_color = Color(0, 0.44313726, 0.5176471, 1)
 
 [node name="Death3D" type="Node" parent="Puzzles3D" unique_id=414329513 node_paths=PackedStringArray("ouija_table")]
 script = ExtResource("15_3epcx")

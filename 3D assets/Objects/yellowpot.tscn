@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bmw0bken33ymw"]
+
+[ext_resource type="PackedScene" uid="uid://cfovg5hetxr6o" path="res://3D assets/Objects/potions/yellowpot.glb" id="1_y0flq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0flq"]
+albedo_color = Color(1, 1, 0, 1)
+roughness = 0.0
+
+[node name="yellowpot" unique_id=132788889 instance=ExtResource("1_y0flq")]
+
+[node name="small health poti_008" parent="." index="0" unique_id=1774923065]
+transform = Transform3D(0.1058763, 0, 0, 0, 0.08026359, 0, 0, 0, 0.1058763, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_y0flq")

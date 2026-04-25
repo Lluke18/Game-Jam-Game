@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://qjik6804vt6k" path="res://Sprites/Background/Table.png" id="7_oxgl2"]
 [ext_resource type="Texture2D" uid="uid://bkl14v3ih0fvu" path="res://Sprites/Background/Window.png" id="8_3xykw"]
 [ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="9_lmr8f"]
+[ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="10_031wo"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="11_pqupb"]
 [ext_resource type="Texture2D" uid="uid://di47lj0iiq1qj" path="res://Sprites/Background/Scale.png" id="12_a5u6s"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="12_ijtto"]
@@ -27,6 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://bttgm556kt8gj" path="res://Sprites/Background/Plant.png" id="22_c0iiq"]
 [ext_resource type="Texture2D" uid="uid://kmknl30m2oye" path="res://Sprites/Background/Protein.png" id="23_mw6fo"]
 [ext_resource type="Texture2D" uid="uid://v3v23w7saabr" path="res://Sprites/Background/CrackedPhone.png" id="24_jkmmp"]
+[ext_resource type="Script" uid="uid://ck7mhaykas1vp" path="res://Scripts/Puzzles2D/room4_checker.gd" id="26_mjyp4"]
+[ext_resource type="Texture2D" uid="uid://cnx5eop323exp" path="res://Sprites/SceneSwitchers/Laptop.png" id="28_ka8xs"]
+[ext_resource type="Texture2D" uid="uid://d22t7xl7mbpld" path="res://Sprites/SceneSwitchers/Calendar.png" id="29_l332i"]
 
 [node name="Room4" type="Node2D" unique_id=1276671648]
 script = ExtResource("1_tj7eo")
@@ -44,15 +48,15 @@ position = Vector2(0, 800)
 texture = ExtResource("3_y1e7j")
 
 [node name="Lamp" type="Sprite2D" parent="BackgorundSprites" unique_id=1826788524]
-position = Vector2(1408, 578)
+position = Vector2(995, 613)
 texture = ExtResource("1_03h48")
 
 [node name="Bookshelf" type="Sprite2D" parent="BackgorundSprites" unique_id=801917368]
-position = Vector2(1408, 578)
+position = Vector2(717, 689)
 texture = ExtResource("2_qu38w")
 
 [node name="Books" type="Sprite2D" parent="BackgorundSprites" unique_id=1103919264]
-position = Vector2(1408, 578)
+position = Vector2(363, 859)
 texture = ExtResource("3_lstom")
 
 [node name="CrystalBall" type="Sprite2D" parent="BackgorundSprites" unique_id=349627469]
@@ -124,7 +128,62 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
+script = ExtResource("26_mjyp4")
+
+[node name="Death" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=1422086249]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1420.0
+offset_top = -274.0
+offset_right = -947.0
+offset_bottom = 150.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Death"
+script = ExtResource("10_031wo")
+destination_room_path = "res://Puzzles/Death.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SceneSwitchers/Death" unique_id=823501902]
+layout_mode = 0
+offset_right = 942.0
+offset_bottom = 851.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("28_ka8xs")
+
+[node name="Star" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=1611350377]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -707.0
+offset_top = -299.0
+offset_right = -353.0
+offset_bottom = 209.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Star"
+script = ExtResource("10_031wo")
+destination_room_path = "res://Puzzles/Star.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SceneSwitchers/Star" unique_id=209756626]
+layout_mode = 0
+offset_left = -3.0
+offset_right = 594.0
+offset_bottom = 848.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("29_l332i")
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("11_pqupb")]
 
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("12_ijtto")]
+
+[connection signal="pressed" from="CanvasLayer/SceneSwitchers/Death" to="CanvasLayer/SceneSwitchers/Death" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/SceneSwitchers/Star" to="CanvasLayer/SceneSwitchers/Star" method="_on_pressed"]

@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @onready var options_panel = $OptionsPanel
 @onready var sfx_player = $SfxPlayer
@@ -20,8 +20,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func resume() -> void:
 	get_tree().paused = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	hide()
+	var current_scene = get_tree().current_scene
+	print("Scena curenta: ", get_tree().current_scene.name)
+	if current_scene.name == "Mainroom":
+		await get_tree().process_frame
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 
 func pause() -> void:
 	show()
@@ -39,3 +44,4 @@ func _on_quit_pressed() -> void:
 	get_tree().paused = false
 	SaveManager.save_data()
 	get_tree().change_scene_to_file("res://scenes/2d/main_menu.tscn")
+	hide()
