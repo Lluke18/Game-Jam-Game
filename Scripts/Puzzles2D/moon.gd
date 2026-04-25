@@ -2,6 +2,7 @@ extends Node
 
 @onready var item_drop_area: ItemDropArea = $ItemDropArea
 @onready var moon_stand_sprite: Sprite2D = $MoonStandSprite
+@onready var sfx_player: AudioStreamPlayer2D = $Sfx_Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,6 +13,7 @@ func _ready() -> void:
 func end_puzzle():
 	print("The Moon finished!")
 	PuzzleManager.finish_puzzle(PuzzleManager.puzzles.MOON)
+	sfx_player.play()
 	TextManager.show_once("Moon_completed" , [
 		"The Moon. Number eighteen. Illusion and anxiety... fitting.", 
 		"It’s a warning that what I’m seeing isn't the whole truth.", 

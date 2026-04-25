@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ck5no70bq1i2k" path="res://Sprites/Background/Floor.png" id="2_7yjyu"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="2_mhu14"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_indks"]
+[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/holy_arcana.ogg" id="8_vbx5x"]
 
 [sub_resource type="FontVariation" id="FontVariation_5x7yd"]
 spacing_glyph = 4
@@ -620,5 +621,8 @@ destination_room_path = "res://Rooms/Room1.tscn"
 mouse_filter = 2
 
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("5_indks")]
+
+[node name="Sfx_Player" type="AudioStreamPlayer2D" parent="." unique_id=587952777]
+stream = ExtResource("8_vbx5x")
 
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/RightArrow" to="CanvasLayer/SceneSwitchers/RightArrow" method="_on_pressed"]

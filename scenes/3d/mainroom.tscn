@@ -31,6 +31,7 @@
 [ext_resource type="Resource" uid="uid://dhkl5spggl2ln" path="res://Scripts/Items/BluePot.tres" id="24_yxx7e"]
 [ext_resource type="Resource" uid="uid://yvnkv23qvu5v" path="res://Scripts/Items/YellowPot.tres" id="25_lr5v6"]
 [ext_resource type="AudioStream" uid="uid://dtos2mplvjkri" path="res://Audio/zodiac_pressedt.wav" id="31_v6s45"]
+[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/holy_arcana.ogg" id="32_yxx7e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j7t7n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -561,6 +562,10 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.93420315, 0.5774975, 
 
 [node name="SfxPlayer" type="AudioStreamPlayer3D" parent="." unique_id=31134926]
 stream = ExtResource("31_v6s45")
+bus = &"Sfx"
+
+[node name="SfxPlayer2" type="AudioStreamPlayer3D" parent="." unique_id=313866492]
+stream = ExtResource("32_yxx7e")
 bus = &"Sfx"
 
 [connection signal="clicked" from="Player" to="." method="_on_player_clicked"]

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="6_36xyo"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="6_oasne"]
 [ext_resource type="Texture2D" uid="uid://bmurmu88dbd5q" path="res://Sprites/PuzzleObjects/Painting3.png" id="6_x0fmj"]
+[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/holy_arcana.ogg" id="12_x0fmj"]
 
 [node name="Magician" type="Node2D" unique_id=726880548]
 script = ExtResource("1_6eh2d")
@@ -133,5 +134,8 @@ destination_room_path = "res://Rooms/Room1.tscn"
 mouse_filter = 2
 
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("6_36xyo")]
+
+[node name="Sfx_Player" type="AudioStreamPlayer2D" parent="." unique_id=656204950]
+stream = ExtResource("12_x0fmj")
 
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/RightArrow" to="CanvasLayer/SceneSwitchers/RightArrow" method="_on_pressed"]

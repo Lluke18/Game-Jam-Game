@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var snap_markers: Node = $CanvasLayer/SnapMarkers
 @onready var paintings_parent: Node = $CanvasLayer/Paintings
+@onready var sfx_player: AudioStreamPlayer2D = $Sfx_Player
 
 var markers: Array[Marker2D] = []
 var paintings: Array[DraggablePuzzleObject] = []
@@ -44,6 +45,7 @@ func end_puzzle():
 		painting.draggable = false
 		painting.try_snapping.disconnect(on_try_snapping)
 	print("The Magician finished!")
+	sfx_player.play()
 	TextManager.show_once("Magician_completed", [
 		"The Magician. Number one. It’s the card of manifestation",
 		"As above, so below It’s a hint", 

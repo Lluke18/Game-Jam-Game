@@ -5,6 +5,7 @@ extends Node
 @onready var interactable_area_3d: InteractableArea3D = $StaticBody3D/InteractableArea3D
 var dialogue_shown: bool = false
 @onready var sfx_player: AudioStreamPlayer3D = $"../../SfxPlayer"
+@onready var sfx_player_2: AudioStreamPlayer3D = $"../../SfxPlayer2"
 
 func say_something():
 	if not dialogue_shown:
@@ -38,6 +39,7 @@ func _on_zodiac_click():
 	zodiac_wheel.aries_fall()
 	print("The Star finished!")
 	PuzzleManager.finish_puzzle(PuzzleManager.puzzles.STAR)
+	sfx_player_2.play()
 	TextManager.show_once("Zodiac_completed", [
 		"The Star. Seventeen. Hope and renewal...", 
 		"a reminder that there’s actually a purpose to this mess."
