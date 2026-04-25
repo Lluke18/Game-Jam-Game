@@ -874,8 +874,9 @@ _data = {
 &"chest_open": SubResource("Animation_dphoo")
 }
 
-[node name="Cypher_chest" unique_id=617163078 instance=ExtResource("1_inefa")]
+[node name="Cypher_chest" unique_id=617163078 node_paths=PackedStringArray("anim_player") instance=ExtResource("1_inefa")]
 script = ExtResource("2_exhbm")
+anim_player = NodePath("AnimationPlayer")
 
 [node name="cypher1" parent="." index="0" unique_id=382153408]
 transform = Transform3D(0.14043283, 0, 0, 0, -6.138514e-09, 0.14043283, 0, -0.14043283, -6.138514e-09, -0.730445, 1.1205007, -0.25054526)

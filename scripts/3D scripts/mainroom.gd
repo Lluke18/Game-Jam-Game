@@ -10,7 +10,7 @@ extends Node3D
 @export var zodiac_tile : Node3D 
 #@export var moon_symbol : InteractableObject
 @export var placeholder_item : ItemData
-
+@export var zoom_camera : Camera3D
 
 func _ready() -> void:
 	print(mirror.area.can_interact)
@@ -20,10 +20,8 @@ func _ready() -> void:
 		"What is this place? Looks like some wizard’s room/ dungeon.", 
 		"I see the moon from the mirror,but can I get back to my own world?"
 	])
+	zoom_camera.canvas.visible = false
 	
-	
-	# Am pus logica fiecarui puzzle intr-un script propriu, in Scripts/Puzzles3D
-	#moon_symbol.interact = Callable(self, "_on_moon_pickup")
 
 
 

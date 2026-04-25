@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://c5jcpns81oxq3" path="res://scenes/3d/death_3d.gd" id="15_3epcx"]
 [ext_resource type="PackedScene" uid="uid://cp02prp35y6o4" path="res://3D assets/Objects/ouija_board_planchette.tscn" id="15_gnvy8"]
 [ext_resource type="PackedScene" uid="uid://b236em5apfa8c" path="res://3D assets/scenes/chest scene/cypher_only.tscn" id="15_ntof2"]
+[ext_resource type="PackedScene" uid="uid://bsjcgc8gqe3tg" path="res://scenes/3d/zoom_camera.tscn" id="16_3wu1q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j7t7n"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -31,7 +32,7 @@ background_mode = 2
 background_energy_multiplier = 0.0
 sky = SubResource("Sky_ujn77")
 tonemap_mode = 2
-tonemap_exposure = 0.35
+tonemap_exposure = 0.19
 glow_enabled = true
 fog_sun_scatter = 0.27
 fog_density = 0.0469
@@ -97,7 +98,7 @@ size = Vector3(1.0214844, 1.2754211, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4aj2b"]
 size = Vector3(4.500122, 4.30719, 5.249878)
 
-[node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player", "mirror", "zodiac_wheel", "zodiac_tile")]
+[node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player", "mirror", "zodiac_wheel", "zodiac_tile", "zoom_camera")]
 script = ExtResource("1_j7t7n")
 spawnpos = NodePath("MirrorSpawnPos")
 player = NodePath("Player")
@@ -105,6 +106,7 @@ scene_2D_path = "res://Rooms/Room2.tscn"
 mirror = NodePath("actual_mirror")
 zodiac_wheel = NodePath("Puzzles3D/Star3D/StaticBody3D")
 zodiac_tile = NodePath("Puzzles3D/Star3D/StaticBody3D/Zodiac_wheel")
+zoom_camera = NodePath("Puzzles3D/Temperance3D/zoom_camera")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1343459481]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -214,7 +216,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23758125, 1.6315613, -0.001
 shape = SubResource("BoxShape3D_rfp5g")
 debug_color = Color(7.4990616, 6.40278, 0, 1)
 
-[node name="Illusion" parent="." unique_id=1785194980 instance=ExtResource("6_5k5vb")]
+[node name="Illusion" parent="." unique_id=2133008694 instance=ExtResource("6_5k5vb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0552967, 0.67229176, -3.7929158)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Illusion" unique_id=707953608]
@@ -333,8 +335,11 @@ debug_color = Color(0, 0, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.646259, 4.579416, -3.4114394)
 shape = SubResource("BoxShape3D_2anc7")
 
-[node name="Temperance3D" type="Node" parent="Puzzles3D" unique_id=1147493463]
+[node name="Temperance3D" type="Node" parent="Puzzles3D" unique_id=1147493463 node_paths=PackedStringArray("zoom_camera", "player", "actual_chest")]
 script = ExtResource("13_gnvy8")
+zoom_camera = NodePath("zoom_camera")
+player = NodePath("../../Player")
+actual_chest = NodePath("StaticBody3D/Cypher_chest")
 
 [node name="Scales" type="Node3D" parent="Puzzles3D/Temperance3D" unique_id=2129855317]
 script = ExtResource("4_fep6r")
@@ -362,7 +367,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36480713, 1.653595, 0.0530
 shape = SubResource("BoxShape3D_4aj2b")
 debug_color = Color(0.70980394, 0.4862745, 0, 1)
 
-[node name="Cypher_only" parent="Puzzles3D/Temperance3D" unique_id=343116895 instance=ExtResource("15_ntof2")]
+[node name="Cypher" parent="Puzzles3D/Temperance3D" unique_id=343116895 node_paths=PackedStringArray("wheel_arr") instance=ExtResource("15_ntof2")]
+transform = Transform3D(-0.809017, -0.58778524, -8.742278e-08, -0.58778524, 0.809017, 0, 7.0726514e-08, 5.138582e-08, -1, 8.64703, 1.8063116, 2.1746304)
+visible = false
+wheel_arr = [NodePath("cypher1"), NodePath("cypher2"), NodePath("cypher3"), NodePath("cypher4")]
+rotations_values = Array[Vector3]([])
+sol_arr = Array[int]([0, 1, 2, 3])
+
+[node name="zoom_camera" parent="Puzzles3D/Temperance3D" unique_id=1184307355 node_paths=PackedStringArray("player") instance=ExtResource("16_3wu1q")]
+transform = Transform3D(0.04642957, 0.2879957, -0.95650554, -0.01396311, 0.9576317, 0.28765702, 0.998824, 0, 0.048483744, 7.6605926, 2.2153668, 2.228384)
+player = NodePath("../../../Player")
+
+[node name="Button" parent="Puzzles3D/Temperance3D/zoom_camera/CanvasLayer" parent_id_path=PackedInt32Array(1184307355, 1383525204) index="0" unique_id=1959588937]
+offset_left = 443.0
+offset_top = 562.0
+offset_right = 504.0
+offset_bottom = 589.0
+
+[node name="Button2" parent="Puzzles3D/Temperance3D/zoom_camera/CanvasLayer" parent_id_path=PackedInt32Array(1184307355, 1383525204) index="1" unique_id=1629335532]
+offset_left = 584.0
+offset_top = 557.0
+offset_right = 650.0
+offset_bottom = 584.0
+
+[node name="Button3" parent="Puzzles3D/Temperance3D/zoom_camera/CanvasLayer" parent_id_path=PackedInt32Array(1184307355, 1383525204) index="2" unique_id=47177555]
+offset_left = 719.0
+offset_top = 559.0
+offset_right = 785.0
+offset_bottom = 586.0
+
+[node name="Button4" parent="Puzzles3D/Temperance3D/zoom_camera/CanvasLayer" parent_id_path=PackedInt32Array(1184307355, 1383525204) index="3" unique_id=415488530]
+offset_left = 860.0
+offset_top = 554.0
+offset_right = 925.0
+offset_bottom = 581.0
+
+[node name="Exit" parent="Puzzles3D/Temperance3D/zoom_camera/CanvasLayer" parent_id_path=PackedInt32Array(1184307355, 1383525204) index="4" unique_id=836941342]
+offset_left = 1187.0
+offset_top = 631.0
+offset_right = 1659.0
+offset_bottom = 917.0
+text = "EXIT
+"
 
 [node name="Hierophant3D" type="Node" parent="Puzzles3D" unique_id=1521141426]
 script = ExtResource("14_3epcx")
@@ -376,3 +422,6 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.93420315, 0.5774975, 
 
 [connection signal="clicked" from="Player" to="." method="_on_player_clicked"]
 [connection signal="body_entered" from="actual_mirror/InteractableArea3D" to="." method="_on_d_mirror_body_entered"]
+[connection signal="cypher_cracked" from="Puzzles3D/Temperance3D/zoom_camera" to="Puzzles3D/Temperance3D" method="_on_zoom_camera_cypher_cracked"]
+
+[editable path="Puzzles3D/Temperance3D/zoom_camera"]

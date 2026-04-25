@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bsjcgc8gqe3tg"]
+
+[ext_resource type="Script" uid="uid://cr1ppvqh8alvm" path="res://scenes/3d/zoom_camera.gd" id="1_8wvtw"]
+
+[node name="zoom_camera" type="Camera3D" unique_id=1184307355 node_paths=PackedStringArray("canvas")]
+transform = Transform3D(0.048483744, 0, -0.998824, 0, 1, 0, 0.998824, 0, 0.048483744, 0, 0, 0)
+fov = 43.8
+script = ExtResource("1_8wvtw")
+canvas = NodePath("CanvasLayer")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1383525204]
+
+[node name="Button" type="TextureButton" parent="CanvasLayer" unique_id=1959588937]
+offset_left = 400.0
+offset_top = 470.0
+offset_right = 461.0
+offset_bottom = 497.0
+
+[node name="Button2" type="TextureButton" parent="CanvasLayer" unique_id=1629335532]
+offset_left = 541.0
+offset_top = 465.0
+offset_right = 607.0
+offset_bottom = 492.0
+
+[node name="Button3" type="TextureButton" parent="CanvasLayer" unique_id=47177555]
+offset_left = 676.0
+offset_top = 467.0
+offset_right = 742.0
+offset_bottom = 494.0
+
+[node name="Button4" type="TextureButton" parent="CanvasLayer" unique_id=415488530]
+offset_left = 817.0
+offset_top = 462.0
+offset_right = 882.0
+offset_bottom = 489.0
+
+[node name="Exit" type="Button" parent="CanvasLayer" unique_id=836941342]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://8j0hlkctugvi"]
+
+[ext_resource type="PackedScene" uid="uid://cihn2klb2ad3m" path="res://3D assets/Objects/CHEST/cypher2.glb" id="1_gkk7l"]
+
+[node name="cypher22" unique_id=892063241 instance=ExtResource("1_gkk7l")]
+
+[node name="cypher2" parent="." index="0" unique_id=1955731773]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

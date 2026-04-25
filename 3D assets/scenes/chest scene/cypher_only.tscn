@@ -1,17 +1,24 @@
 [gd_scene format=3 uid="uid://b236em5apfa8c"]
 
 [ext_resource type="PackedScene" uid="uid://d3ylp7p6orceo" path="res://3D assets/Objects/CHEST/Cypher_only.glb" id="1_ytxft"]
+[ext_resource type="Script" uid="uid://dmsnavdern1e5" path="res://3D assets/scenes/chest scene/cypher_only.gd" id="2_hqm1s"]
 
-[node name="Cypher_only" unique_id=343116895 instance=ExtResource("1_ytxft")]
+[node name="Cypher_only" unique_id=343116895 node_paths=PackedStringArray("first", "second", "third", "fourth") instance=ExtResource("1_ytxft")]
+script = ExtResource("2_hqm1s")
+first = NodePath("cypher1")
+second = NodePath("cypher2")
+third = NodePath("cypher3")
+fourth = NodePath("cypher4")
+rotations_values = Array[Vector3]([Vector3(26, -90, -90), Vector3(-90, 180, 0), Vector3(26, 90, 90), Vector3(36, -90, -90)])
 
 [node name="cypher1" parent="." index="0" unique_id=1609269518]
-transform = Transform3D(0.14043283, 0, 0, 0, 0, 0.14043283, 0, -0.14043283, 0, -0.008353278, -0.0068208426, -0.17062233)
+transform = Transform3D(-0.14043282, -1.2277027e-08, -5.366459e-16, 0, -6.1385137e-09, 0.14043282, -1.2277027e-08, 0.14043282, 6.1385137e-09, -0.008949578, -0.0068208426, 0.16152193)
 
 [node name="cypher2" parent="." index="1" unique_id=557632822]
-transform = Transform3D(0.14043283, 0, 0, 0, 0, 0.14043283, 0, -0.14043283, 0, -0.008353278, -0.0068208426, -0.060958374)
+transform = Transform3D(-0.14043282, -1.2277027e-08, 6.1385137e-09, 6.1385137e-09, 2.6832294e-16, 0.14043282, -1.2277027e-08, 0.14043282, 2.6832294e-16, -0.008949568, -0.0068208426, 0.051857967)
 
 [node name="cypher3" parent="." index="2" unique_id=1857011406]
-transform = Transform3D(0.14043283, 0, 0, 0, 0, 0.14043283, 0, -0.14043283, 0, -0.008353278, -0.0068207234, 0.04870559)
+transform = Transform3D(-0.14043282, -1.2277027e-08, 6.1385137e-09, 6.1385137e-09, 2.6832294e-16, 0.14043282, -1.2277027e-08, 0.14043282, 2.6832294e-16, -0.008949558, -0.0068207234, -0.057805996)
 
 [node name="cypher4" parent="." index="3" unique_id=541862050]
-transform = Transform3D(0.14043283, 0, 0, 0, -6.138514e-09, 0.14043283, 0, -0.14043283, -6.138514e-09, -0.009545848, -0.0067096204, 0.1646743)
+transform = Transform3D(-0.14043282, -1.2277027e-08, 6.1385137e-09, 6.1385137e-09, 2.6832294e-16, 0.14043282, -1.2277027e-08, 0.14043282, 2.6832294e-16, -0.0077569783, -0.0067096204, -0.1737747)
