@@ -16,7 +16,7 @@ var t_bob : float = 0.0
 
 @onready var footstep_player = $FootStepsPlayer
 var footstep_timer : float = 0.0
-const FOOTSTEP_INTERVAL : float = 0.7
+const FOOTSTEP_INTERVAL : float = 0.9
 
 signal clicked
 @export var cursor : Resource
