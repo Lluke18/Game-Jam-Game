@@ -877,37 +877,37 @@ _data = {
 [node name="Cypher_chest" unique_id=617163078 instance=ExtResource("1_inefa")]
 script = ExtResource("2_exhbm")
 
-[node name="cypher1" parent="." index="0" unique_id=382153408]
+[node name="cypher1" parent="." index="0" unique_id=1503233865]
 transform = Transform3D(0.14043283, 0, 0, 0, -6.138514e-09, 0.14043283, 0, -0.14043283, -6.138514e-09, -0.730445, 1.1205007, -0.25054526)
 
-[node name="handle" parent="." index="1" unique_id=1259258863]
+[node name="handle" parent="." index="1" unique_id=5980474]
 transform = Transform3D(2.6832296e-16, -6.138514e-09, 0.14043283, -0.14043283, -6.138514e-09, 0, 6.138514e-09, -0.14043283, -6.138514e-09, -0.74266875, 1.0652362, -0.10105014)
 
-[node name="cypher2" parent="." index="2" unique_id=1878537595]
+[node name="cypher2" parent="." index="2" unique_id=1409817399]
 transform = Transform3D(0.14043283, 0, 0, 0, -6.138514e-09, 0.14043283, 0, -0.14043283, -6.138514e-09, -0.730445, 1.1205007, -0.1408813)
 
-[node name="cypher3" parent="." index="3" unique_id=1907774195]
+[node name="cypher3" parent="." index="3" unique_id=534183581]
 transform = Transform3D(0.14043283, 0, 0, 0, -6.138514e-09, 0.14043283, 0, -0.14043283, -6.138514e-09, -0.730445, 1.1205008, -0.031217337)
 
-[node name="cypher4" parent="." index="4" unique_id=839984796]
+[node name="cypher4" parent="." index="4" unique_id=815096247]
 transform = Transform3D(0.14043283, 0, 0, 0, -6.138514e-09, 0.14043283, 0, -0.14043283, -6.138514e-09, -0.7316376, 1.1206119, 0.08475137)
 
-[node name="left_handle" parent="." index="5" unique_id=1271487355]
+[node name="left_handle" parent="." index="5" unique_id=2109133167]
 transform = Transform3D(2.6832296e-16, -6.138514e-09, 0.14043283, -0.14043283, -6.138514e-09, 0, 6.138514e-09, -0.14043283, -6.138514e-09, -0.74266875, 1.0652362, -0.10105014)
 
-[node name="treasure_chest_bottom_001" parent="." index="6" unique_id=2046384951]
+[node name="treasure_chest_bottom_001" parent="." index="6" unique_id=1879422386]
 transform = Transform3D(5.9212164e-07, 0, -3.311384, 0, 3.311384, 0, 3.311384, 0, 5.9212164e-07, 0.108550906, 0.14017934, -0.090791464)
 
-[node name="treasure_chest_lid_001" parent="." index="7" unique_id=1413443936]
+[node name="treasure_chest_lid_001" parent="." index="7" unique_id=159538377]
 transform = Transform3D(-1.4474519e-07, 0, -3.311384, 0, 3.311384, 0, 3.311384, 0, -1.4474519e-07, 0.95993316, 1.4780717, -0.090791464)
 
-[node name="treasure_chest_handle_left_001" parent="." index="8" unique_id=1417858257]
+[node name="treasure_chest_handle_left_001" parent="." index="8" unique_id=428893344]
 transform = Transform3D(5.9212164e-07, 0, -3.311384, 0, 3.311384, 0, 3.311384, 0, 5.9212164e-07, 0.108550906, 1.0592015, -1.641197)
 
-[node name="treasure_chest_handle_right_001" parent="." index="9" unique_id=2109540812]
+[node name="treasure_chest_handle_right_001" parent="." index="9" unique_id=2023605774]
 transform = Transform3D(5.9212164e-07, 0, -3.311384, 0, 3.311384, 0, 3.311384, 0, 5.9212164e-07, 0.108550906, 1.0592015, 1.459614)
 
-[node name="treasure_chest_lock_001" parent="." index="10" unique_id=1093142407]
+[node name="treasure_chest_lock_001" parent="." index="10" unique_id=303944958]
 transform = Transform3D(5.9212164e-07, 0, -3.311384, 0, 3.311384, 0, 3.311384, 0, 5.9212164e-07, -0.74501765, 1.4841123, -0.090791464)
 visible = false
 

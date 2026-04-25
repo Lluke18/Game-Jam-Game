@@ -10,7 +10,7 @@ func _ready() -> void:
 		moon_shape.interact = Callable(self, "_on_moon_pickup")
 
 func _on_moon_pickup():
-	InventoryManager.add_item(InventoryManager.ITEM3)
+	InventoryManager.add_item(InventoryManager.MOONSIGN)
 	TextManager.show_once("mainroom_pick_moon", [
 		"Got it. I should take it back.", 
 		"Let's hope the mirror still works and I am not stuck." 

@@ -2,7 +2,6 @@ class_name ItemDropArea
 
 extends Control
 
-const WORLD_ITEM_2D = preload("res://PuzzleObjects/DraggablePuzzleObject.tscn")
 @export var required_item: ItemData
 var complete: bool = false
 signal area_complete
@@ -11,7 +10,7 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return true
 	
 func _drop_data(at_position: Vector2, data: Variant) -> void:
-	if data.item != required_item:
+	if data.item.item_name != required_item.item_name:
 		print("Wrong item!")
 		return
 	

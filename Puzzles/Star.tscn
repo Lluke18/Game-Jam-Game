@@ -116,7 +116,7 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "Inapoi la camera"
 script = ExtResource("4_aad07")
-destination_room_path = "res://Rooms/Room1.tscn"
+destination_room_path = "res://Rooms/Room4.tscn"
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("5_xo56k")]
 mouse_filter = 2

@@ -5,7 +5,6 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	InventoryManager.add_item(InventoryManager.ITEM1)
 	item_drop_area.area_complete.connect(end_puzzle)
 	if PuzzleManager.complete_puzzles[PuzzleManager.puzzles.MOON] == true:
 		fill_moon_stand()

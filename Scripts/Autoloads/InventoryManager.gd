@@ -1,9 +1,14 @@
 extends Node
 
 #ITEMS
-const ITEM1: ItemData = preload("res://Scripts/Items/Item1.tres")
-const ITEM2: ItemData = preload("res://Scripts/Items/Item2.tres")
-const ITEM3: ItemData = preload("res://Scripts/Items/Item3.tres")
+const MOONSIGN: ItemData = preload("res://Scripts/Items/Moonsign.tres")
+const PENCIL: ItemData = preload("res://Scripts/Items/Pencil.tres")
+const BLUE_POT: ItemData = preload("res://Scripts/Items/BluePot.tres")
+const GREEN_POT: ItemData = preload("res://Scripts/Items/GreenPot.tres")
+const YELLOW_POT: ItemData = preload("res://Scripts/Items/YellowPot.tres")
+const SMALL_SACK: ItemData = preload("res://Scripts/Items/SmallSack.tres")
+const MEDIUM_SACK: ItemData = preload("res://Scripts/Items/MediumSack.tres")
+const BIG_SACK: ItemData = preload("res://Scripts/Items/BigSack.tres")
 
 const MAX_SIZE = 8
 

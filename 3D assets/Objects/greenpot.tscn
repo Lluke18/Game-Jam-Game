@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dhtaksq2mt8o1"]
+
+[ext_resource type="PackedScene" uid="uid://ckjts31lacay7" path="res://3D assets/Objects/potions/greenpot.glb" id="1_w1srs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w1srs"]
+albedo_color = Color(0, 0.6585997, 0.21827766, 1)
+roughness = 0.0
+
+[node name="greenpot" unique_id=1222744295 instance=ExtResource("1_w1srs")]
+
+[node name="small health poti_001" parent="." index="0" unique_id=994384243]
+transform = Transform3D(0.06786783, 0, 0, 0, 0.051449817, 0, 0, 0, 0.06786783, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_w1srs")
