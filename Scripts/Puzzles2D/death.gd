@@ -38,17 +38,18 @@ func check_typed_text():
 		disconnect_key_signals()
 	else:
 		print("Wrong password!")
-		typed_text = typed_text.left(-1 * solution.length())
+		typed_text.text = typed_text.text.left(-1 * solution.length())
+		update_displayed_letters()
 
 func on_keyboard_input(input: String):
-	if input == "<-" and typed_text.length() > 0:
-		typed_text = typed_text.left(-1)
+	if input == "<-" and typed_text.text.length() > 0:
+		typed_text.text = typed_text.text.left(-1)
 		update_displayed_letters()
 		
 	if input != "<-":
 		typed_text.text += input
 		update_displayed_letters()
-		if typed_text.length() == solution.length():
+		if typed_text.text.length() == solution.length():
 			check_typed_text()
 			
 func update_displayed_letters():
@@ -56,5 +57,8 @@ func update_displayed_letters():
 	print(typed_text.text)
 	for letter in typed_text.get_children():
 		if letter is Label:
-			letter.text = typed_text.text[letter_index]
+			if letter_index >= typed_text.text.length():
+				letter.text = " "
+			else:
+				letter.text = typed_text.text[letter_index]
 			letter_index += 1
