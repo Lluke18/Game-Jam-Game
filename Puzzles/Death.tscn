@@ -9,11 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_indks"]
 [ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/holy_arcana.ogg" id="8_vbx5x"]
 
+[sub_resource type="FontVariation" id="FontVariation_vbx5x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vbx5x"]
+font_size = 150
+
 [sub_resource type="FontVariation" id="FontVariation_5x7yd"]
-spacing_glyph = 4
+spacing_glyph = 55
 
 [sub_resource type="LabelSettings" id="LabelSettings_7yjyu"]
-font_size = 25
+font_size = 180
 
 [sub_resource type="LabelSettings" id="LabelSettings_mhu14"]
 font_color = Color(0, 0, 0, 1)
@@ -46,20 +51,67 @@ size_flags_horizontal = 4
 
 [node name="Underscores" type="Label" parent="CanvasLayer/Panel" unique_id=132446979]
 layout_mode = 0
-offset_left = 89.48541
-offset_top = 86.131256
-offset_right = 154.48541
-offset_bottom = 102.131256
-scale = Vector2(11, 8)
+offset_left = 30.485413
+offset_top = 74.131256
+offset_right = 656.4854
+offset_bottom = 245.13126
+scale = Vector2(1.33, 1)
+theme_override_fonts/font = SubResource("FontVariation_vbx5x")
 text = "_ _ _ _ _"
+label_settings = SubResource("LabelSettings_vbx5x")
 
 [node name="Password" type="Label" parent="CanvasLayer/Panel" unique_id=999109147]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 82.0
-offset_top = 9.0
-offset_right = 196.0
-offset_bottom = 37.0
-scale = Vector2(8, 8)
+offset_left = 7.0
+offset_top = -2.0
+offset_right = 860.0
+offset_bottom = 226.0
+theme_override_fonts/font = SubResource("FontVariation_5x7yd")
+label_settings = SubResource("LabelSettings_7yjyu")
+
+[node name="Letter1" type="Label" parent="CanvasLayer/Panel/Password" unique_id=1217497742]
+layout_mode = 0
+offset_left = 34.0
+offset_top = -2.0
+offset_right = 887.0
+offset_bottom = 226.0
+theme_override_fonts/font = SubResource("FontVariation_5x7yd")
+label_settings = SubResource("LabelSettings_7yjyu")
+
+[node name="Letter2" type="Label" parent="CanvasLayer/Panel/Password" unique_id=1922483220]
+layout_mode = 0
+offset_left = 209.0
+offset_top = -2.0
+offset_right = 1062.0
+offset_bottom = 226.0
+theme_override_fonts/font = SubResource("FontVariation_5x7yd")
+label_settings = SubResource("LabelSettings_7yjyu")
+
+[node name="Letter3" type="Label" parent="CanvasLayer/Panel/Password" unique_id=1681778771]
+layout_mode = 0
+offset_left = 387.0
+offset_top = -2.0
+offset_right = 1240.0
+offset_bottom = 226.0
+theme_override_fonts/font = SubResource("FontVariation_5x7yd")
+label_settings = SubResource("LabelSettings_7yjyu")
+
+[node name="Letter4" type="Label" parent="CanvasLayer/Panel/Password" unique_id=1441588949]
+layout_mode = 0
+offset_left = 564.0
+offset_top = -2.0
+offset_right = 1417.0
+offset_bottom = 226.0
+theme_override_fonts/font = SubResource("FontVariation_5x7yd")
+label_settings = SubResource("LabelSettings_7yjyu")
+
+[node name="Letter5" type="Label" parent="CanvasLayer/Panel/Password" unique_id=125543437]
+layout_mode = 0
+offset_left = 742.0
+offset_top = -2.0
+offset_right = 1595.0
+offset_bottom = 226.0
 theme_override_fonts/font = SubResource("FontVariation_5x7yd")
 label_settings = SubResource("LabelSettings_7yjyu")
 
@@ -607,15 +659,15 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -1118.0
-offset_top = 370.0
-offset_right = -783.0
-offset_bottom = 501.5
+offset_left = -471.0
+offset_top = 11.0
+offset_right = -136.0
+offset_bottom = 142.5
 grow_horizontal = 0
 grow_vertical = 2
 text = "Inapoi la camera"
 script = ExtResource("1_ih0fh")
-destination_room_path = "res://Rooms/Room1.tscn"
+destination_room_path = "res://Rooms/Room3.tscn"
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("2_mhu14")]
 mouse_filter = 2

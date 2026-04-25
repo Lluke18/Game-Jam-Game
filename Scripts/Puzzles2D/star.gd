@@ -30,7 +30,7 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("interact") and is_drawing:
+	if Input.is_action_pressed("interact") and is_drawing and InventoryManager.selected_item.item_name == "Pencil":
 		if currently_drawn_line != null:
 			currently_drawn_line.set_point_position(1, get_global_mouse_position())
 
@@ -107,3 +107,4 @@ func end_puzzle():
 		"This feels familiar… it’s a constellation."
 	])
 	disconnect_drawing_dots_signals()
+	InventoryManager.remove_item(InventoryManager.PENCIL)

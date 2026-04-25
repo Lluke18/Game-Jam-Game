@@ -4,12 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://catwiuebv55f2" path="res://Sprites/Background/Wall.png" id="2_5nh31"]
 [ext_resource type="Texture2D" uid="uid://ck5no70bq1i2k" path="res://Sprites/Background/Floor.png" id="3_gthuv"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_477ix"]
+[ext_resource type="Texture2D" uid="uid://qjik6804vt6k" path="res://Sprites/Background/Table.png" id="4_bktqt"]
 [ext_resource type="Texture2D" uid="uid://b8f212x0roc8b" path="res://Sprites/PuzzleObjects/Painting0.png" id="4_cpc84"]
 [ext_resource type="Script" uid="uid://u06go6wad3mn" path="res://Scripts/Puzzles2D/room1_checker.gd" id="4_gthuv"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="5_1kmgg"]
+[ext_resource type="Texture2D" uid="uid://cu4citckkerp4" path="res://Sprites/Background/LightBulb.png" id="5_bktqt"]
 [ext_resource type="Texture2D" uid="uid://7xy1t0nknkd3" path="res://Sprites/PuzzleObjects/Painting1.png" id="5_lud8e"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="6_1kmgg"]
+[ext_resource type="Texture2D" uid="uid://c1d50w80guhr1" path="res://Sprites/Background/Perfume.png" id="6_bktqt"]
 [ext_resource type="Texture2D" uid="uid://h50u3vfpmwir" path="res://Sprites/PuzzleObjects/Painting2.png" id="6_mv7ge"]
+[ext_resource type="Texture2D" uid="uid://v3v23w7saabr" path="res://Sprites/Background/CrackedPhone.png" id="6_tw4i0"]
 [ext_resource type="Texture2D" uid="uid://bmurmu88dbd5q" path="res://Sprites/PuzzleObjects/Painting3.png" id="7_5nh31"]
 
 [node name="Room1" type="Node2D" unique_id=1138460362]
@@ -26,6 +30,27 @@ texture = ExtResource("2_5nh31")
 [node name="Floor" type="Sprite2D" parent="BackgroundSprites/Wall" unique_id=697022783]
 position = Vector2(0, 800)
 texture = ExtResource("3_gthuv")
+
+[node name="Table" type="Sprite2D" parent="BackgroundSprites" unique_id=952236053]
+position = Vector2(1305, 762)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_bktqt")
+
+[node name="LightBulb" type="Sprite2D" parent="BackgroundSprites" unique_id=174072524]
+position = Vector2(1521, 374)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_bktqt")
+
+[node name="Perfume" type="Sprite2D" parent="BackgroundSprites" unique_id=682386778]
+position = Vector2(1175, 386)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("6_bktqt")
+
+[node name="CrackedPhone" type="Sprite2D" parent="BackgroundSprites" unique_id=1603479401]
+position = Vector2(1100.8413, 497.39996)
+rotation = -1.7243853
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_tw4i0")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=565787541]
 

@@ -56,7 +56,6 @@ func end_puzzle():
 	PuzzleManager.finish_puzzle(PuzzleManager.puzzles.MAGICIAN)
 	SignalBus.magician_completed.emit()
 	await get_tree().create_timer(20).timeout
-	SceneChanger.change_scene_to_path(room1_path)
 
 func on_try_snapping(painting_index: int):
 	for marker_index in range(markers.size()):

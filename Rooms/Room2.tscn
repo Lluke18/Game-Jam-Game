@@ -5,10 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://ck5no70bq1i2k" path="res://Sprites/Background/Floor.png" id="3_ipfbv"]
 [ext_resource type="PackedScene" uid="uid://baoxv5vjmbtil" path="res://Puzzles/Moon.tscn" id="3_qsv4v"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_a5nxq"]
+[ext_resource type="Texture2D" uid="uid://bnmy0u3thqpx8" path="res://Sprites/Background/Clock.png" id="4_b1p4t"]
 [ext_resource type="Texture2D" uid="uid://brwtj0n2mr6xn" path="res://Sprites/Background/MoonStandEmpty.png" id="4_j8d48"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="4_xiq1f"]
+[ext_resource type="Texture2D" uid="uid://djv6jg02bo0cs" path="res://Sprites/Background/Wardrobe.png" id="5_y8kwm"]
+[ext_resource type="Texture2D" uid="uid://d0oj5cybwavxn" path="res://Sprites/Background/TV.png" id="6_8ikkq"]
 [ext_resource type="Script" uid="uid://gcs7aymyg04o" path="res://Scripts/Puzzles2D/room2_checker.gd" id="6_ipfbv"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="6_qsv4v"]
+[ext_resource type="Texture2D" uid="uid://dt0a6etrml81u" path="res://Sprites/Background/Chest.png" id="7_7ixoc"]
 [ext_resource type="Texture2D" uid="uid://cvfcblubkqpjv" path="res://Sprites/SceneSwitchers/Mirror.png" id="7_wjqet"]
 
 [node name="Room2" type="Node2D" unique_id=104392886]
@@ -27,11 +31,38 @@ texture = ExtResource("2_j8d48")
 position = Vector2(0, 800)
 texture = ExtResource("3_ipfbv")
 
+[node name="Clock" type="Sprite2D" parent="BackgroundSprites" unique_id=2130256150]
+position = Vector2(1058, 186)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_b1p4t")
+
+[node name="Wardrobe" type="Sprite2D" parent="BackgroundSprites" unique_id=383540516]
+position = Vector2(714, 709)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_y8kwm")
+
+[node name="TV" type="Sprite2D" parent="BackgroundSprites" unique_id=1771871798]
+position = Vector2(1490.9999, 627)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_8ikkq")
+
+[node name="Chest" type="Sprite2D" parent="BackgroundSprites" unique_id=1976853128]
+position = Vector2(791.99994, 503.99997)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_7ixoc")
+
 [node name="Moon" parent="." unique_id=1789782810 instance=ExtResource("3_qsv4v")]
+position = Vector2(-529, -42)
+
+[node name="ItemDropArea" parent="Moon" index="0" unique_id=748105193]
+offset_left = 1021.0
+offset_top = 293.0
+offset_right = 1293.0
+offset_bottom = 645.0
 
 [node name="MoonStandSprite" type="Sprite2D" parent="Moon" unique_id=1777121265]
-position = Vector2(1428, 668)
-scale = Vector2(0.6, 0.6)
+position = Vector2(1156, 462)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("4_j8d48")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=288935036]
@@ -50,10 +81,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 390.0
-offset_top = -359.0
-offset_right = 782.0
-offset_bottom = 338.0
+offset_left = 101.0
+offset_top = -513.0
+offset_right = 493.0
+offset_bottom = 184.0
 grow_vertical = 2
 script = ExtResource("4_xiq1f")
 destination_room_path = "res://scenes/3d/mainroom.tscn"
@@ -73,3 +104,5 @@ mouse_filter = 2
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("6_qsv4v")]
 
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/Mirror" to="CanvasLayer/SceneSwitchers/Mirror" method="_on_pressed"]
+
+[editable path="Moon"]

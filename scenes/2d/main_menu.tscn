@@ -2,8 +2,13 @@
 
 [ext_resource type="Script" uid="uid://pktjg68ny7sg" path="res://scenes/2d/main_menu.gd" id="1_uvd46"]
 [ext_resource type="Texture2D" uid="uid://c82ntmjv0kl7p" path="res://UI/Menus/coperta.png" id="2_d3yhd"]
+[ext_resource type="Texture2D" uid="uid://c3c61je526p8m" path="res://UI/Menus/play.png" id="3_4m701"]
+[ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="3_7b3b2"]
 [ext_resource type="PackedScene" uid="uid://bhm5xkhsb3n7c" path="res://scenes/2d/options_panel.tscn" id="3_k62s8"]
-[ext_resource type="PackedScene" uid="uid://dep2x6ri76qqs" path="res://UI/cutscene.tscn" id="4_d3yhd"]
+[ext_resource type="Texture2D" uid="uid://ci775yrl2aklw" path="res://UI/Menus/continue.png" id="4_7b3b2"]
+[ext_resource type="PackedScene" path="res://UI/cutscene.tscn" id="4_d3yhd"]
+[ext_resource type="Texture2D" uid="uid://dcvsuerlm3bxq" path="res://UI/Menus/settings.png" id="5_cjo4x"]
+[ext_resource type="Texture2D" uid="uid://cs1xgmrvsqp06" path="res://UI/Menus/quit.png" id="6_welr4"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3yhd"]
 
@@ -57,14 +62,23 @@ anchor_left = 34.375
 anchor_top = 4.375
 anchor_right = 44.275
 anchor_bottom = 6.8750005
-offset_left = -88.0
-offset_top = 154.99997
-offset_right = -181.56104
-offset_bottom = 198.08948
-scale = Vector2(0.615, 0.615)
+offset_left = -74.0
+offset_top = 149.0
+offset_right = -316.0
+offset_bottom = 125.99997
+pivot_offset = Vector2(107, 54)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_d3yhd")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_u77uy")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_2qbj5")
+script = ExtResource("3_7b3b2")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/ButtonManager/Start" unique_id=1245656591]
+layout_mode = 0
+offset_right = 156.0
+offset_bottom = 77.66669
+texture = ExtResource("3_4m701")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Continue" type="Button" parent="TextureRect/ButtonManager" unique_id=1065800829]
 layout_mode = 1
@@ -73,14 +87,23 @@ anchor_left = 34.375
 anchor_top = 4.375
 anchor_right = 44.275
 anchor_bottom = 6.8750005
-offset_left = -125.0
-offset_top = 284.0
-offset_right = -257.0
-offset_bottom = 265.99997
+offset_left = -98.0
+offset_top = 296.0
+offset_right = -271.0
+offset_bottom = 252.99997
 theme_override_styles/normal = SubResource("StyleBoxEmpty_6sm0g")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_4m701")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_7b3b2")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_oxbk4")
+script = ExtResource("3_7b3b2")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/ButtonManager/Continue" unique_id=650207959]
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 56.0
+texture = ExtResource("4_7b3b2")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Options" type="Button" parent="TextureRect/ButtonManager" unique_id=625525947]
 layout_mode = 1
@@ -89,13 +112,22 @@ anchor_left = 34.325
 anchor_top = 8.775001
 anchor_right = 44.350002
 anchor_bottom = 11.025001
-offset_left = -114.0
-offset_top = 245.99997
-offset_right = -258.00012
-offset_bottom = 241.99997
+offset_left = -87.0
+offset_top = 246.99997
+offset_right = -276.00012
+offset_bottom = 225.99997
 theme_override_styles/normal = SubResource("StyleBoxEmpty_cjo4x")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_welr4")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_nd5kf")
+script = ExtResource("3_7b3b2")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/ButtonManager/Options" unique_id=1212199045]
+layout_mode = 0
+offset_right = 212.0
+offset_bottom = 71.0
+texture = ExtResource("5_cjo4x")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Quit Game" type="Button" parent="TextureRect/ButtonManager" unique_id=1816856413]
 layout_mode = 1
@@ -104,13 +136,22 @@ anchor_left = 34.075
 anchor_top = 17.225
 anchor_right = 44.375004
 anchor_bottom = 19.400002
-offset_left = -60.0
-offset_top = 50.0
-offset_right = -296.00012
-offset_bottom = 55.99994
+offset_left = -27.0
+offset_top = 63.0
+offset_right = -320.00012
+offset_bottom = 44.99994
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nq53s")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vb5xx")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_y04ss")
+script = ExtResource("3_7b3b2")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect/ButtonManager/Quit Game" unique_id=1326380573]
+layout_mode = 0
+offset_right = 118.0
+offset_bottom = 69.0
+texture = ExtResource("6_welr4")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="OptionsPanel" parent="." unique_id=355889237 instance=ExtResource("3_k62s8")]
 visible = false
@@ -119,10 +160,16 @@ visible = false
 visible = false
 
 [node name="Control" parent="Cutscene/CanvasLayer" parent_id_path=PackedInt32Array(1860893096, 615334443) index="1" unique_id=1387650501]
-offset_left = 56.0
-offset_top = -12.0
-offset_right = 56.0
-offset_bottom = -12.0
+offset_left = 84.0
+offset_top = 30.0
+offset_right = 84.0
+offset_bottom = 30.0
+
+[node name="Button" parent="Cutscene/CanvasLayer/Control" index="5" unique_id=261315579]
+offset_left = 1441.0
+offset_top = 795.0
+offset_right = 1727.0
+offset_bottom = 895.0
 
 [connection signal="pressed" from="TextureRect/ButtonManager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonManager/Continue" to="." method="_on_continue_pressed"]

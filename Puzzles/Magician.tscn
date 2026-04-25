@@ -126,7 +126,7 @@ offset_right = -123.0
 offset_bottom = 65.75
 grow_horizontal = 0
 grow_vertical = 2
-text = "Inapoi la camera"
+text = "Back to room"
 script = ExtResource("5_d7o1r")
 destination_room_path = "res://Rooms/Room1.tscn"
 

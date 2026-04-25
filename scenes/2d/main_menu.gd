@@ -14,6 +14,7 @@ func _ready() -> void:
 	skip_button.hide()
 	if FileAccess.file_exists("user://SaveFile.tres") == false:
 		continue_button.disabled = true
+		continue_button.visible = false
 	options_panel.visible = false
 
 func _on_start_pressed() -> void:

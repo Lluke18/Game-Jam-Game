@@ -45,10 +45,7 @@ func _ready() -> void:
 func check_cards():
 	completed_puzzles += 1
 	print("puzzle count:", completed_puzzles)
-	if completed_puzzles == 4: # nrul de puzzleuri complete, pt debug
-		print("THE MAGICIAN LONGS TO SEE... FIRE, WALK WITH ME")
-		SceneChanger.change_scene_to_path("res://scenes/2d/main_menu.tscn")
-		
+
 func finish_puzzle(puzzle_index: int):
 	complete_puzzles[puzzle_index] = true
 	puzzle_finished.emit(puzzle_index)

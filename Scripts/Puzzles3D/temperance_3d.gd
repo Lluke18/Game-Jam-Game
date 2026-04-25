@@ -67,7 +67,6 @@ func _on_chest_clicked():
 
 
 func _on_zoom_camera_cypher_cracked() -> void:
-	SignalBus.temperance_completed.emit()
 	PuzzleManager.chest_opened = true
 	
 	#things that unlock once chest is opened

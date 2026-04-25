@@ -3,7 +3,16 @@
 [ext_resource type="Script" uid="uid://c1poe3shrtvbk" path="res://Scripts/room.gd" id="1_wt6t0"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="3_vy55m"]
 [ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="4_ouduj"]
+[ext_resource type="Texture2D" uid="uid://cmh5dqwaqc86c" path="res://Sprites/Background/Desk.png" id="4_vppcs"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_gxi2d"]
+[ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="5_lsdnl"]
+[ext_resource type="Script" uid="uid://b3s022c3tp6ro" path="res://Scripts/Puzzles2D/room3_checker.gd" id="5_um4a1"]
+[ext_resource type="Texture2D" uid="uid://co31wx6k2as80" path="res://Sprites/Background/PencilJar.png" id="5_uvuc2"]
+[ext_resource type="Texture2D" uid="uid://bkl14v3ih0fvu" path="res://Sprites/Background/Window.png" id="6_drxiv"]
+[ext_resource type="Texture2D" uid="uid://crq1yhvagfe2f" path="res://Sprites/SceneSwitchers/Grimoire.png" id="6_lsdnl"]
+[ext_resource type="Texture2D" uid="uid://d0kfxlaj51or7" path="res://Sprites/Background/WeirdMask.png" id="7_diejy"]
+[ext_resource type="Texture2D" uid="uid://cqssh3rcjd268" path="res://Sprites/Background/ScaryMask.png" id="8_nnmqw"]
+[ext_resource type="Texture2D" uid="uid://cnx5eop323exp" path="res://Sprites/SceneSwitchers/Laptop.png" id="9_x05e3"]
 [ext_resource type="Texture2D" uid="uid://catwiuebv55f2" path="res://Sprites/Background/Wall.png" id="10_a1vuc"]
 [ext_resource type="Texture2D" uid="uid://ck5no70bq1i2k" path="res://Sprites/Background/Floor.png" id="11_diejy"]
 
@@ -22,6 +31,31 @@ texture = ExtResource("10_a1vuc")
 position = Vector2(0, 800)
 texture = ExtResource("11_diejy")
 
+[node name="Desk" type="Sprite2D" parent="BackgorundSprites" unique_id=2106099098]
+position = Vector2(1302, 686)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_vppcs")
+
+[node name="PencilJar" type="Sprite2D" parent="BackgorundSprites" unique_id=1899876494]
+position = Vector2(1311, 339)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_uvuc2")
+
+[node name="Window" type="Sprite2D" parent="BackgorundSprites" unique_id=161906943]
+position = Vector2(312.00003, 403)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("6_drxiv")
+
+[node name="WeirdMask" type="Sprite2D" parent="BackgorundSprites" unique_id=1388585211]
+position = Vector2(796, 193)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_diejy")
+
+[node name="ScaryMask" type="Sprite2D" parent="BackgorundSprites" unique_id=1887937568]
+position = Vector2(696, 471)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("8_nnmqw")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=765953715]
 
 [node name="ItemDropArea" parent="CanvasLayer" unique_id=748105193 instance=ExtResource("4_ouduj")]
@@ -32,7 +66,58 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
+script = ExtResource("5_um4a1")
+
+[node name="Grimoire" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=471262980]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1316.0
+offset_top = 328.0
+offset_right = 1715.0
+offset_bottom = 563.0
+script = ExtResource("5_lsdnl")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SceneSwitchers/Grimoire" unique_id=1814977862]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 563.0
+offset_bottom = 334.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_lsdnl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Death" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=1658255433]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -1002.0
+offset_top = -359.0
+offset_right = -619.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Death"
+script = ExtResource("5_lsdnl")
+destination_room_path = "res://Puzzles/Death.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SceneSwitchers/Death" unique_id=800447927]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 5.0
+offset_right = 945.0
+offset_bottom = 856.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_x05e3")
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("3_vy55m")]
 
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("5_gxi2d")]
+
+[connection signal="pressed" from="CanvasLayer/SceneSwitchers/Grimoire" to="CanvasLayer/SceneSwitchers" method="_on_grimoire_pressed"]
+[connection signal="pressed" from="CanvasLayer/SceneSwitchers/Death" to="CanvasLayer/SceneSwitchers/Death" method="_on_pressed"]
