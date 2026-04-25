@@ -23,8 +23,6 @@ func _ready() -> void:
 	zoom_camera.canvas.visible = false
 	
 
-
-
 func _on_mirror_switch():
 	print("SWITCHING!")
 	mirror.area.can_interact = false
@@ -35,6 +33,7 @@ func _on_mirror_switch():
 
 func _on_player_clicked(target) -> void:
 	if target.area.can_interact:
+		print("target is in area!")
 		target.interact.call()
 
 

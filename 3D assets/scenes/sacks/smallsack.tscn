@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cj6exx8db3k3l"]
+
+[ext_resource type="PackedScene" uid="uid://cgpxnkyli24dg" path="res://3D assets/Objects/sacks/individual_sack/smallsack.glb" id="1_ao2h8"]
+
+[node name="smallsack2" unique_id=625795237 instance=ExtResource("1_ao2h8")]
+
+[node name="smallsack" parent="." index="0" unique_id=71491419]
+transform = Transform3D(0.48340344, 0, 0, 0, 0.48340344, 0, 0, 0, 0.48340344, 0, 0, 0)

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cs34nwn2hm41q"]
+
+[ext_resource type="PackedScene" uid="uid://oqsqjudcx3u" path="res://3D assets/Objects/sacks/individual_sack/bigsack.glb" id="1_1562s"]
+
+[node name="bigsack2" unique_id=1059751343 instance=ExtResource("1_1562s")]
+
+[node name="bigsack" parent="." index="0" unique_id=2071916423]
+transform = Transform3D(1.5539651, 0, 0, 0, 1.5539651, 0, 0, 0, 1.5539651, 0, 0, 0)

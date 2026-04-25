@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dcfqtxdgsvsf4"]
+
+[ext_resource type="PackedScene" uid="uid://o61fr0uage7j" path="res://3D assets/Objects/sacks/individual_sack/midsack.glb" id="1_djn4c"]
+
+[node name="midsack2" unique_id=1902174106 instance=ExtResource("1_djn4c")]
+
+[node name="midsack" parent="." index="0" unique_id=1441445629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
