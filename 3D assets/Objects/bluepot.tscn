@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bb05nxvtgq347"]
+
+[ext_resource type="PackedScene" uid="uid://e0o8d6r1bq1" path="res://3D assets/Objects/potions/bluepot.glb" id="1_wfk5m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wfk5m"]
+albedo_color = Color(0, 1, 1, 1)
+roughness = 0.0
+
+[node name="bluepot" unique_id=55907318 instance=ExtResource("1_wfk5m")]
+
+[node name="small health poti_007" parent="." index="0" unique_id=429432751]
+transform = Transform3D(0.15994893, 0, 0, 0, 0.121255435, 0, 0, 0, 0.15994893, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_wfk5m")
