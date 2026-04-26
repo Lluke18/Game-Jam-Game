@@ -31,6 +31,7 @@ SaveManager="*uid://bq17yn112l8j7"
 PuzzleManager="*uid://clfq0m6sxt40y"
 DialogueBox="*uid://cmfbnbcffxin4"
 TextManager="*uid://4aefjcn31okg"
+Cursorel="*uid://63u2vfluymja"
 
 [display]
 

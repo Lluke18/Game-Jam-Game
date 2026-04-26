@@ -9,6 +9,7 @@ extends Node
 @export var med_sack : Node3D
 @export var small_sack : Node3D
 @onready var sfx_player_2: AudioStreamPlayer3D = $"../../SfxPlayer2"
+@onready var sfx_player_3: AudioStreamPlayer3D = $"../../SfxPlayer3"
 
 #left taler markers:
 @export var left_big_marker : Marker3D
@@ -79,6 +80,7 @@ func _on_chest_clicked():
 func _on_zoom_camera_cypher_cracked() -> void:
 	PuzzleManager.chest_opened = true
 	
+	sfx_player_3.play()
 	#things that unlock once chest is opened
 	allsack.interact = Callable(self, "_on_all_pickup")
 
@@ -215,6 +217,10 @@ func compare():
 			left_scale.remove_from_group("Interactables")
 			right_scale.remove_from_group("Interactables")
 			PuzzleManager.temperance_solved = true
+			TextManager.show_once("Temperance_completed", [
+				"Justice. Eleven Number fourteen. Balance and purpose.", 
+				"It’s about finding the middle path when your world is split in two."
+			])
 			sfx_player_2.play()
 			PuzzleManager.finish_puzzle(PuzzleManager.puzzles.TEMPERANCE)
 			SignalBus.temperance_completed.emit()
