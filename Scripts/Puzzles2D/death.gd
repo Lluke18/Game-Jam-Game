@@ -27,7 +27,6 @@ func check_typed_text():
 		print("Death finished!")
 		PuzzleManager.finish_puzzle(PuzzleManager.puzzles.DEATH)
 		SignalBus.death_completed.emit()
-		PuzzleManager.death_solved = true
 		sfx_player.play()
 		TextManager.show_once("Death_completed", [
 		"Death. Number thirteen. Everyone panics when they see this one,", 

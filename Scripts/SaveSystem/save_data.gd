@@ -11,6 +11,7 @@ extends Resource
 @export var moon_symbol_picked_up: bool = false
 @export var pencil_picked_up: bool = false
 @export var calendar_solved: bool = false
+@export var chest_opened: bool = false
 
 @export var blue_pot_picked_up: bool = false
 @export var green_pot_picked_up: bool = false

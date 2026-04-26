@@ -16,4 +16,5 @@ func _on_moon_pickup():
 		"Let's hope the mirror still works and I am not stuck." 
 	])
 	PuzzleManager.moon_symbol_picked_up = true
+	SaveManager.save_file_data.moon_symbol_picked_up = true
 	moon_shape.queue_free()

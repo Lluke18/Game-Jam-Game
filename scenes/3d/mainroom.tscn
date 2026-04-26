@@ -121,7 +121,7 @@ size = Vector3(0.5372925, 1.1344948, 1)
 size = Vector3(5.8433228, 5.011139, 4.394516)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sbgw4"]
-size = Vector3(1.0844727, 1.7418976, 2.3536377)
+size = Vector3(1.0844727, 3.2314224, 2.6148071)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sbgw4"]
 
@@ -761,7 +761,7 @@ area = NodePath("../InteractableArea3D")
 object = NodePath(".")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Temperance3D/Allsacks" unique_id=2082676905]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.48782, 1.6717544, 2.0367029)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.48782, 2.4165168, 2.1672876)
 shape = SubResource("BoxShape3D_sbgw4")
 debug_color = Color(0.9204547, 0.25705266, 0.29306638, 1)
 

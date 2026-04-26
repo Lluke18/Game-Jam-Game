@@ -3,7 +3,7 @@ extends Node
 
 
 func _ready() -> void:
-	if PuzzleManager.death_solved:
+	if PuzzleManager.complete_puzzles[PuzzleManager.puzzles.DEATH]:
 		print("DEATH IS SOLVED, NO ANIMATION!")
 		stop_animation()
 

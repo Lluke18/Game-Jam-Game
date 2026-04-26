@@ -58,7 +58,6 @@ func end_puzzle():
 	print("The Magician finished!")
 	sfx_player.play()
 	
-	await get_tree().create_timer(3.0).timeout
 	TextManager.show_once("Magician_completed", [
 		"The Magician. Number one. It’s the card of manifestation",
 		"As above, so below It’s a hint", 
@@ -68,7 +67,7 @@ func end_puzzle():
 	PuzzleManager.finish_puzzle(PuzzleManager.puzzles.MAGICIAN)
 	SignalBus.magician_completed.emit()
 	
-	await get_tree().create_timer(8.0).timeout 
+	await get_tree().create_timer(3.0).timeout 
 	back_to_room.disabled = false
 	texture_rect.modulate.a = 1
 

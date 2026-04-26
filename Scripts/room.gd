@@ -14,9 +14,12 @@ func _ready() -> void:
 	#pt tranzitia de la 3d, ca mouse-ul sa se vada din nou in 2d
 	
 	#can_switch = true
+	SignalBus.world_completed.connect(disable_input)
 	
-	SignalBus.world_completed.connect(disable_switching)
-	#COMENTAT DOAR PENTRU TESTING
+	if PuzzleManager.complete_puzzles[PuzzleManager.puzzles.WORLD] == true:
+		can_switch = false
+		return
+	
 	if PuzzleManager.complete_puzzles[PuzzleManager.puzzles.MAGICIAN] == false:
 		can_switch = false
 	
@@ -35,8 +38,6 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("3D_right") and can_switch:
 		if right_room_path:
 			SceneChanger.change_scene_to_path(right_room_path)
-
-func disable_switching():
-	if PuzzleManager.completed_puzzles == PuzzleManager.number_of_puzzles: # nrul de puzzleuri complete, pt debug
-		print("THE MAGICIAN LONGS TO SEE... FIRE, WALK WITH ME")
-		can_switch = false
+		
+func disable_input():
+	can_switch = false

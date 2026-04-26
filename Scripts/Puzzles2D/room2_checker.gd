@@ -13,7 +13,8 @@ func _ready() -> void:
 	#DECOMENTAT DOAR PENTRU TESTARE
 	#end_game()
 	
-	SignalBus.world_completed.connect(end_game)
+	if PuzzleManager.complete_puzzles[PuzzleManager.puzzles.WORLD] == true:
+		end_game()
 	
 	if PuzzleManager.complete_puzzles[PuzzleManager.puzzles.MOON] == false:
 		TextManager.show_once("room_2_checker", [
