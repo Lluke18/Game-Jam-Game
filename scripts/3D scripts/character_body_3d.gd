@@ -71,11 +71,11 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and velocity.length() > 0.1:
 		footstep_timer -= delta
 		if footstep_timer <= 0.0:
+			footstep_player.pitch_scale = randf_range(0.9, 1.3)
 			footstep_player.play()
 			footstep_timer = FOOTSTEP_INTERVAL
 	else:
 		footstep_timer = 0.0
-
 
 func _headbob(time : float) -> Vector3:
 	var pos = Vector3.ZERO

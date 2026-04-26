@@ -4,6 +4,7 @@ extends Node2D
 @onready var paintings_parent: Node = $CanvasLayer/Paintings
 @onready var sfx_player: AudioStreamPlayer2D = $Sfx_Player
 @onready var back_to_room: Button = $CanvasLayer/SceneSwitchers/BackToRoom
+@onready var texture_rect: TextureRect = $CanvasLayer/SceneSwitchers/BackToRoom/TextureRect
 
 var painting_descriptions: Array[String] = [
 	"Mom’s favorite photo. She always told people I was a star child.", "She even gave me a name to match “Otto” meaning wealth",
@@ -19,6 +20,7 @@ var room1_path : String = "res://Rooms/Room1.tscn"
 
 func _ready() -> void:
 	back_to_room.disabled = true
+	texture_rect.modulate.a = 0.5 
 	
 	init_markers_array()
 	init_paintings_array()
@@ -68,6 +70,7 @@ func end_puzzle():
 	
 	await get_tree().create_timer(8.0).timeout 
 	back_to_room.disabled = false
+	texture_rect.modulate.a = 1
 
 func on_try_snapping(painting_index: int):
 	for marker_index in range(markers.size()):

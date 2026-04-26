@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ddjntrex6slnb" path="res://Scripts/Puzzles2D/moon.gd" id="1_la0u8"]
 [ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="2_mftv0"]
 [ext_resource type="Resource" uid="uid://c4it2mbpx314x" path="res://Scripts/Items/MoonSign.tres" id="3_mftv0"]
-[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/holy_arcana.ogg" id="4_3pl4i"]
+[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/SFX/holy_arcana.ogg" id="4_3pl4i"]
 
 [node name="Moon" type="Node2D" unique_id=1512798189]
 script = ExtResource("1_la0u8")

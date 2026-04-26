@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bm2sct1i5mld5"]
 
-[ext_resource type="Script" uid="uid://cr1ppvqh8alvm" path="res://scenes/3d/zoom_camera.gd" id="1_8wvtw"]
+[ext_resource type="Script" path="res://scenes/3d/zoom_camera.gd" id="1_8wvtw"]
 [ext_resource type="Texture2D" uid="uid://b1s1gig8fcge5" path="res://Sprites/runes/rune_0.jpg" id="2_cdv7l"]
 [ext_resource type="Texture2D" uid="uid://upl2fg165wol" path="res://Sprites/runes/rune_1.jpg" id="3_ygdcu"]
 [ext_resource type="Texture2D" uid="uid://bhl774fxqn772" path="res://Sprites/runes/rune_2.jpg" id="4_svo3w"]
 [ext_resource type="Texture2D" uid="uid://d2jk24xroqfyi" path="res://Sprites/runes/rune_3.jpg" id="5_r7il7"]
+[ext_resource type="Texture2D" uid="uid://dfovannbdm63n" path="res://Sprites/Mouse/back2.png" id="6_ygdcu"]
 
 [node name="zoom_camera" type="Camera3D" unique_id=1184307355 node_paths=PackedStringArray("canvas")]
 transform = Transform3D(0.048483744, 0, -0.998824, 0, 1, 0, 0.998824, 0, 0.048483744, 0, 0, 0)
@@ -73,12 +74,23 @@ grow_vertical = 2
 texture_normal = ExtResource("2_cdv7l")
 
 [node name="Exit" type="Button" parent="CanvasLayer" unique_id=836941342]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 97.0
 offset_top = 63.0
 offset_right = 389.0
 offset_bottom = 225.0
 size_flags_horizontal = 4
 text = "Exit"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Exit" unique_id=1636505076]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 25.0
+offset_right = 378.0
+offset_bottom = 157.0
+texture = ExtResource("6_ygdcu")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]

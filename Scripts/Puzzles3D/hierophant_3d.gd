@@ -8,6 +8,7 @@ extends Node
 @onready var liquid: MeshInstance3D = $CookingPot/Liquid
 @onready var hierophant_3d: Node = $"."
 @onready var sfx_player_2: AudioStreamPlayer3D = $"../../SfxPlayer2"
+@onready var sfx_player_4: AudioStreamPlayer3D = $"../../SfxPlayer4"
 
 #for animation
 @export var blue_pot_anim : Node3D
@@ -94,19 +95,20 @@ func _on_cooking_interaction():
 			already_interacting = true
 			blue_pot_anim.visible = true
 			anim_player.play("blue_spill")
+			sfx_player_4.play()
 			
 		"GreenPot":
 			green_pot_anim.visible = true
 			already_interacting = true
 			
 			anim_player.play("green_spill")
-			
+			sfx_player_4.play()
 
 		"YellowPot":
 			yellow_pot_anim.visible = true
 			already_interacting = true
 			anim_player.play("yellow_spill")
-		_:
+			sfx_player_4.play()
 			print("Wrong item")
 	
 func _on_blue_pot_anim_finished():

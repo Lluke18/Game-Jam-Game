@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de1q6e6bk31v1"
-path="res://.godot/imported/BAGHETA_RESIZE_2.png-27ef083cb82f30d91beeccaa2f5735c7.ctex"
+uid="uid://dfovannbdm63n"
+path="res://.godot/imported/back2.png-3cad86f64d603f15673a2c6482f4a230.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Mouse/BAGHETA_RESIZE_2.png"
-dest_files=["res://.godot/imported/BAGHETA_RESIZE_2.png-27ef083cb82f30d91beeccaa2f5735c7.ctex"]
+source_file="res://Sprites/Mouse/back2.png"
+dest_files=["res://.godot/imported/back2.png-3cad86f64d603f15673a2c6482f4a230.ctex"]
 
 [params]
 
