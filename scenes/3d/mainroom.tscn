@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dm0ycc5x5wtod" path="res://scenes/3d/player3D.tscn" id="1_w1mmj"]
 [ext_resource type="Texture2D" uid="uid://hx7c34uexnhc" path="res://Sprites/Mouse/bagheta_2.png" id="3_okq3e"]
 [ext_resource type="PackedScene" uid="uid://bwg407mxqbuw" path="res://scenes/3d/interactable_area_3d.tscn" id="3_rfp5g"]
+[ext_resource type="AudioStream" uid="uid://cjjftd5gfa6y5" path="res://Audio/creakyfloor.mp3" id="4_bjqaj"]
 [ext_resource type="Script" uid="uid://3hq0fuvsjl70" path="res://scenes/3d/InteractableObject.gd" id="4_fep6r"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_rfp5g"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_whf7h"]
@@ -432,6 +433,9 @@ omni_range = 1.6018165
 [node name="Player" parent="." unique_id=2036735905 instance=ExtResource("1_w1mmj")]
 transform = Transform3D(3.7, 0, 0, 0, 3.7, 0, 0, 0, 3.7, -5.271773, 3.1448445, 2.6078143)
 cursor = ExtResource("3_okq3e")
+
+[node name="FootStepsPlayer" parent="Player" index="4" unique_id=1268008791]
+stream = ExtResource("4_bjqaj")
 
 [node name="MirrorSpawnPos" type="Marker3D" parent="." unique_id=1941016669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.596, 1.567, 3.542)
@@ -975,3 +979,5 @@ light_size = 0.215
 [connection signal="clicked" from="Player" to="." method="_on_player_clicked"]
 [connection signal="body_entered" from="actual_mirror/InteractableArea3D" to="." method="_on_d_mirror_body_entered"]
 [connection signal="cypher_cracked" from="Puzzles3D/Temperance3D/zoom_camera" to="Puzzles3D/Temperance3D" method="_on_zoom_camera_cypher_cracked"]
+
+[editable path="Player"]

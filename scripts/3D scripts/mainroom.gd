@@ -17,7 +17,7 @@ func _ready() -> void:
 	player.global_position = spawnpos.position
 	mirror.interact = Callable(self, "_on_mirror_switch")
 	TextManager.show_once("mainroom_enter", [
-		"What is this place? Looks like some wizard’s room.", 
+		"What is this place? Looks like some wizard’s room.	", 
 		"I see the moon from the mirror,but can I get back to my world?"
 	])
 	zoom_camera.canvas.visible = false
