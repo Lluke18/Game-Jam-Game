@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="3_7b3b2"]
 [ext_resource type="PackedScene" uid="uid://bhm5xkhsb3n7c" path="res://scenes/2d/options_panel.tscn" id="3_k62s8"]
 [ext_resource type="Texture2D" uid="uid://ci775yrl2aklw" path="res://UI/Menus/continue.png" id="4_7b3b2"]
-[ext_resource type="PackedScene" path="res://UI/cutscene.tscn" id="4_d3yhd"]
+[ext_resource type="PackedScene" uid="uid://dep2x6ri76qqs" path="res://UI/cutscene.tscn" id="4_d3yhd"]
 [ext_resource type="Texture2D" uid="uid://dcvsuerlm3bxq" path="res://UI/Menus/settings.png" id="5_cjo4x"]
 [ext_resource type="Texture2D" uid="uid://cs1xgmrvsqp06" path="res://UI/Menus/quit.png" id="6_welr4"]
 

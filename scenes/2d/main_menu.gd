@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var skip_button = $Cutscene/CanvasLayer/Control/Button
 
 func _ready() -> void:
+	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	cutscene_node.hide()
 	skip_button.hide()
 	if FileAccess.file_exists("user://SaveFile.tres") == false:
