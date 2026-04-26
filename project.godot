@@ -37,6 +37,8 @@ TextManager="*uid://4aefjcn31okg"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
+window/size/resizable=false
+window/stretch/mode="viewport"
 window/main_scene="uid://d0rrcq8bkicf1"
 
 [global_group]

@@ -471,7 +471,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23758125, 1.6315613, -0.001
 shape = SubResource("BoxShape3D_rfp5g")
 debug_color = Color(7.4990616, 6.40278, 0, 1)
 
-[node name="Illusion" parent="." unique_id=238703043 instance=ExtResource("6_5k5vb")]
+[node name="Illusion" parent="." unique_id=1538957603 instance=ExtResource("6_5k5vb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0552967, 0.67229176, -3.7929158)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Illusion" unique_id=707953608]
@@ -879,7 +879,6 @@ bus = &"Sfx"
 
 [node name="FogVolume" type="FogVolume" parent="." unique_id=359217717]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8659668, 0.10107422, -1.4724121)
-visible = false
 size = Vector3(18.64795, 2.2021484, 22.753418)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=391650907]

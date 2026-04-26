@@ -21,4 +21,5 @@ func _on_button_down() -> void:
 
 func _on_button_up() -> void:
 	is_dragging = false
-	try_snapping.emit(index)
+	if draggable:
+		try_snapping.emit(index)
