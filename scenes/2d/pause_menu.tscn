@@ -5,12 +5,20 @@
 [ext_resource type="Shader" uid="uid://lf8tvki7yosm" path="res://Shaders/new_shader.gdshader" id="2_gunp4"]
 [ext_resource type="PackedScene" uid="uid://bhm5xkhsb3n7c" path="res://scenes/2d/options_panel.tscn" id="3_gunp4"]
 [ext_resource type="AudioStream" uid="uid://cltsx4t2jckm6" path="res://Audio/_paper_flip_01.wav" id="4_d3nmb"]
+[ext_resource type="Texture2D" uid="uid://b8oxfypsk7en2" path="res://UI/Menus/NewScolResume.png" id="4_nolku"]
+[ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="5_ae3lb"]
+[ext_resource type="Texture2D" uid="uid://vr3dlkwy02r3" path="res://UI/Menus/NewScolOptions.png" id="6_dwgly"]
+[ext_resource type="Texture2D" uid="uid://co3y2fbf843cn" path="res://UI/Menus/NewScolQuit.png" id="7_t5gj7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d3nmb"]
 shader = ExtResource("2_gunp4")
 shader_parameter/lod = 0.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2cfqt"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwpuv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bo4lo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s4kyc"]
 
 [sub_resource type="Animation" id="Animation_cosra"]
 length = 0.001
@@ -54,50 +62,107 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.44705883)
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1328311190]
+[node name="PanelContainer" type="Control" parent="." unique_id=804982913]
+layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -258.25
-offset_top = -216.5
-offset_right = 258.25
-offset_bottom = 216.5
+offset_left = -272.0
+offset_top = -199.0
+offset_right = 244.5
+offset_bottom = 234.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_2cfqt")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1165657734]
-layout_mode = 2
-theme_override_constants/separation = 164
-
-[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer" unique_id=358768865]
-layout_mode = 2
+[node name="Resume" type="Button" parent="PanelContainer" unique_id=358768865]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.25
+offset_top = -182.5
+offset_right = 106.75
+offset_bottom = -140.5
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
-text = "Resume
-"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qwpuv")
+script = ExtResource("5_ae3lb")
 
-[node name="Options" type="Button" parent="PanelContainer/VBoxContainer" unique_id=725115520]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Options
-"
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/Resume" unique_id=65874034]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -92.375
+offset_top = -6.0
+offset_right = 101.625
+offset_bottom = 48.0
+grow_horizontal = 2
+texture = ExtResource("4_nolku")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer" unique_id=465673851]
-layout_mode = 2
+[node name="Options" type="Button" parent="PanelContainer" unique_id=725115520]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 187.0
+offset_top = 137.0
+offset_right = 365.0
+offset_bottom = 173.0
 size_flags_horizontal = 4
-text = "Quit"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bo4lo")
+script = ExtResource("5_ae3lb")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/Options" unique_id=585610130]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -15.0
+offset_right = 188.0
+offset_bottom = 43.0
+texture = ExtResource("6_dwgly")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Quit" type="Button" parent="PanelContainer" unique_id=465673851]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 161.0
+offset_top = 297.0
+offset_right = 374.0
+offset_bottom = 352.0
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s4kyc")
+script = ExtResource("5_ae3lb")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/Quit" unique_id=1628994295]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.943
+anchor_bottom = 0.943
+offset_left = 6.0
+offset_top = -52.662994
+offset_right = 200.0
+offset_bottom = 1.3370056
+texture = ExtResource("7_t5gj7")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1667776456]
 libraries/ = SubResource("AnimationLibrary_fmuxe")
 
 [node name="OptionsPanel" parent="." unique_id=355889237 instance=ExtResource("3_gunp4")]
+visible = false
 
 [node name="SfxPlayer" type="AudioStreamPlayer2D" parent="." unique_id=901482915]
 stream = ExtResource("4_d3nmb")
 bus = &"Sfx"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PanelContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="PanelContainer/Quit" to="." method="_on_quit_pressed"]
