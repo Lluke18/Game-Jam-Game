@@ -3,28 +3,28 @@
 [ext_resource type="Script" uid="uid://b52n10npscye6" path="res://Scripts/3D scripts/mainroom.gd" id="1_j7t7n"]
 [ext_resource type="PackedScene" uid="uid://dm0ycc5x5wtod" path="res://scenes/3d/player3D.tscn" id="1_w1mmj"]
 [ext_resource type="Texture2D" uid="uid://hx7c34uexnhc" path="res://Sprites/Mouse/bagheta_2.png" id="3_okq3e"]
-[ext_resource type="PackedScene" path="res://scenes/3d/interactable_area_3d.tscn" id="3_rfp5g"]
+[ext_resource type="PackedScene" uid="uid://bwg407mxqbuw" path="res://scenes/3d/interactable_area_3d.tscn" id="3_rfp5g"]
+[ext_resource type="AudioStream" uid="uid://ycmioj1u1n0e" path="res://Audio/SFX/lepasi.mp3" id="4_5ikaq"]
 [ext_resource type="Script" uid="uid://3hq0fuvsjl70" path="res://scenes/3d/InteractableObject.gd" id="4_fep6r"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_rfp5g"]
-[ext_resource type="AudioStream" uid="uid://dtvajaw2vmu8i" path="res://Audio/footstepsWOOD2.mp3" id="4_yh05a"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_whf7h"]
 [ext_resource type="PackedScene" uid="uid://d35qijl2l5jdx" path="res://3D assets/Illusion.blend" id="6_5k5vb"]
 [ext_resource type="PackedScene" uid="uid://b8x23qj21yxwb" path="res://Particles/Fire.tscn" id="9_lr5v6"]
 [ext_resource type="Script" uid="uid://5dn58dedj0g6" path="res://Scripts/Puzzles3D/moon_3d.gd" id="10_2vkj2"]
-[ext_resource type="PackedScene" uid="uid://ixxg5srbckg2" path="res://3D assets/luna.tscn" id="11_ntof2"]
+[ext_resource type="PackedScene" path="res://3D assets/luna.tscn" id="11_ntof2"]
 [ext_resource type="Script" uid="uid://c1srst7838qj0" path="res://Scripts/Puzzles3D/star_3d.gd" id="12_vl5l8"]
 [ext_resource type="Script" uid="uid://0htjwty3extj" path="res://Scripts/Puzzles3D/temperance_3d.gd" id="13_gnvy8"]
-[ext_resource type="PackedScene" uid="uid://j403tq8k44rm" path="res://3D assets/Objects/zodiac_wheel.tscn" id="13_yuerg"]
+[ext_resource type="PackedScene" uid="uid://by17lu4nxjwgw" path="res://3D assets/Objects/zodiac_wheel.tscn" id="13_yuerg"]
 [ext_resource type="Script" uid="uid://jr6oloa7llj7" path="res://Scripts/Puzzles3D/hierophant_3d.gd" id="14_3epcx"]
 [ext_resource type="PackedScene" uid="uid://22hbh3dme6n0" path="res://3D assets/scenes/chest scene/cypher_chest.tscn" id="14_yuerg"]
-[ext_resource type="Script" uid="uid://c5jcpns81oxq3" path="res://scenes/3d/death_3d.gd" id="15_3epcx"]
+[ext_resource type="Script" path="res://scenes/3d/death_3d.gd" id="15_3epcx"]
 [ext_resource type="PackedScene" uid="uid://cp02prp35y6o4" path="res://3D assets/Objects/ouija_board_planchette.tscn" id="15_gnvy8"]
 [ext_resource type="PackedScene" uid="uid://bm2sct1i5mld5" path="res://scenes/3d/zoom_camera.tscn" id="16_3wu1q"]
 [ext_resource type="PackedScene" uid="uid://dac0nstm4o4l5" path="res://3D assets/scenes/sacks/Allsacks.tscn" id="16_yxx7e"]
-[ext_resource type="PackedScene" uid="uid://bb05nxvtgq347" path="res://3D assets/Objects/bluepot.tscn" id="17_3wu1q"]
+[ext_resource type="PackedScene" path="res://3D assets/Objects/bluepot.tscn" id="17_3wu1q"]
 [ext_resource type="PackedScene" uid="uid://drtrf8lmpshik" path="res://3D assets/scenes/scales/scales.tscn" id="17_83icm"]
-[ext_resource type="PackedScene" uid="uid://dhtaksq2mt8o1" path="res://3D assets/Objects/greenpot.tscn" id="18_4aj2b"]
-[ext_resource type="PackedScene" uid="uid://bmw0bken33ymw" path="res://3D assets/Objects/yellowpot.tscn" id="19_1o1v0"]
+[ext_resource type="PackedScene" path="res://3D assets/Objects/greenpot.tscn" id="18_4aj2b"]
+[ext_resource type="PackedScene" path="res://3D assets/Objects/yellowpot.tscn" id="19_1o1v0"]
 [ext_resource type="PackedScene" uid="uid://cj6exx8db3k3l" path="res://3D assets/scenes/sacks/smallsack.tscn" id="19_v6s45"]
 [ext_resource type="PackedScene" uid="uid://cs34nwn2hm41q" path="res://3D assets/scenes/sacks/bigsack.tscn" id="20_2or8c"]
 [ext_resource type="PackedScene" uid="uid://dcfqtxdgsvsf4" path="res://3D assets/scenes/sacks/midsack.tscn" id="21_kit8x"]
@@ -32,9 +32,10 @@
 [ext_resource type="Resource" uid="uid://fxf623ngowdt" path="res://Scripts/Items/GreenPot.tres" id="23_v6s45"]
 [ext_resource type="Resource" uid="uid://dhkl5spggl2ln" path="res://Scripts/Items/BluePot.tres" id="24_yxx7e"]
 [ext_resource type="Resource" uid="uid://yvnkv23qvu5v" path="res://Scripts/Items/YellowPot.tres" id="25_lr5v6"]
-[ext_resource type="AudioStream" uid="uid://dtos2mplvjkri" path="res://Audio/zodiac_pressedt.wav" id="31_v6s45"]
-[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/holy_arcana.ogg" id="32_yxx7e"]
-[ext_resource type="AudioStream" uid="uid://djksd37gj7fx6" path="res://Audio/chest.wav" id="35_yh05a"]
+[ext_resource type="AudioStream" uid="uid://dtos2mplvjkri" path="res://Audio/SFX/zodiac_pressedt.wav" id="31_v6s45"]
+[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/SFX/holy_arcana.ogg" id="32_yxx7e"]
+[ext_resource type="AudioStream" uid="uid://djksd37gj7fx6" path="res://Audio/SFX/chest.wav" id="35_yh05a"]
+[ext_resource type="AudioStream" uid="uid://jjggtprm8e3" path="res://Audio/SFX/bubblez.mp3" id="36_5ikaq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yxx7e"]
 
@@ -433,7 +434,7 @@ transform = Transform3D(3.7, 0, 0, 0, 3.7, 0, 0, 0, 3.7, -5.271773, 3.1448445, 2
 cursor = ExtResource("3_okq3e")
 
 [node name="FootStepsPlayer" parent="Player" index="4" unique_id=1268008791]
-stream = ExtResource("4_yh05a")
+stream = ExtResource("4_5ikaq")
 
 [node name="MirrorSpawnPos" type="Marker3D" parent="." unique_id=1941016669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.596, 1.567, 3.542)
@@ -960,6 +961,10 @@ light_size = 0.215
 
 [node name="SfxPlayer3" type="AudioStreamPlayer3D" parent="." unique_id=1108698427]
 stream = ExtResource("35_yh05a")
+
+[node name="SfxPlayer4" type="AudioStreamPlayer3D" parent="." unique_id=1327373369]
+stream = ExtResource("36_5ikaq")
+volume_db = 35.535
 
 [connection signal="clicked" from="Player" to="." method="_on_player_clicked"]
 [connection signal="body_entered" from="actual_mirror/InteractableArea3D" to="." method="_on_d_mirror_body_entered"]

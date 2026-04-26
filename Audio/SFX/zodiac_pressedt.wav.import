@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dtos2mplvjkri"
-path="res://.godot/imported/zodiac_pressedt.wav-aac1a6e2e73cfaef623d334eeea08674.sample"
+path="res://.godot/imported/zodiac_pressedt.wav-93117ea427d7b6e1611ed7abe56d702a.sample"
 
 [deps]
 
-source_file="res://Audio/zodiac_pressedt.wav"
-dest_files=["res://.godot/imported/zodiac_pressedt.wav-aac1a6e2e73cfaef623d334eeea08674.sample"]
+source_file="res://Audio/SFX/zodiac_pressedt.wav"
+dest_files=["res://.godot/imported/zodiac_pressedt.wav-93117ea427d7b6e1611ed7abe56d702a.sample"]
 
 [params]
 

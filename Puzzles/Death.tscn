@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ck5no70bq1i2k" path="res://Sprites/Background/Floor.png" id="2_7yjyu"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="2_mhu14"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_indks"]
-[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/holy_arcana.ogg" id="8_vbx5x"]
+[ext_resource type="Texture2D" uid="uid://dfovannbdm63n" path="res://Sprites/Mouse/back2.png" id="6_ioy5s"]
+[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/SFX/holy_arcana.ogg" id="8_vbx5x"]
 
 [sub_resource type="FontVariation" id="FontVariation_vbx5x"]
 
@@ -653,21 +654,32 @@ offset_bottom = 1080.0
 mouse_filter = 2
 
 [node name="RightArrow" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=2085893978]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -1831.0
-offset_top = -455.0
-offset_right = -1496.0
-offset_bottom = -323.5
+offset_left = -1832.0
+offset_top = -432.0
+offset_right = -1497.0
+offset_bottom = -319.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "Back to room"
 script = ExtResource("1_ih0fh")
 destination_room_path = "res://Rooms/Room3.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SceneSwitchers/RightArrow" unique_id=890887518]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 17.0
+offset_right = 340.0
+offset_bottom = 129.0
+texture = ExtResource("6_ioy5s")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("2_mhu14")]
 mouse_filter = 2

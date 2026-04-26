@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cltsx4t2jckm6"
-path="res://.godot/imported/_paper_flip_01.wav-97d20e0e66872eb6a0a4e08b134cefd7.sample"
+path="res://.godot/imported/_paper_flip_01.wav-b1b52b6c5e2cb602de95ab4ae3689e65.sample"
 
 [deps]
 
-source_file="res://Audio/_paper_flip_01.wav"
-dest_files=["res://.godot/imported/_paper_flip_01.wav-97d20e0e66872eb6a0a4e08b134cefd7.sample"]
+source_file="res://Audio/SFX/_paper_flip_01.wav"
+dest_files=["res://.godot/imported/_paper_flip_01.wav-b1b52b6c5e2cb602de95ab4ae3689e65.sample"]
 
 [params]
 

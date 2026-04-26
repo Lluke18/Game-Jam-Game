@@ -11,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="6_36xyo"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="6_oasne"]
 [ext_resource type="Texture2D" uid="uid://bmurmu88dbd5q" path="res://Sprites/PuzzleObjects/Painting3.png" id="6_x0fmj"]
-[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/holy_arcana.ogg" id="12_x0fmj"]
+[ext_resource type="Texture2D" uid="uid://dfovannbdm63n" path="res://Sprites/Mouse/back2.png" id="10_v7l01"]
+[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/SFX/holy_arcana.ogg" id="12_x0fmj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ef3u"]
 
 [node name="Magician" type="Node2D" unique_id=726880548]
 script = ExtResource("1_6eh2d")
@@ -114,6 +117,7 @@ offset_bottom = 1080.0
 mouse_filter = 2
 
 [node name="BackToRoom" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=845259031]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -122,13 +126,22 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -1871.0
 offset_top = -496.0
-offset_right = -1536.0
-offset_bottom = -364.5
+offset_right = -1527.0
+offset_bottom = -374.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0ef3u")
 text = "Back to room"
 script = ExtResource("5_d7o1r")
 destination_room_path = "res://Rooms/Room1.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SceneSwitchers/BackToRoom" unique_id=1867008577]
+layout_mode = 0
+offset_right = 356.0
+offset_bottom = 114.0
+texture = ExtResource("10_v7l01")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("6_oasne")]
 mouse_filter = 2

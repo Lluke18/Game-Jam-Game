@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://cybhyxsxpfs7v" path="res://UI/Menus/scol.png" id="2_cosra"]
 [ext_resource type="Shader" uid="uid://lf8tvki7yosm" path="res://Shaders/new_shader.gdshader" id="2_gunp4"]
 [ext_resource type="PackedScene" uid="uid://bhm5xkhsb3n7c" path="res://scenes/2d/options_panel.tscn" id="3_gunp4"]
-[ext_resource type="AudioStream" uid="uid://cltsx4t2jckm6" path="res://Audio/_paper_flip_01.wav" id="4_d3nmb"]
-[ext_resource type="Texture2D" uid="uid://b8oxfypsk7en2" path="res://UI/Menus/NewScolResume.png" id="4_nolku"]
+[ext_resource type="AudioStream" uid="uid://cltsx4t2jckm6" path="res://Audio/SFX/_paper_flip_01.wav" id="4_d3nmb"]
+[ext_resource type="Texture2D" uid="uid://bvba8vply06xa" path="res://UI/Menus/NewScolResume.png" id="4_nolku"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="5_ae3lb"]
-[ext_resource type="Texture2D" uid="uid://vr3dlkwy02r3" path="res://UI/Menus/NewScolOptions.png" id="6_dwgly"]
-[ext_resource type="Texture2D" uid="uid://co3y2fbf843cn" path="res://UI/Menus/NewScolQuit.png" id="7_t5gj7"]
+[ext_resource type="Texture2D" uid="uid://cojkc3eo7s4hh" path="res://UI/Menus/NewScolOptions.png" id="6_dwgly"]
+[ext_resource type="Texture2D" uid="uid://c8hosb0jwmrbg" path="res://UI/Menus/NewScolQuit.png" id="7_t5gj7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d3nmb"]
 shader = ExtResource("2_gunp4")

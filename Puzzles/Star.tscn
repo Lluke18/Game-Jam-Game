@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="4_aad07"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_5gbe3"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="5_xo56k"]
+[ext_resource type="Texture2D" uid="uid://dfovannbdm63n" path="res://Sprites/Mouse/back2.png" id="6_xo56k"]
 
 [node name="Star" type="Node2D" unique_id=496611057]
 script = ExtResource("1_asnyx")
@@ -109,6 +110,7 @@ offset_bottom = 1080.0
 mouse_filter = 2
 
 [node name="RightArrow" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=151249248]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -117,13 +119,21 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -1881.0
 offset_top = -498.0
-offset_right = -1546.0
-offset_bottom = -366.5
+offset_right = -1554.0
+offset_bottom = -374.0
 grow_horizontal = 0
 grow_vertical = 2
 text = "Back to room"
 script = ExtResource("4_aad07")
 destination_room_path = "res://Rooms/Room4.tscn"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/SceneSwitchers/RightArrow" unique_id=1093403086]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 129.0
+texture = ExtResource("6_xo56k")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("5_xo56k")]
 mouse_filter = 2
