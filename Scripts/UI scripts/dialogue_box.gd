@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var text_label : Label = $PanelContainer/MarginContainer/HBoxContainer/Label
 
-var _typing_speed : float = 60.0
+var _typing_speed : float = 15.0
 var _typing_time : float = 0.0
 var is_typing : bool = false
 var current_id : int = 0
@@ -52,3 +52,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		if is_typing:
 			text_label.visible_characters = -1
 			is_typing = false
+			current_id += 1
+			await get_tree().create_timer(3.0).timeout
+			hide()
+			TextManager.dialogue_finished.emit()
+		else:
+			current_id += 1
+			hide()
+			TextManager.dialogue_finished.emit()
