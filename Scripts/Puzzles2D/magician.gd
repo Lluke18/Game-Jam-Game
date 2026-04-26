@@ -3,6 +3,8 @@ extends Node2D
 @onready var snap_markers: Node = $CanvasLayer/SnapMarkers
 @onready var paintings_parent: Node = $CanvasLayer/Paintings
 @onready var sfx_player: AudioStreamPlayer2D = $Sfx_Player
+@onready var back_to_room: Button = $CanvasLayer/SceneSwitchers/BackToRoom
+
 var painting_descriptions: Array[String] = [
 	"Mom’s favorite photo. She always told people I was a star child.", "She even gave me a name to match “Otto” meaning wealth",
 	"Nine years old. I wore that wizard hat for weeks", "The start of the obsession. Should’ve just played football.",
@@ -16,6 +18,8 @@ var room1_path : String = "res://Rooms/Room1.tscn"
 @export var snap_max_distance: float = 100.0
 
 func _ready() -> void:
+	back_to_room.disabled = true
+	
 	init_markers_array()
 	init_paintings_array()
 	init_paintings_snapped_array()
@@ -48,9 +52,11 @@ func check_if_solved():
 func end_puzzle():
 	for painting in paintings:
 		painting.draggable = false
-		painting.try_snapping.disconnect(on_try_snapping)
+		
 	print("The Magician finished!")
 	sfx_player.play()
+	
+	await get_tree().create_timer(3.0).timeout
 	TextManager.show_once("Magician_completed", [
 		"The Magician. Number one. It’s the card of manifestation",
 		"As above, so below It’s a hint", 
@@ -59,7 +65,9 @@ func end_puzzle():
 	])
 	PuzzleManager.finish_puzzle(PuzzleManager.puzzles.MAGICIAN)
 	SignalBus.magician_completed.emit()
-	await get_tree().create_timer(20).timeout
+	
+	await get_tree().create_timer(8.0).timeout 
+	back_to_room.disabled = false
 
 func on_try_snapping(painting_index: int):
 	for marker_index in range(markers.size()):
@@ -71,7 +79,7 @@ func on_try_snapping(painting_index: int):
 			if marker_index == painting_index: 
 				var texts: Array[String] = [
 				painting_descriptions[painting_index * 2],
-				 painting_descriptions[painting_index * 2 + 1]
+				painting_descriptions[painting_index * 2 + 1]
 	]
 				TextManager.show_sequence(texts)
 			#await get_tree().create_timer(6.0).timeout 

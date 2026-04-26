@@ -16,7 +16,7 @@ position = Vector2(960, 540)
 texture = ExtResource("2_aad07")
 
 [node name="Calendar" type="Sprite2D" parent="." unique_id=1426004988]
-position = Vector2(885, 216)
+position = Vector2(1001, 216)
 scale = Vector2(2, 2)
 texture = ExtResource("2_3nmne")
 
@@ -26,6 +26,8 @@ texture = ExtResource("2_3nmne")
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 0
+offset_left = 116.0
+offset_right = 116.0
 mouse_filter = 2
 
 [node name="DrawingDot0" parent="CanvasLayer/DrawingDots" unique_id=1974290463 instance=ExtResource("2_i662l")]
@@ -82,19 +84,19 @@ index = 3
 [node name="TargetMarkers" type="Node" parent="CanvasLayer" unique_id=389890641]
 
 [node name="Marker0" type="Marker2D" parent="CanvasLayer/TargetMarkers" unique_id=1275042861]
-position = Vector2(431, 485)
+position = Vector2(547, 485)
 scale = Vector2(4, 4)
 
 [node name="Marker1" type="Marker2D" parent="CanvasLayer/TargetMarkers" unique_id=42949806]
-position = Vector2(925, 575)
+position = Vector2(1041, 575)
 scale = Vector2(4, 4)
 
 [node name="Marker2" type="Marker2D" parent="CanvasLayer/TargetMarkers" unique_id=1887122023]
-position = Vector2(1145, 657)
+position = Vector2(1261, 657)
 scale = Vector2(4, 4)
 
 [node name="Marker3" type="Marker2D" parent="CanvasLayer/TargetMarkers" unique_id=1702258535]
-position = Vector2(1205, 812)
+position = Vector2(1321, 812)
 scale = Vector2(4, 4)
 
 [node name="DrawableLines" type="Node" parent="CanvasLayer" unique_id=1542286310]
@@ -113,13 +115,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -458.0
-offset_top = -65.75
-offset_right = -123.0
-offset_bottom = 65.75
+offset_left = -1881.0
+offset_top = -498.0
+offset_right = -1546.0
+offset_bottom = -366.5
 grow_horizontal = 0
 grow_vertical = 2
-text = "Inapoi la camera"
+text = "Back to room"
 script = ExtResource("4_aad07")
 destination_room_path = "res://Rooms/Room4.tscn"
 

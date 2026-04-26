@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 	#can_switch = true
 	
-	SignalBus.world_completed.connect(end_game)
+	SignalBus.world_completed.connect(disable_switching)
 	#COMENTAT DOAR PENTRU TESTING
 	if PuzzleManager.complete_puzzles[PuzzleManager.puzzles.MAGICIAN] == false:
 		can_switch = false
@@ -36,9 +36,7 @@ func _input(event: InputEvent) -> void:
 		if right_room_path:
 			SceneChanger.change_scene_to_path(right_room_path)
 
-func end_game():
+func disable_switching():
 	if PuzzleManager.completed_puzzles == PuzzleManager.number_of_puzzles: # nrul de puzzleuri complete, pt debug
 		print("THE MAGICIAN LONGS TO SEE... FIRE, WALK WITH ME")
 		can_switch = false
-		await get_tree().create_timer(5).timeout
-		SceneChanger.change_scene_to_path("res://scenes/2d/main_menu.tscn")

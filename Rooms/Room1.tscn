@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://h50u3vfpmwir" path="res://Sprites/PuzzleObjects/Painting2.png" id="6_mv7ge"]
 [ext_resource type="Texture2D" uid="uid://v3v23w7saabr" path="res://Sprites/Background/CrackedPhone.png" id="6_tw4i0"]
 [ext_resource type="Texture2D" uid="uid://bmurmu88dbd5q" path="res://Sprites/PuzzleObjects/Painting3.png" id="7_5nh31"]
+[ext_resource type="Texture2D" uid="uid://cg2rj51cjh3h3" path="res://Sprites/Background/A.png" id="8_enbp3"]
+[ext_resource type="Texture2D" uid="uid://r4d1prfccsp0" path="res://Sprites/Background/D.png" id="9_c8nu8"]
 
 [node name="Room1" type="Node2D" unique_id=1138460362]
 script = ExtResource("1_fja4u")
@@ -32,35 +34,47 @@ position = Vector2(0, 800)
 texture = ExtResource("3_gthuv")
 
 [node name="Table" type="Sprite2D" parent="BackgroundSprites" unique_id=952236053]
-position = Vector2(1305, 762)
+position = Vector2(1200.0001, 732.00006)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_bktqt")
 
-[node name="LightBulb" type="Sprite2D" parent="BackgroundSprites" unique_id=174072524]
-position = Vector2(1521, 374)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("5_bktqt")
-
-[node name="Perfume" type="Sprite2D" parent="BackgroundSprites" unique_id=682386778]
-position = Vector2(1175, 386)
-scale = Vector2(0.35, 0.35)
+[node name="Perfume" type="Sprite2D" parent="BackgroundSprites/Table" unique_id=682386778]
+position = Vector2(-162.5, -470)
+scale = Vector2(0.4374999, 0.4374999)
 texture = ExtResource("6_bktqt")
 
-[node name="CrackedPhone" type="Sprite2D" parent="BackgroundSprites" unique_id=1603479401]
-position = Vector2(1100.8413, 497.39996)
+[node name="CrackedPhone" type="Sprite2D" parent="BackgroundSprites/Table" unique_id=1603479401]
+position = Vector2(-255.19836, -330.75006)
 rotation = -1.7243853
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.24999999, 0.24999999)
 texture = ExtResource("6_tw4i0")
+
+[node name="LightBulb" type="Sprite2D" parent="BackgroundSprites/Table" unique_id=174072524]
+position = Vector2(270, -484.99997)
+scale = Vector2(0.49999997, 0.49999997)
+texture = ExtResource("5_bktqt")
+
+[node name="A" type="Sprite2D" parent="BackgroundSprites" unique_id=1423947781]
+visible = false
+position = Vector2(152, 670)
+texture = ExtResource("8_enbp3")
+
+[node name="D" type="Sprite2D" parent="BackgroundSprites" unique_id=562755897]
+visible = false
+position = Vector2(1722, 670)
+texture = ExtResource("9_c8nu8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=565787541]
 
-[node name="SceneSwitchers" type="Control" parent="CanvasLayer" unique_id=653715160]
+[node name="SceneSwitchers" type="Control" parent="CanvasLayer" unique_id=653715160 node_paths=PackedStringArray("a_sprite", "d_sprite")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 script = ExtResource("4_gthuv")
+a_sprite = NodePath("../../BackgroundSprites/A")
+d_sprite = NodePath("../../BackgroundSprites/D")
 
 [node name="The Magician" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=1099889148]
 self_modulate = Color(1, 1, 1, 0)

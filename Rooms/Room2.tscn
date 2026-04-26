@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="6_qsv4v"]
 [ext_resource type="Texture2D" uid="uid://dt0a6etrml81u" path="res://Sprites/Background/Chest.png" id="7_7ixoc"]
 [ext_resource type="Texture2D" uid="uid://cvfcblubkqpjv" path="res://Sprites/SceneSwitchers/Mirror.png" id="7_wjqet"]
+[ext_resource type="Texture2D" uid="uid://bu8os322q1q3o" path="res://Sprites/Background/BrokenMirror.png" id="11_iwjsq"]
 
 [node name="Room2" type="Node2D" unique_id=104392886]
 script = ExtResource("1_iehj0")
@@ -74,6 +75,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 script = ExtResource("6_ipfbv")
+broken_mirror_texture = ExtResource("11_iwjsq")
 
 [node name="Mirror" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=217423170]
 self_modulate = Color(1, 1, 1, 0)

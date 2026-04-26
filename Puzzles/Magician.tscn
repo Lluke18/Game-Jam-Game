@@ -113,17 +113,17 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 
-[node name="RightArrow" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=845259031]
+[node name="BackToRoom" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=845259031]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -458.0
-offset_top = -65.75
-offset_right = -123.0
-offset_bottom = 65.75
+offset_left = -1871.0
+offset_top = -496.0
+offset_right = -1536.0
+offset_bottom = -364.5
 grow_horizontal = 0
 grow_vertical = 2
 text = "Back to room"
@@ -138,4 +138,4 @@ mouse_filter = 2
 [node name="Sfx_Player" type="AudioStreamPlayer2D" parent="." unique_id=656204950]
 stream = ExtResource("12_x0fmj")
 
-[connection signal="pressed" from="CanvasLayer/SceneSwitchers/RightArrow" to="CanvasLayer/SceneSwitchers/RightArrow" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/SceneSwitchers/BackToRoom" to="CanvasLayer/SceneSwitchers/BackToRoom" method="_on_pressed"]

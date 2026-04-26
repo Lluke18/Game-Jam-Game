@@ -151,6 +151,13 @@ func check_if_completed():
 		
 func end_puzzle():
 	print("HIEROPHANT OVER!")
+	
+	InventoryManager.remove_item(InventoryManager.BLUE_POT)
+	InventoryManager.remove_item(InventoryManager.GREEN_POT)
+	InventoryManager.remove_item(InventoryManager.YELLOW_POT)
+	
+	InventoryManager.send_inventory_modified_signal()
+	
 	sfx_player_2.play()
 	TextManager.show_once("Hierophant_completed", [
 		"The Hierophant. Number five. Wisdom, structure, and the weight of the old ways.",
