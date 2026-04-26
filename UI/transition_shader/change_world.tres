@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://brl6vy1lsgxej"]
+
+[ext_resource type="Shader" uid="uid://c8snjyngiicxo" path="res://UI/transition_shader/change_world.gdshader" id="1_ky1og"]
+
+[resource]
+shader = ExtResource("1_ky1og")
+shader_parameter/luminance_cutoff = 0.0
+shader_parameter/invert = false

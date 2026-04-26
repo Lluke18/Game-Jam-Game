@@ -155,10 +155,13 @@ func end_puzzle():
 	print("HIEROPHANT OVER!")
 	
 	InventoryManager.remove_item(InventoryManager.BLUE_POT)
-	InventoryManager.remove_item(InventoryManager.GREEN_POT)
-	InventoryManager.remove_item(InventoryManager.YELLOW_POT)
+	await get_tree().create_timer(0.1).timeout 
 	
-	InventoryManager.send_inventory_modified_signal()
+	InventoryManager.remove_item(InventoryManager.GREEN_POT)
+	await get_tree().create_timer(0.1).timeout 
+	
+	InventoryManager.remove_item(InventoryManager.YELLOW_POT)
+	await get_tree().create_timer(0.1).timeout 
 	
 	sfx_player_2.play()
 	TextManager.show_once("Hierophant_completed", [
@@ -169,6 +172,8 @@ func end_puzzle():
 	cooking_static_body_3d.remove_from_group("Interactables")
 	PuzzleManager.finish_puzzle(PuzzleManager.puzzles.HIEROPHANT)
 	SignalBus.hierophant_completed.emit()
+	
+	InventoryManager.send_inventory_modified_signal()
 
 func reset_streak():
 	correct_steps_streak = 0

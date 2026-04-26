@@ -14,7 +14,6 @@ var moon_symbol_picked_up: bool = false
 var pencil_picked_up: bool = false
 var calendar_solved: bool = false
 var chest_opened : bool = false
-var temperance_solved : bool = false
 
 var blue_pot_picked_up: bool = false
 var green_pot_picked_up: bool = false
@@ -25,8 +24,6 @@ var medium_sack_picked_up: bool = false
 var big_sack_picked_up: bool = false
 
 var all_sacks_picked_up: bool = false
-
-var death_solved : bool = false
 
 const number_of_puzzles: int = 7
 var complete_puzzles: Array[bool] = []
@@ -50,12 +47,14 @@ func check_cards():
 
 func finish_puzzle(puzzle_index: int):
 	complete_puzzles[puzzle_index] = true
+	SaveManager.save_file_data.complete_puzzles[puzzle_index] = true
 	puzzle_finished.emit(puzzle_index)
 	
 func reset_data():
 	moon_symbol_picked_up = false
 	pencil_picked_up = false
 	calendar_solved = false
+	chest_opened = false
 	
 	blue_pot_picked_up = false
 	green_pot_picked_up = false
@@ -70,12 +69,17 @@ func reset_data():
 	complete_puzzles = []
 	complete_puzzles.resize(number_of_puzzles)
 	complete_puzzles.fill(false)
+	
+	SaveManager.save_file_data.complete_puzzles.resize(number_of_puzzles)
+	SaveManager.save_file_data.complete_puzzles.fill(false)
+	
 	completed_puzzles = 0
 
 func load_data():
 	moon_symbol_picked_up = SaveManager.save_file_data.moon_symbol_picked_up
 	pencil_picked_up = SaveManager.save_file_data.pencil_picked_up
 	calendar_solved = SaveManager.save_file_data.calendar_solved
+	chest_opened = SaveManager.save_file_data.chest_opened
 	
 	blue_pot_picked_up = SaveManager.save_file_data.blue_pot_picked_up
 	green_pot_picked_up = SaveManager.save_file_data.green_pot_picked_up

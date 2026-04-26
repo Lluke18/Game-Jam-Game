@@ -7,14 +7,103 @@
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_a5nxq"]
 [ext_resource type="Texture2D" uid="uid://bnmy0u3thqpx8" path="res://Sprites/Background/Clock.png" id="4_b1p4t"]
 [ext_resource type="Texture2D" uid="uid://brwtj0n2mr6xn" path="res://Sprites/Background/MoonStandEmpty.png" id="4_j8d48"]
-[ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="4_xiq1f"]
 [ext_resource type="Texture2D" uid="uid://djv6jg02bo0cs" path="res://Sprites/Background/Wardrobe.png" id="5_y8kwm"]
 [ext_resource type="Texture2D" uid="uid://d0oj5cybwavxn" path="res://Sprites/Background/TV.png" id="6_8ikkq"]
 [ext_resource type="Script" uid="uid://gcs7aymyg04o" path="res://Scripts/Puzzles2D/room2_checker.gd" id="6_ipfbv"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="6_qsv4v"]
 [ext_resource type="Texture2D" uid="uid://dt0a6etrml81u" path="res://Sprites/Background/Chest.png" id="7_7ixoc"]
 [ext_resource type="Texture2D" uid="uid://cvfcblubkqpjv" path="res://Sprites/SceneSwitchers/Mirror.png" id="7_wjqet"]
+[ext_resource type="Script" uid="uid://dgxccig7fib3l" path="res://Rooms/canvas_layer.gd" id="10_a6xs1"]
 [ext_resource type="Texture2D" uid="uid://bu8os322q1q3o" path="res://Sprites/Background/BrokenMirror.png" id="11_iwjsq"]
+[ext_resource type="Script" uid="uid://cmohrk42myhw4" path="res://Rooms/new_mirror.gd" id="12_r2r2o"]
+[ext_resource type="Texture2D" uid="uid://dhtdue5rkxpdp" path="res://Sprites/tarot cards/The Magician.png" id="16_r2r2o"]
+
+[sub_resource type="Shader" id="Shader_a6xs1"]
+code = "shader_type canvas_item;
+
+uniform float luminance_cutoff: hint_range(0.0, 1.0) = 0.0;
+uniform bool invert = false;
+uniform sampler2D mask_texture;
+uniform sampler2D display_texture;
+
+void fragment() {
+	vec4 sample_color = texture(mask_texture, UV);
+	float luminance = dot(sample_color.rgb, vec3(0.2126, 0.7152, 0.0722));
+	bool filter = luminance > luminance_cutoff;
+	if (invert) {
+		filter = !filter;
+	}
+	
+	if (filter) {
+		COLOR = texture(display_texture, UV);
+	} else {
+		COLOR = vec4(1.0, 1.0, 1.0, 0.0) * texture(display_texture, UV);
+	}
+}
+"
+
+[sub_resource type="Gradient" id="Gradient_atu7q"]
+offsets = PackedFloat32Array(0.6729323)
+colors = PackedColorArray(0.14214447, 0.13081574, 0.29850298, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wuast"]
+gradient = SubResource("Gradient_atu7q")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_okvqb"]
+shader = SubResource("Shader_a6xs1")
+shader_parameter/luminance_cutoff = 0.0
+shader_parameter/invert = true
+shader_parameter/mask_texture = ExtResource("16_r2r2o")
+shader_parameter/display_texture = SubResource("GradientTexture2D_wuast")
+
+[sub_resource type="Animation" id="Animation_iwjsq"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dissolve:material:shader_parameter/luminance_cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dissolve:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r2r2o"]
+resource_name = "dissolve"
+length = 1.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dissolve:material:shader_parameter/luminance_cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a6xs1"]
+_data = {
+&"RESET": SubResource("Animation_iwjsq"),
+&"dissolve": SubResource("Animation_r2r2o")
+}
 
 [node name="Room2" type="Node2D" unique_id=104392886]
 script = ExtResource("1_iehj0")
@@ -67,6 +156,22 @@ scale = Vector2(0.4, 0.4)
 texture = ExtResource("4_j8d48")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=288935036]
+script = ExtResource("10_a6xs1")
+destination_room_path = "res://scenes/3d/mainroom.tscn"
+
+[node name="dissolve" type="ColorRect" parent="CanvasLayer" unique_id=974259353]
+z_index = 11
+material = SubResource("ShaderMaterial_okvqb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_right = 32.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.091252245, 0.08692636, 0.2524531, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="SceneSwitchers" type="Control" parent="CanvasLayer" unique_id=83785056]
 layout_mode = 3
@@ -88,7 +193,7 @@ offset_top = -513.0
 offset_right = 493.0
 offset_bottom = 184.0
 grow_vertical = 2
-script = ExtResource("4_xiq1f")
+script = ExtResource("12_r2r2o")
 destination_room_path = "res://scenes/3d/mainroom.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/SceneSwitchers/Mirror" unique_id=790678593]
@@ -105,6 +210,9 @@ mouse_filter = 2
 
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("6_qsv4v")]
 
-[connection signal="pressed" from="CanvasLayer/SceneSwitchers/Mirror" to="CanvasLayer/SceneSwitchers/Mirror" method="_on_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=998364505]
+libraries/ = SubResource("AnimationLibrary_a6xs1")
+
+[connection signal="pressed" from="CanvasLayer/SceneSwitchers/Mirror" to="CanvasLayer" method="_on_mirror_pressed"]
 
 [editable path="Moon"]

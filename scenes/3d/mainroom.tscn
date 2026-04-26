@@ -32,10 +32,10 @@
 [ext_resource type="Resource" uid="uid://fxf623ngowdt" path="res://Scripts/Items/GreenPot.tres" id="23_v6s45"]
 [ext_resource type="Resource" uid="uid://dhkl5spggl2ln" path="res://Scripts/Items/BluePot.tres" id="24_yxx7e"]
 [ext_resource type="Resource" uid="uid://yvnkv23qvu5v" path="res://Scripts/Items/YellowPot.tres" id="25_lr5v6"]
-[ext_resource type="AudioStream" uid="uid://dtos2mplvjkri" path="res://Audio/SFX/zodiac_pressedt.wav" id="31_v6s45"]
-[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/SFX/holy_arcana.ogg" id="32_yxx7e"]
-[ext_resource type="AudioStream" uid="uid://djksd37gj7fx6" path="res://Audio/SFX/chest.wav" id="35_yh05a"]
-[ext_resource type="AudioStream" uid="uid://jjggtprm8e3" path="res://Audio/SFX/bubblez.mp3" id="36_5ikaq"]
+[ext_resource type="AudioStream" uid="uid://dtos2mplvjkri" path="res://Audio/zodiac_pressedt.wav" id="31_v6s45"]
+[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/holy_arcana.ogg" id="32_yxx7e"]
+[ext_resource type="AudioStream" uid="uid://djksd37gj7fx6" path="res://Audio/chest.wav" id="35_yh05a"]
+[ext_resource type="Texture2D" uid="uid://dhtdue5rkxpdp" path="res://Sprites/tarot cards/The Magician.png" id="36_5ikaq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yxx7e"]
 
@@ -121,7 +121,7 @@ size = Vector3(0.5372925, 1.1344948, 1)
 size = Vector3(5.8433228, 5.011139, 4.394516)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sbgw4"]
-size = Vector3(1.0844727, 1.7418976, 2.3536377)
+size = Vector3(1.0844727, 3.2314224, 2.6148071)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_sbgw4"]
 
@@ -404,6 +404,93 @@ _data = {
 &"yellow_spill": SubResource("Animation_yh05a")
 }
 
+[sub_resource type="Shader" id="Shader_a6xs1"]
+code = "shader_type canvas_item;
+
+uniform float luminance_cutoff: hint_range(0.0, 1.0) = 0.0;
+uniform bool invert = false;
+uniform sampler2D mask_texture;
+uniform sampler2D display_texture;
+
+void fragment() {
+	vec4 sample_color = texture(mask_texture, UV);
+	float luminance = dot(sample_color.rgb, vec3(0.2126, 0.7152, 0.0722));
+	bool filter = luminance > luminance_cutoff;
+	if (invert) {
+		filter = !filter;
+	}
+	
+	if (filter) {
+		COLOR = texture(display_texture, UV);
+	} else {
+		COLOR = vec4(1.0, 1.0, 1.0, 0.0) * texture(display_texture, UV);
+	}
+}
+"
+
+[sub_resource type="Gradient" id="Gradient_ch8tf"]
+offsets = PackedFloat32Array(0.6729323)
+colors = PackedColorArray(0.14214447, 0.13081574, 0.29850298, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wuast"]
+gradient = SubResource("Gradient_ch8tf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7m280"]
+shader = SubResource("Shader_a6xs1")
+shader_parameter/luminance_cutoff = 0.0
+shader_parameter/invert = true
+shader_parameter/mask_texture = ExtResource("36_5ikaq")
+shader_parameter/display_texture = SubResource("GradientTexture2D_wuast")
+
+[sub_resource type="Animation" id="Animation_iwjsq"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dissolve:material:shader_parameter/luminance_cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dissolve:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r2r2o"]
+resource_name = "dissolve"
+length = 1.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dissolve:material:shader_parameter/luminance_cutoff")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pchfi"]
+_data = {
+&"RESET": SubResource("Animation_iwjsq"),
+&"dissolve": SubResource("Animation_r2r2o")
+}
+
 [node name="Mainroom" type="Node3D" unique_id=81722206 node_paths=PackedStringArray("spawnpos", "player", "mirror", "zodiac_wheel", "zodiac_tile", "zoom_camera")]
 script = ExtResource("1_j7t7n")
 spawnpos = NodePath("MirrorSpawnPos")
@@ -674,7 +761,7 @@ area = NodePath("../InteractableArea3D")
 object = NodePath(".")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Puzzles3D/Temperance3D/Allsacks" unique_id=2082676905]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.48782, 1.6717544, 2.0367029)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.48782, 2.4165168, 2.1672876)
 shape = SubResource("BoxShape3D_sbgw4")
 debug_color = Color(0.9204547, 0.25705266, 0.29306638, 1)
 
@@ -961,6 +1048,23 @@ light_size = 0.215
 
 [node name="SfxPlayer3" type="AudioStreamPlayer3D" parent="." unique_id=1108698427]
 stream = ExtResource("35_yh05a")
+
+[node name="dissolve" type="ColorRect" parent="." unique_id=823956295]
+z_index = 11
+material = SubResource("ShaderMaterial_7m280")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_right = 32.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.091252245, 0.08692636, 0.2524531, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1201800877]
+libraries/ = SubResource("AnimationLibrary_pchfi")
 
 [node name="SfxPlayer4" type="AudioStreamPlayer3D" parent="." unique_id=1327373369]
 stream = ExtResource("36_5ikaq")
