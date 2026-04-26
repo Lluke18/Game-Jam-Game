@@ -1,7 +1,7 @@
 extends Node
 
 #ITEMS
-const MOONSIGN: ItemData = preload("res://Scripts/Items/Moonsign.tres")
+const MOONSIGN: ItemData = preload("res://Scripts/Items/MoonSign.tres")
 const PENCIL: ItemData = preload("res://Scripts/Items/Pencil.tres")
 const BLUE_POT: ItemData = preload("res://Scripts/Items/BluePot.tres")
 const GREEN_POT: ItemData = preload("res://Scripts/Items/GreenPot.tres")
