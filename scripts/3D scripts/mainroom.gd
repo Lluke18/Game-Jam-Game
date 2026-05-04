@@ -29,6 +29,7 @@ func _ready() -> void:
 		"I see the moon from the mirror,but can I get back to my world?"
 	])
 	zoom_camera.canvas.visible = false
+	
 
 
 func _on_mirror_switch():
@@ -42,7 +43,9 @@ func _on_mirror_switch():
 	animation_player.play("dissolve")
 	sfx_player_4.play()
 	await animation_player.animation_finished
+	SignalBus.dimension_changed = true
 	SceneChanger.change_scene_to_path.call_deferred(scene_2D_path)
+
 
 func _on_player_clicked(target) -> void:
 	if not target.area:
