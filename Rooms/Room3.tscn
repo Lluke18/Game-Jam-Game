@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://cnx5eop323exp" path="res://Sprites/SceneSwitchers/Laptop.png" id="9_x05e3"]
 [ext_resource type="Texture2D" uid="uid://catwiuebv55f2" path="res://Sprites/Background/Wall.png" id="10_a1vuc"]
 [ext_resource type="Texture2D" uid="uid://ck5no70bq1i2k" path="res://Sprites/Background/Floor.png" id="11_diejy"]
+[ext_resource type="AudioStream" uid="uid://b8gxxiq2gk0j1" path="res://Audio/SFX/ZA WARUDO - Dio's The World Sound Effect.mp3" id="16_nnmqw"]
+[ext_resource type="AudioStream" uid="uid://fr6qhv05l1pv" path="res://Audio/SFX/mirror-break.mp3" id="17_3lhxu"]
 
 [node name="Room3" type="Node2D" unique_id=664680839]
 script = ExtResource("1_wt6t0")
@@ -118,6 +120,13 @@ texture = ExtResource("9_x05e3")
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("3_vy55m")]
 
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("5_gxi2d")]
+
+[node name="SfxPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1162345648]
+stream = ExtResource("16_nnmqw")
+volume_db = 9.295
+
+[node name="SfxPlayer2" type="AudioStreamPlayer2D" parent="." unique_id=1429730742]
+stream = ExtResource("17_3lhxu")
 
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/Grimoire" to="CanvasLayer/SceneSwitchers" method="_on_grimoire_pressed"]
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/Death" to="CanvasLayer/SceneSwitchers/Death" method="_on_pressed"]
