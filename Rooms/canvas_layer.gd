@@ -19,5 +19,4 @@ func _on_mirror_pressed() -> void:
 		animation_player.play("dissolve")
 		await animation_player.animation_finished
 		#process inputs freeze
-		SignalBus.dimension_changed = true
 		SceneChanger.change_scene_to_path(destination_room_path)

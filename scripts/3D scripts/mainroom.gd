@@ -41,7 +41,6 @@ func _on_mirror_switch():
 	animation_player.play("dissolve")
 	sfx_player_5.play()
 	await animation_player.animation_finished
-	SignalBus.dimension_changed = true
 	SceneChanger.change_scene_to_path.call_deferred(scene_2D_path)
 
 
