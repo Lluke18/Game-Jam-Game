@@ -15,8 +15,7 @@ func end_puzzle():
 	PuzzleManager.finish_puzzle(PuzzleManager.puzzles.MOON)
 	sfx_player.play()
 	TextManager.show_once("Moon_completed" , [
-		"The Moon. Number eighteen. Illusion and anxiety... fitting.", 
-		"So all the cards are scattered between these mirrored realities."
+		"The Moon. Number eighteen. Illusion and anxiety... fitting. So all the cards are scattered between these mirrored realities."
 	])
 	SignalBus.moon_completed.emit()
 	fill_moon_stand()

@@ -165,9 +165,7 @@ func end_puzzle():
 	
 	sfx_player_2.play()
 	TextManager.show_once("Hierophant_completed", [
-		"The Hierophant. Number five. Wisdom, structure, and the weight of the old ways.",
-		"It turns out that even when the world turns inside out",
-		"there are still rules you can’t bypass."
+		"The Hierophant. Number five. Wisdom, structure, and the weight of the old ways. It turns out that even when the world turns inside out there are still rules you can’t bypass."
 	])
 	cooking_static_body_3d.remove_from_group("Interactables")
 	PuzzleManager.finish_puzzle(PuzzleManager.puzzles.HIEROPHANT)

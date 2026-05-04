@@ -12,8 +12,7 @@ func _ready() -> void:
 func _on_moon_pickup():
 	InventoryManager.add_item(InventoryManager.MOONSIGN)
 	TextManager.show_once("mainroom_pick_moon", [
-		"Got it. I should take it back.", 
-		"Let's hope the mirror still works and I am not stuck." 
+		"Got it. I should take it back. Let's hope the mirror still works and I am not stuck." 
 	])
 	PuzzleManager.moon_symbol_picked_up = true
 	SaveManager.save_file_data.moon_symbol_picked_up = true

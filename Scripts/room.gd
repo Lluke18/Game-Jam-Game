@@ -14,9 +14,8 @@ func _ready() -> void:
 	#pt tranzitia de la 3d, ca mouse-ul sa se vada din nou in 2d
 	
 	#can_switch = true
-	
 	SignalBus.world_completed.connect(disable_input)
-	
+	AudioManager.switch_to_2d()
 	if PuzzleManager.complete_puzzles[PuzzleManager.puzzles.WORLD] == true:
 		can_switch = false
 		return
@@ -26,9 +25,7 @@ func _ready() -> void:
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	TextManager.show_once("room_2", [
-		"Ugh, my head... what the hell happened?",
-		"I was just doing a reading and then...everything went sideways", 
-	    "And why are my photos all messed up?"
+		"Ugh, my head... what the hell happened?, I was just doing a reading and then...everything went sideways. And why are my photos all messed up?"
 	])
 
 func _input(event: InputEvent) -> void:

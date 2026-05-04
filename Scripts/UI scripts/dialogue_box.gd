@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var text_label : Label = $PanelContainer/MarginContainer/HBoxContainer/Label
 @onready var skip_button: Button = $Skip
 
-var _typing_speed : float = 25.0
+var _typing_speed : float = 30.0
 var _typing_time : float = 0.0
 var is_typing : bool = false
 var current_id : int = 0

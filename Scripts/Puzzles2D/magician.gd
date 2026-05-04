@@ -7,10 +7,10 @@ extends Node2D
 @onready var texture_rect: TextureRect = $CanvasLayer/SceneSwitchers/BackToRoom/TextureRect
 
 var painting_descriptions: Array[String] = [
-	"Mom’s favorite photo. She always told people I was a star child.", "She even gave me a name to match “Otto” meaning wealth",
-	"Nine years old. I wore that wizard hat for weeks", "The start of the obsession. Should’ve just played football.",
-	"Twenty-two. Citrine and aventurine in my pockets for success.","I was sure a degree and a few crystals would do the heavy lifting.",
-	"Wait... this isn't supposed to be here. This just happened.", "The mirror... it was glowing exactly like that during the reading."
+	"Mom’s favorite photo. She always told people I was a star child. She even gave me a name to match “Otto” meaning wealth",
+	"Nine years old. I wore that wizard hat for weeks. The start of the obsession. Should’ve just played football.",
+	"Twenty-two. Citrine and aventurine in my pockets for success. I was sure a degree and a few crystals would do the heavy lifting.",
+	"Wait... this isn't supposed to be here. This just happened. The mirror... it was glowing exactly like that during the reading."
 ]
 var markers: Array[Marker2D] = []
 var paintings: Array[DraggablePuzzleObject] = []
@@ -26,8 +26,7 @@ func _ready() -> void:
 	init_paintings_array()
 	init_paintings_snapped_array()
 	TextManager.show_once("Magician", [
-		"I should probably put these back in order.",
-		"I don't need my life looking as messy as this room."
+		"I should probably put these back in order. I don't need my life looking as messy as this room."
 	])
 		
 func init_markers_array():
@@ -59,8 +58,7 @@ func end_puzzle():
 	sfx_player.play()
 	
 	TextManager.show_once("Magician_completed", [
-		"The Magician. Number one. It’s the card of manifestation",
-		"I need the other six if I’m going to fix this mess"
+		"The Magician. Number one. It’s the card of manifestation, I need the other six if I’m going to fix this mess"
 	])
 	PuzzleManager.finish_puzzle(PuzzleManager.puzzles.MAGICIAN)
 	SignalBus.magician_completed.emit()
@@ -76,13 +74,8 @@ func on_try_snapping(painting_index: int):
 				return
 			paintings_snapped[painting_index] = marker_index
 			paintings[painting_index].global_position = markers[marker_index].global_position
-			if marker_index == painting_index: 
-				var texts: Array[String] = [
-				painting_descriptions[painting_index * 2],
-				painting_descriptions[painting_index * 2 + 1]
-	]
-				TextManager.show_sequence(texts)
-			#await get_tree().create_timer(6.0).timeout 
+			if marker_index == painting_index:
+				TextManager.show_text(painting_descriptions[painting_index])
 			check_if_solved()
 			return
 	paintings_snapped[painting_index] = -1

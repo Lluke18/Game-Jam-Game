@@ -11,9 +11,7 @@ func say_something():
 	if not dialogue_shown:
 		dialogue_shown = true
 		TextManager.show_once("Zodiac_Seen", [
-		"I’ve spent half my life tracing these symbols in my books.", 
-		"Seeing the Great Wheel like this... feels like a dream.", 
-		"I need to see where my alignment actually falls."
+		"I’ve spent half my life tracing these symbols in my books. Seeing the Great Wheel like this... feels like a dream. I need to see where my alignment actually falls."
 	])
 
 func _ready() -> void:
@@ -41,8 +39,7 @@ func _on_zodiac_click():
 	PuzzleManager.finish_puzzle(PuzzleManager.puzzles.STAR)
 	sfx_player_2.play()
 	TextManager.show_once("Zodiac_completed", [
-		"The Star. Number seventeen. Hope and renewal...", 
-		"a reminder that there’s actually a purpose to this mess."
+		"The Star. Number seventeen. Hope and renewal... a reminder that there’s actually a purpose to this mess."
 	])
 	SignalBus.star_completed.emit()
 	zodiac_interactable.remove_from_group("Interactables")

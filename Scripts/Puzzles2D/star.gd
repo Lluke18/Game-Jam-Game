@@ -22,9 +22,7 @@ func _ready() -> void:
 	init_drawing_dots_array()
 	connect_drawing_dots_signals()
 	TextManager.show_once("Star" ,[
-		"The 16th. My fortieth birthday. I remember that New Moon...",
-		"it was so dark I couldn't see my own hands.", 
-		"But looking at the other dates, they somehow feel intentional", 
+		"The 16th. My fortieth birthday. I remember that New Moon... it was so dark I couldn't see my own hands. But looking at the other dates, they somehow feel intentional", 
 	])
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

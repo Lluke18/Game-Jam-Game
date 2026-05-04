@@ -223,8 +223,7 @@ func compare():
 		left_scale.remove_from_group("Interactables")
 		right_scale.remove_from_group("Interactables")
 		TextManager.show_once("Temperance_completed", [
-			"Justice. Eleven Number fourteen. Balance and purpose.", 
-			"It’s about finding the middle path when your world is split in two."
+			"Justice. Number eleven. Balance and purpose. It’s about finding the middle path when your world is split in two."
 		])
 		sfx_player_2.play()
 		PuzzleManager.finish_puzzle(PuzzleManager.puzzles.TEMPERANCE)

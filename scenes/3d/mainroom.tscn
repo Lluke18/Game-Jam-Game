@@ -37,6 +37,7 @@
 [ext_resource type="AudioStream" uid="uid://djksd37gj7fx6" path="res://Audio/SFX/chest.wav" id="35_yh05a"]
 [ext_resource type="Texture2D" uid="uid://dhtdue5rkxpdp" path="res://Sprites/tarot cards/The Magician.png" id="36_5ikaq"]
 [ext_resource type="AudioStream" uid="uid://bm085t0y4w02f" path="res://Audio/SFX/mirror4.mp3" id="37_ch8tf"]
+[ext_resource type="AudioStream" uid="uid://jjggtprm8e3" path="res://Audio/SFX/bubblez.mp3" id="38_7m280"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yxx7e"]
 
@@ -1057,9 +1058,12 @@ metadata/_edit_use_anchors_ = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1201800877]
 libraries/ = SubResource("AnimationLibrary_pchfi")
 
-[node name="SfxPlayer4" type="AudioStreamPlayer3D" parent="." unique_id=1327373369]
+[node name="SfxPlayer5" type="AudioStreamPlayer3D" parent="." unique_id=1399176760]
 stream = ExtResource("37_ch8tf")
-volume_db = 35.535
+
+[node name="SfxPlayer4" type="AudioStreamPlayer3D" parent="." unique_id=1327373369]
+stream = ExtResource("38_7m280")
+volume_db = 44.592
 
 [connection signal="clicked" from="Player" to="." method="_on_player_clicked"]
 [connection signal="body_entered" from="actual_mirror/InteractableArea3D" to="." method="_on_d_mirror_body_entered"]

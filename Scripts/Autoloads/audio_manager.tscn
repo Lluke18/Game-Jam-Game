@@ -15,5 +15,5 @@ bus = &"Music"
 
 [node name="MusicPlayer3d" type="AudioStreamPlayer" parent="." unique_id=1287518570]
 stream = ExtResource("3_vyl8t")
-volume_db = -4.73
+volume_db = -8.635
 bus = &"Music"

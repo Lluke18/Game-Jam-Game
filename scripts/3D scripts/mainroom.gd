@@ -14,19 +14,18 @@ extends Node3D
 @onready var dissolve: ColorRect = $dissolve
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sfx_player_4: AudioStreamPlayer3D = $SfxPlayer4
+@onready var sfx_player_5: AudioStreamPlayer3D = $SfxPlayer5
 
 
 
 func _ready() -> void:
-	AudioManager.stop_music()
-	AudioManager.music_player_3d.play()
+	AudioManager.switch_to_3d()
 	dissolve.visible = false
 	print(mirror.area.can_interact)
 	player.global_position = spawnpos.position
 	mirror.interact = Callable(self, "_on_mirror_switch")
 	TextManager.show_once("mainroom_enter", [
-		"What is this place? Looks like some wizard’s room.	", 
-		"I see the moon from the mirror,but can I get back to my world?"
+		"What is this place? Looks like some wizard’s room. I see the moon from the mirror,but can I get back to my world?"
 	])
 	zoom_camera.canvas.visible = false
 	
@@ -35,13 +34,12 @@ func _ready() -> void:
 func _on_mirror_switch():
 	print("SWITCHING!")
 	
-	
 	mirror.area.can_interact = false
 	print(mirror.area.can_interact)
 	player.set_physics_process(false)
 	dissolve.visible = true
 	animation_player.play("dissolve")
-	sfx_player_4.play()
+	sfx_player_5.play()
 	await animation_player.animation_finished
 	SignalBus.dimension_changed = true
 	SceneChanger.change_scene_to_path.call_deferred(scene_2D_path)

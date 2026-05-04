@@ -18,6 +18,6 @@ func _on_grimoire_pressed() -> void:
 		SceneChanger.change_scene_to_path("res://Rooms/Room2.tscn")
 	else:
 		TextManager.show_once("World_empty", [
-			"Not yet! I need all the other cards for this spell"
+			"Not yet! I need all the other 6 cards for this spell"
 		])
 	

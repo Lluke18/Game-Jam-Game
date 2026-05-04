@@ -29,8 +29,7 @@ func check_typed_text():
 		SignalBus.death_completed.emit()
 		sfx_player.play()
 		TextManager.show_once("Death_completed", [
-		"Death. Number thirteen. Everyone panics when they see this one,", 
-		"but it’s rarely about the literal end. It’s just... a transition." 
+		"Death. Number thirteen. Everyone panics when they see this one, but it’s rarely about the literal end. It’s just... a transition." 
 	])
 		disconnect_key_signals()
 	else:
