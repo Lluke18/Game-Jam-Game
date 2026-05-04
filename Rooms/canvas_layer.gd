@@ -10,6 +10,7 @@ extends CanvasLayer
 func _ready():
 	dissolve.visible = false
 
+
 func _on_mirror_pressed() -> void:
 	if destination_room_path != "":
 		audio_stream_player_2d.play()

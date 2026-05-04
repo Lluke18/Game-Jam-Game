@@ -28,6 +28,7 @@ func _ready() -> void:
 		"What is this place? Looks like some wizard’s room. I see the moon from the mirror,but can I get back to my world?"
 	])
 	zoom_camera.canvas.visible = false
+	
 
 
 func _on_mirror_switch():
@@ -41,6 +42,7 @@ func _on_mirror_switch():
 	sfx_player_5.play()
 	await animation_player.animation_finished
 	SceneChanger.change_scene_to_path.call_deferred(scene_2D_path)
+
 
 func _on_player_clicked(target) -> void:
 	if not target.area:
