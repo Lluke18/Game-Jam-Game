@@ -26,8 +26,10 @@ func resume() -> void:
 	print("Scena curenta: ", get_tree().current_scene.name)
 	if current_scene.name == "Mainroom":
 		await get_tree().process_frame
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		if is_in_chest: Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if is_in_chest:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 
 func pause() -> void:

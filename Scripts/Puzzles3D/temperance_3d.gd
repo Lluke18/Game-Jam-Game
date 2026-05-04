@@ -92,7 +92,7 @@ func _on_zoom_camera_cypher_cracked() -> void:
 
 	
 	print("opening chest!")
-	
+	PauseMenu.is_in_chest = false
 	static_chest.remove_from_group("Interactables")
 	zoom_camera.queue_free()
 	player.camera.make_current()
@@ -141,7 +141,7 @@ func _on_lefts_interact():
 			is_left = true
 			which_sack(sack)
 			return
-	TextManager.show_once("wrong taler", ["This doesn't belong here.."])
+	TextManager.show_once("Wrong taler", ["This doesn't belong here.."])
 
 func which_sack(sack):
 	if sack.item_name == InventoryManager.BIG_SACK.item_name :
