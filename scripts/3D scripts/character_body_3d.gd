@@ -5,6 +5,7 @@ const SENSITIVITY = 0.003
 
 var gravity = 9.8
 @export var camera : Camera3D
+@export var canvas_layer : CanvasLayer
 @export var head : Node3D
 
 @export var bob_freq : float = 2.4
