@@ -11,7 +11,7 @@ func _ready() -> void:
 		death.disabled = true
 
 func _on_grimoire_pressed() -> void:
-	if PuzzleManager.completed_puzzles == 1:
+	if PuzzleManager.completed_puzzles == 6:
 		PuzzleManager.finish_puzzle(PuzzleManager.puzzles.WORLD)
 		sfx_player.play()
 		TextManager.show_once("World_completed", [
