@@ -146,10 +146,10 @@ texture = ExtResource("7_7ixoc")
 position = Vector2(-529, -42)
 
 [node name="ItemDropArea" parent="Moon" index="0" unique_id=748105193]
-offset_left = 1021.0
-offset_top = 293.0
-offset_right = 1293.0
-offset_bottom = 645.0
+offset_left = 1090.0
+offset_top = 357.0
+offset_right = 1229.0
+offset_bottom = 542.0
 
 [node name="MoonStandSprite" type="Sprite2D" parent="Moon" unique_id=1777121265]
 position = Vector2(1161.5, 485.5)
