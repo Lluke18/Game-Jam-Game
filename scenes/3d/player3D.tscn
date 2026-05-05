@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dm0ycc5x5wtod"]
 
 [ext_resource type="Script" uid="uid://beaw8rgrydwhu" path="res://Scripts/3D scripts/character_body_3d.gd" id="1_pcgwn"]
+[ext_resource type="Texture2D" uid="uid://bjiyifiuo1ogb" path="res://Sprites/Mouse/Cursor3D.png" id="2_1r2c3"]
 [ext_resource type="AudioStream" uid="uid://4ug4vg2xps3h" path="res://Audio/SFX/Steps_wood-004.ogg" id="2_ewrff"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_fep6r"]
@@ -10,9 +11,10 @@ points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_w1mmj"]
 
-[node name="Player" type="CharacterBody3D" unique_id=2036735905 node_paths=PackedStringArray("camera", "head", "seetext")]
+[node name="Player" type="CharacterBody3D" unique_id=2036735905 node_paths=PackedStringArray("camera", "canvas_layer", "head", "seetext")]
 script = ExtResource("1_pcgwn")
 camera = NodePath("head/Camera3D")
+canvas_layer = NodePath("CanvasLayer")
 head = NodePath("head")
 seetext = NodePath("CanvasLayer/BoxContainer/Label")
 
@@ -56,6 +58,24 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Click to Interact"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1955048905]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -193.285
+offset_right = 187.00085
+offset_bottom = 181.71497
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.3, 0.3)
+pivot_offset = Vector2(187, 187)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_1r2c3")
 
 [node name="FootStepsPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1268008791]
 stream = ExtResource("2_ewrff")

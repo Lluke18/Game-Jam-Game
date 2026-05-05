@@ -24,6 +24,8 @@ func _ready():
 func _on_exit_pressed() -> void:
 	player.camera.make_current()
 	canvas.visible = false
+	player.canvas_layer.visible = true
+	PauseMenu.is_in_chest = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 

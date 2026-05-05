@@ -78,6 +78,7 @@ func _on_chest_clicked():
 		zoom_camera.make_current()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		zoom_camera.canvas.visible = true
+		player.canvas_layer.visible = false
 		PauseMenu.is_in_chest = true
 
 
@@ -96,6 +97,7 @@ func _on_zoom_camera_cypher_cracked() -> void:
 	static_chest.remove_from_group("Interactables")
 	zoom_camera.queue_free()
 	player.camera.make_current()
+	player.canvas_layer.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	await get_tree().create_timer(1).timeout
