@@ -30,7 +30,7 @@ var complete_puzzles: Array[bool] = []
 var completed_puzzles : int = 0
 
 signal puzzle_finished(puzzle_index: int)
-
+signal all_puzzles_completed
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.connect("magician_completed", check_cards)
@@ -43,6 +43,8 @@ func _ready() -> void:
 	
 func check_cards():
 	completed_puzzles += 1
+	if completed_puzzles == 6:
+		all_puzzles_completed.emit()
 	print("puzzle count:", completed_puzzles)
 
 func finish_puzzle(puzzle_index: int):

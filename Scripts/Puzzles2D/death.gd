@@ -60,3 +60,7 @@ func update_displayed_letters():
 			else:
 				letter.text = typed_text.text[letter_index]
 			letter_index += 1
+
+
+func _on_hint_pressed() -> void:
+	TextManager.show_text("Maybe I should check the Ouija board.")

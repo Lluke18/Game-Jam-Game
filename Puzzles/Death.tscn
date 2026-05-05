@@ -693,4 +693,12 @@ stream = ExtResource("8_vbx5x")
 [node name="Wrong" type="AudioStreamPlayer2D" parent="." unique_id=421339222]
 stream = ExtResource("10_m5e8q")
 
+[node name="Hint" type="Button" parent="." unique_id=1722647014]
+offset_left = 1520.0
+offset_top = 736.0
+offset_right = 1642.0
+offset_bottom = 794.0
+text = "HINT"
+
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/RightArrow" to="CanvasLayer/SceneSwitchers/RightArrow" method="_on_pressed"]
+[connection signal="pressed" from="Hint" to="." method="_on_hint_pressed"]

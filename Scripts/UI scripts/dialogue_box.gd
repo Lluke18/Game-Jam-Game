@@ -12,6 +12,7 @@ func _ready() -> void:
 	hide()
 	TextManager.start_dialogue.connect(_on_start_dialogue)
 	skip_button.pressed.connect(_on_skip_pressed)
+	
 
 func _on_skip_pressed() -> void:
 	if is_typing:

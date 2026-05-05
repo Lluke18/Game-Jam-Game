@@ -6,6 +6,12 @@ var shown_dialogues : Array[String] = []
 signal start_dialogue(text: String)
 signal dialogue_finished
 
+func _ready() -> void:
+	PuzzleManager.all_puzzles_completed.connect(_on_all_completed)
+
+func _on_all_completed() -> void:
+	show_text("The last piece of the puzzle might be waiting inside the Grimoire.")
+	
 func show_text(text: String) -> void:
 	start_dialogue.emit(text)
 

@@ -35,6 +35,9 @@ func check_puzzle():
 			print("wrong!")
 			return
 	cypher_cracked.emit()
+	TextManager.show_once("Chest_Finished" , [
+		"Weights, they definitely are for the balance."
+	])
 	print("solved!")
 
 func _on_button_pressed() -> void:
@@ -76,4 +79,4 @@ func _on_button_4_pressed() -> void:
 
 
 func _on_hint_pressed() -> void:
-	TextManager.show_text("The balls: they tell a story")
+	TextManager.show_text("I should look more closely at the runes.")

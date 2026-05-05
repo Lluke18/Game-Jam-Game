@@ -23,6 +23,6 @@ func _on_grimoire_pressed() -> void:
 		sfx_player_2.play()
 	else:
 		TextManager.show_once("World_empty", [
-			"Not yet! I need all the other 6 cards for this spell"
+			"The Grimoire is silent. I need to find the rest of the cards before I even think about starting the spell."
 		])
 	
