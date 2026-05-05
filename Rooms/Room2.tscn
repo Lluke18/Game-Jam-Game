@@ -186,32 +186,41 @@ broken_mirror_texture = ExtResource("11_iwjsq")
 [node name="Mirror" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=217423170]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 101.0
-offset_top = -513.0
-offset_right = 493.0
-offset_bottom = 184.0
+anchors_preset = -1
+anchor_left = 0.053000003
+anchor_top = 0.025
+anchor_right = 0.257
+anchor_bottom = 0.67
+offset_left = -0.76000977
+offset_right = -0.44000244
+offset_bottom = 0.39996338
 grow_vertical = 2
 script = ExtResource("12_r2r2o")
 destination_room_path = "res://scenes/3d/mainroom.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/SceneSwitchers/Mirror" unique_id=790678593]
-layout_mode = 0
-offset_left = -10.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.026
+anchor_right = 1.0
+anchor_bottom = 1.003
+offset_left = 0.19200039
 offset_top = -2.9999847
-offset_right = 564.0
-offset_bottom = 1000.0
+offset_right = 172.0
+offset_bottom = 300.909
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("7_wjqet")
 
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("4_a5nxq")]
+anchors_preset = -1
+anchor_left = 0.94100004
+anchor_top = 0.231
+offset_left = 0.27990723
+offset_top = 0.519989
 mouse_filter = 2
 
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("6_qsv4v")]
 offset_left = 15.0
-offset_right = 15.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=998364505]
 libraries/ = SubResource("AnimationLibrary_a6xs1")
