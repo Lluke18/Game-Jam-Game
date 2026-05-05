@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_5gbe3"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="5_xo56k"]
 [ext_resource type="Texture2D" uid="uid://dfovannbdm63n" path="res://Sprites/Mouse/back2.png" id="6_xo56k"]
+[ext_resource type="AudioStream" uid="uid://cnltioi6fxs2m" path="res://Audio/SFX/error.wav" id="9_yyvcj"]
 
 [node name="Star" type="Node2D" unique_id=496611057]
 script = ExtResource("1_asnyx")
@@ -139,5 +140,8 @@ stretch_mode = 5
 mouse_filter = 2
 
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("5_5gbe3")]
+
+[node name="Wrong" type="AudioStreamPlayer2D" parent="." unique_id=933826279]
+stream = ExtResource("9_yyvcj")
 
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/RightArrow" to="CanvasLayer/SceneSwitchers/RightArrow" method="_on_pressed"]

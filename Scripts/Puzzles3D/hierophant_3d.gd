@@ -9,6 +9,7 @@ extends Node
 @onready var hierophant_3d: Node = $"."
 @onready var sfx_player_2: AudioStreamPlayer3D = $"../../SfxPlayer2"
 @onready var sfx_player_4: AudioStreamPlayer3D = $"../../SfxPlayer4"
+@onready var wrong: AudioStreamPlayer2D = $Wrong
 
 #for animation
 @export var blue_pot_anim : Node3D
@@ -174,6 +175,7 @@ func end_puzzle():
 	InventoryManager.send_inventory_modified_signal()
 
 func reset_streak():
+	TextManager.show_text("It's not the right order")
 	correct_steps_streak = 0
 	change_liquid_color(Color.WHITE)
 	

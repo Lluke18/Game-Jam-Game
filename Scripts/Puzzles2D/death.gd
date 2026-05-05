@@ -3,6 +3,7 @@ extends Node
 @onready var keyboard: Node = $CanvasLayer/Keyboard
 @onready var typed_text: Label = $CanvasLayer/Panel/Password
 @onready var sfx_player: AudioStreamPlayer2D = $Sfx_Player
+@onready var wrong: AudioStreamPlayer2D = $Wrong
 
 @export var solution: String
 
@@ -34,6 +35,7 @@ func check_typed_text():
 		disconnect_key_signals()
 	else:
 		print("Wrong password!")
+		wrong.play()
 		typed_text.text = typed_text.text.left(-1 * solution.length())
 		update_displayed_letters()
 

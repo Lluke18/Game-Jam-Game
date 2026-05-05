@@ -6,13 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://baoxv5vjmbtil" path="res://Puzzles/Moon.tscn" id="3_qsv4v"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="4_a5nxq"]
 [ext_resource type="Texture2D" uid="uid://bnmy0u3thqpx8" path="res://Sprites/Background/Clock.png" id="4_b1p4t"]
-[ext_resource type="Texture2D" uid="uid://brwtj0n2mr6xn" path="res://Sprites/Background/MoonStandEmpty.png" id="4_j8d48"]
 [ext_resource type="Texture2D" uid="uid://djv6jg02bo0cs" path="res://Sprites/Background/Wardrobe.png" id="5_y8kwm"]
 [ext_resource type="Texture2D" uid="uid://d0oj5cybwavxn" path="res://Sprites/Background/TV.png" id="6_8ikkq"]
 [ext_resource type="Script" uid="uid://gcs7aymyg04o" path="res://Scripts/Puzzles2D/room2_checker.gd" id="6_ipfbv"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="6_qsv4v"]
 [ext_resource type="Texture2D" uid="uid://dt0a6etrml81u" path="res://Sprites/Background/Chest.png" id="7_7ixoc"]
 [ext_resource type="Texture2D" uid="uid://cvfcblubkqpjv" path="res://Sprites/SceneSwitchers/Mirror.png" id="7_wjqet"]
+[ext_resource type="Texture2D" uid="uid://3qc5dhvlg0bj" path="res://Sprites/Items/suport_3.png" id="9_atu7q"]
 [ext_resource type="Script" uid="uid://dgxccig7fib3l" path="res://Rooms/canvas_layer.gd" id="10_a6xs1"]
 [ext_resource type="Texture2D" uid="uid://bu8os322q1q3o" path="res://Sprites/Background/BrokenMirror.png" id="11_iwjsq"]
 [ext_resource type="Script" uid="uid://cmohrk42myhw4" path="res://Rooms/new_mirror.gd" id="12_r2r2o"]
@@ -152,9 +152,9 @@ offset_right = 1293.0
 offset_bottom = 645.0
 
 [node name="MoonStandSprite" type="Sprite2D" parent="Moon" unique_id=1777121265]
-position = Vector2(1156, 462)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("4_j8d48")
+position = Vector2(1161.5, 485.5)
+scale = Vector2(0.3255208, 0.33796296)
+texture = ExtResource("9_atu7q")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=288935036]
 script = ExtResource("10_a6xs1")
@@ -210,6 +210,8 @@ texture = ExtResource("7_wjqet")
 mouse_filter = 2
 
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("6_qsv4v")]
+offset_left = 15.0
+offset_right = 15.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=998364505]
 libraries/ = SubResource("AnimationLibrary_a6xs1")
