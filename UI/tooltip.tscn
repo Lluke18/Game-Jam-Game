@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://r3tvgfnd4hi4"]
+
+[ext_resource type="Script" uid="uid://coho0i1684ktx" path="res://UI/tooltip.gd" id="1_r4bus"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=14542026]
+script = ExtResource("1_r4bus")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1598781493]
+offset_left = 854.0
+offset_top = 450.0
+offset_right = 1162.0
+offset_bottom = 608.0
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=697242584]
+layout_mode = 2
