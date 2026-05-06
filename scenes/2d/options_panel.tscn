@@ -5,9 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://c6bh60unpue2s" path="res://UI/NewScolOptions.png" id="3_dn7tq"]
 [ext_resource type="Texture2D" uid="uid://b3dl3x6smwyoa" path="res://UI/Menus/scroll_master.png" id="4_sc1tt"]
 [ext_resource type="Texture2D" uid="uid://dj8xauuqwjoxt" path="res://UI/Menus/scroll_music.png" id="5_ih0hd"]
-[ext_resource type="Texture2D" uid="uid://wl04k2ht3mnm" path="res://UI/Menus/scroll_sfx.png" id="6_4t73e"]
+[ext_resource type="Texture2D" uid="uid://d13u5xijln554" path="res://UI/Menus/sfx.png" id="6_cxsir"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="7_4t73e"]
-[ext_resource type="Texture2D" uid="uid://df787onbb4cmf" path="res://UI/Menus/scroll_close.png" id="8_cxsir"]
+[ext_resource type="Texture2D" uid="uid://cfhagcvx3g70l" path="res://UI/Menus/close.png" id="8_32usx"]
+[ext_resource type="Texture2D" uid="uid://b1ee8sef1y688" path="res://UI/Menus/resolution.png" id="9_cxsir"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dn7tq"]
 
@@ -146,7 +147,7 @@ value = 1.0
 
 [node name="MusicLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1920110103]
 layout_mode = 0
-offset_left = 453.0
+offset_left = 459.0
 offset_top = 196.0
 offset_right = 582.0
 offset_bottom = 240.0
@@ -181,16 +182,17 @@ step = 0.05
 value = 1.0
 
 [node name="SfxLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1685028026]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.32500002
+anchor_left = 0.326
 anchor_top = 0.504
 anchor_right = 0.395
 anchor_bottom = 0.58100003
-offset_left = -0.2750244
-offset_top = -0.27999878
+offset_left = -0.68200684
+offset_top = -1.2799988
 offset_right = 0.23498535
-offset_bottom = -0.17001343
+offset_bottom = -1.1700134
 theme_override_colors/font_color = Color(0.39215687, 0.34901962, 0.2784314, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 38
@@ -200,14 +202,15 @@ text = "Sfx"
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.12900001
-anchor_right = 1.0
-anchor_bottom = 0.744
-offset_left = -97.229
-offset_top = -311.0
-offset_right = 536.0
-offset_bottom = 203.264
+anchor_top = -0.11400001
+anchor_right = 0.8880001
+anchor_bottom = 0.864
+offset_left = 7.6419725
+offset_top = 0.01600027
+offset_right = -0.024040222
+offset_bottom = 0.98399734
 mouse_filter = 2
-texture = ExtResource("6_4t73e")
+texture = ExtResource("6_cxsir")
 expand_mode = 1
 
 [node name="SfxSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2037572812]
@@ -242,25 +245,41 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.77000004
-offset_left = -115.99997
-offset_top = -238.00002
-offset_right = 250.55539
-offset_bottom = 63.90975
+offset_left = -5.9999695
+offset_top = -2.0000153
+offset_right = 2.2965393
+offset_bottom = 2.3355942
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.995, 0.995)
 mouse_filter = 2
-texture = ExtResource("8_cxsir")
+texture = ExtResource("8_32usx")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1638141368]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 465.0
 offset_top = 72.0
 offset_right = 553.0
 offset_bottom = 95.0
 text = "Resolution"
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Label" unique_id=1292942340]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.22700001
+anchor_top = -0.609
+anchor_right = 1.58
+anchor_bottom = 1.478
+offset_left = 8.976002
+offset_top = 2.007001
+offset_right = 8.959991
+offset_bottom = 2.0060005
+texture = ExtResource("9_cxsir")
+expand_mode = 1
+stretch_mode = 5
 
 [connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
