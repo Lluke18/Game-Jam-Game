@@ -22,6 +22,9 @@ func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return true
 
 func _get_drag_data(at_position: Vector2) -> Variant:
+	# Nu mai vrem sa avem items draggable lol
+	return
+
 	#check if the slot is empty
 	print("Incearca drag")
 	if not (item and is_selected):

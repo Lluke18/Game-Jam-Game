@@ -9,7 +9,6 @@ extends Node
 @onready var hierophant_3d: Node = $"."
 @onready var sfx_player_2: AudioStreamPlayer3D = $"../../SfxPlayer2"
 @onready var sfx_player_4: AudioStreamPlayer3D = $"../../SfxPlayer4"
-@onready var wrong: AudioStreamPlayer2D = $Wrong
 
 #for animation
 @export var blue_pot_anim : Node3D

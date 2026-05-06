@@ -39,6 +39,23 @@ transform = Transform3D(1.9106853e-15, -1.3032567e-07, -0.9999998, -0.99999994, 
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=331923488]
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=470484339]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = -57.75
+offset_right = 57.0
+offset_bottom = 57.75
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_1r2c3")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="BoxContainer" type="BoxContainer" parent="CanvasLayer" unique_id=166535007]
 anchors_preset = 8
 anchor_left = 0.5
