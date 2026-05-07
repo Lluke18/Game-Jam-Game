@@ -10,7 +10,7 @@ extends Node
 func _ready() -> void:
 	connect_key_signals()
 	TextManager.show_once("Death" , [
-		"I wonder what the code is"
+		"I wonder what the code is."
 	])
 
 func connect_key_signals():

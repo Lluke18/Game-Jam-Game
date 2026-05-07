@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bhl774fxqn772" path="res://Sprites/runes/rune_2.jpg" id="4_svo3w"]
 [ext_resource type="Texture2D" uid="uid://d2jk24xroqfyi" path="res://Sprites/runes/rune_3.jpg" id="5_r7il7"]
 [ext_resource type="Texture2D" uid="uid://dfovannbdm63n" path="res://Sprites/Mouse/back2.png" id="6_ygdcu"]
+[ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="7_r7il7"]
+[ext_resource type="Texture2D" uid="uid://c3yd4pl7fx1dp" path="res://UI/Menus/hint.png" id="8_yxogl"]
 
 [node name="zoom_camera" type="Camera3D" unique_id=1184307355 node_paths=PackedStringArray("canvas")]
 transform = Transform3D(0.048483744, 0, -0.998824, 0, 1, 0, 0.998824, 0, 0.048483744, 0, 0, 0)
@@ -81,6 +83,7 @@ offset_right = 389.0
 offset_bottom = 225.0
 size_flags_horizontal = 4
 text = "Exit"
+script = ExtResource("7_r7il7")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Exit" unique_id=1636505076]
 layout_mode = 0
@@ -93,11 +96,23 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Hint" type="Button" parent="CanvasLayer" unique_id=498309990]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 1582.0
 offset_top = 633.0
 offset_right = 1704.0
 offset_bottom = 691.0
 text = "HINT"
+script = ExtResource("7_r7il7")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Hint" unique_id=682185718]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.008
+anchor_bottom = 1.0
+offset_right = 0.023994446
+offset_bottom = -1.0
+texture = ExtResource("8_yxogl")
+expand_mode = 1
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]
