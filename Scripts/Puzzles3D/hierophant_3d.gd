@@ -174,7 +174,7 @@ func end_puzzle():
 	InventoryManager.send_inventory_modified_signal()
 
 func reset_streak():
-	TextManager.show_text("It's not the right order")
+	TextManager.show_text("It's not the right order.")
 	correct_steps_streak = 0
 	change_liquid_color(Color.WHITE)
 	
