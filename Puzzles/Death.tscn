@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dfovannbdm63n" path="res://Sprites/Mouse/back2.png" id="6_ioy5s"]
 [ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/SFX/holy_arcana.ogg" id="8_vbx5x"]
 [ext_resource type="AudioStream" uid="uid://cnltioi6fxs2m" path="res://Audio/SFX/error.wav" id="10_m5e8q"]
+[ext_resource type="Texture2D" uid="uid://c3yd4pl7fx1dp" path="res://UI/Menus/hint.png" id="11_k0kgw"]
 
 [sub_resource type="FontVariation" id="FontVariation_vbx5x"]
 
@@ -694,11 +695,21 @@ stream = ExtResource("8_vbx5x")
 stream = ExtResource("10_m5e8q")
 
 [node name="Hint" type="Button" parent="." unique_id=1722647014]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 1520.0
 offset_top = 736.0
 offset_right = 1642.0
 offset_bottom = 794.0
-text = "HINT"
+script = ExtResource("1_ih0fh")
+
+[node name="TextureRect" type="TextureRect" parent="Hint" unique_id=1460399614]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+texture = ExtResource("11_k0kgw")
+expand_mode = 1
 
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/RightArrow" to="CanvasLayer/SceneSwitchers/RightArrow" method="_on_pressed"]
 [connection signal="pressed" from="Hint" to="." method="_on_hint_pressed"]
