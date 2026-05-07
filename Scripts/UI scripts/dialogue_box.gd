@@ -31,8 +31,9 @@ func _on_start_dialogue(text: String) -> void:
 	if my_id != current_id:
 		return
 	show()
-	
-	if get_tree().current_scene.name == "Mainroom":
+	if get_tree().current_scene == null:
+		skip_button.visible = true
+	elif get_tree().current_scene.name == "Mainroom":
 		skip_button.visible = false
 	else:
 		skip_button.visible = true
