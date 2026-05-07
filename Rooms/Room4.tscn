@@ -131,3 +131,5 @@ stretch_mode = 5
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("12_ijtto")]
 
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/Star" to="CanvasLayer/SceneSwitchers/Star" method="_on_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/SceneSwitchers/Books" to="CanvasLayer/SceneSwitchers" method="_on_books_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/SceneSwitchers/Books" to="CanvasLayer/SceneSwitchers" method="_on_books_mouse_exited"]

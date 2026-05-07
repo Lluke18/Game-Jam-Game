@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://r3tvgfnd4hi4"]
 
-[ext_resource type="Script" uid="uid://coho0i1684ktx" path="res://UI/tooltip.gd" id="1_r4bus"]
+[ext_resource type="Script" uid="uid://degu6pkukdhfg" path="res://Scripts/UI scripts/tooltip.gd" id="1_rxunl"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=14542026]
-script = ExtResource("1_r4bus")
+[node name="Tooltip" type="PanelContainer" unique_id=1469773120]
+anchors_preset = -1
+offset_right = 133.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rxunl")
+metadata/_edit_use_anchors_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1598781493]
-offset_left = 854.0
-offset_top = 450.0
-offset_right = 1162.0
-offset_bottom = 608.0
-size_flags_horizontal = 4
-
-[node name="Label" type="Label" parent="PanelContainer" unique_id=697242584]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=935221284]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=132134837]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+autowrap_mode = 3
