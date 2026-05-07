@@ -6,9 +6,17 @@ extends Button
 @onready var purr_sound: AudioStreamPlayer2D = $"purr_sound"
 @onready var special_sound: AudioStreamPlayer2D = $"special_sound"
 
-
-
 var click_count : int = 0
+
+var random_messages: Array[String] = [
+	"I love my little Jinx.",
+	"She wants more pets.",
+	"She blinked at me. That means love.",
+	"She's starting to purr...",
+	"Keep going...",
+	"She rolled over. Time for more pets.",
+	"*purring intensifies*"
+]
 
 func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
@@ -23,12 +31,12 @@ func _on_pressed() -> void:
 	
 	if click_count == 6:
 		special_sound.play()
-		TextManager.show_text("So cute!")
+		TextManager.show_text("So cute.")
 		click_count = 0
 	else:
 		purr_sound.play()
-		TextManager.show_text("I love my little Jinx.")
-		
+		TextManager.show_text(random_messages[randi() % random_messages.size()])
+
 func _on_mouse_entered() -> void:
 	if disabled == true:
 		return
