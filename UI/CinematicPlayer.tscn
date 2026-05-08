@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://xjsowxpop2h6"]
 
-[ext_resource type="Script" path="res://Scripts/UI scripts/cinematic_player.gd" id="1_tvui3"]
-[ext_resource type="VideoStream" uid="uid://bum7g33c2myf8" path="res://Videos/Intro - Arcana_final (1).ogv" id="2_apckq"]
-[ext_resource type="VideoStream" uid="uid://b26u8pv1qdfrr" path="res://Videos/Arcana - Outro_final (1).ogv" id="3_r5lw3"]
+[ext_resource type="Script" uid="uid://biq2pisv2spek" path="res://Scripts/UI scripts/cinematic_player.gd" id="1_tvui3"]
+[ext_resource type="VideoStream" uid="uid://ce8mg3xaglj1b" path="res://Videos/gata.ogv" id="2_apckq"]
+[ext_resource type="VideoStream" uid="uid://bwujmt4ln3qff" path="res://Videos/outro-gata.ogv" id="3_r5lw3"]
 
 [sub_resource type="Animation" id="Animation_apckq"]
 length = 0.001
