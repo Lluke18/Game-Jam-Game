@@ -68,8 +68,8 @@ scale = Vector2(0.19318184, 0.16550767)
 texture = ExtResource("11_oxgl2")
 
 [node name="CrystalBall" type="Sprite2D" parent="BackgorundSprites" unique_id=1867255797]
-position = Vector2(258, 603)
-scale = Vector2(0.11170214, 0.12371137)
+position = Vector2(255, 605)
+scale = Vector2(0.11968085, 0.11958764)
 texture = ExtResource("4_8egnn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1817150608]
