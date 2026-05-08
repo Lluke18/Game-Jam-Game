@@ -4,15 +4,17 @@ extends CanvasLayer
 @onready var sfx_player = $SfxPlayer
 var is_in_chest : bool = false
 
+var game_won: bool = false
+var is_in_intro: bool = false
+
 func _ready() -> void:
 	hide()
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
-
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		var current_scene = get_tree().current_scene
-		if current_scene.name == "MainMenu":
+		if current_scene.name == "MainMenu" and !is_in_intro:
 			return
 		if options_panel.visible:
 			options_panel.visible = false
@@ -50,6 +52,10 @@ func _on_options_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().paused = false
-	SaveManager.save_data()
+	if game_won:
+		DirAccess.remove_absolute("user://SaveFile.tres")
+		game_won = false
+	else:
+		SaveManager.save_data()
 	get_tree().change_scene_to_file("res://scenes/2d/main_menu.tscn")
 	hide()

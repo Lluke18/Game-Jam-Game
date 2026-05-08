@@ -99,6 +99,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+volume_db = -11.999999
 script = ExtResource("1_tvui3")
 intro_video = ExtResource("1_apckq")
 outro_video = ExtResource("3_r5lw3")

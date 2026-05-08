@@ -5,7 +5,6 @@ extends Control
 @onready var pisi: Button = $"../Pisi"
 
 @onready var sfx_player: AudioStreamPlayer2D = $"../../SfxPlayer"
-@onready var sfx_player_2: AudioStreamPlayer2D = $"../../SfxPlayer2"
 
 @onready var cinematic_player: CinematicPlayer = $"../CinematicPlayer"
 
@@ -15,6 +14,7 @@ func _ready() -> void:
 
 func _on_grimoire_pressed() -> void:
 	if PuzzleManager.completed_puzzles == PuzzleManager.number_of_puzzles - 1:
+		PauseMenu.game_won = true
 		disable_buttons()
 		PuzzleManager.finish_puzzle(PuzzleManager.puzzles.WORLD)
 		sfx_player.play()
@@ -22,7 +22,6 @@ func _on_grimoire_pressed() -> void:
 			"A mirror only shatters when its work is done!"
 		])
 		SignalBus.world_completed.emit()
-		sfx_player_2.play()
 		await get_tree().create_timer(2).timeout
 		
 		cinematic_player.show()
