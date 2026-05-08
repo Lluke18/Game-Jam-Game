@@ -15,7 +15,7 @@ func _ready() -> void:
 	_master_bus = AudioServer.get_bus_index("Master")
 	_music_bus  = AudioServer.get_bus_index("Music")
 	_sfx_bus    = AudioServer.get_bus_index("Sfx")
-	music_player.play() 
+	#music_player.play() 
 
 func set_master_volume(value: float) -> void:
 	master_volume = value

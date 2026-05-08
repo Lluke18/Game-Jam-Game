@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://cvfcblubkqpjv" path="res://Sprites/SceneSwitchers/Mirror.png" id="7_wjqet"]
 [ext_resource type="Texture2D" uid="uid://3qc5dhvlg0bj" path="res://Sprites/Items/suport_3.png" id="9_atu7q"]
 [ext_resource type="Script" uid="uid://dgxccig7fib3l" path="res://Rooms/canvas_layer.gd" id="10_a6xs1"]
-[ext_resource type="Texture2D" uid="uid://bu8os322q1q3o" path="res://Sprites/Background/BrokenMirror.png" id="11_iwjsq"]
 [ext_resource type="Script" uid="uid://cmohrk42myhw4" path="res://Rooms/new_mirror.gd" id="12_r2r2o"]
 [ext_resource type="Texture2D" uid="uid://dhtdue5rkxpdp" path="res://Sprites/tarot cards/The Magician.png" id="16_r2r2o"]
 [ext_resource type="AudioStream" uid="uid://bm085t0y4w02f" path="res://Audio/SFX/mirror4.mp3" id="18_atu7q"]
@@ -181,7 +180,6 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 mouse_filter = 2
 script = ExtResource("6_ipfbv")
-broken_mirror_texture = ExtResource("11_iwjsq")
 
 [node name="Mirror" type="Button" parent="CanvasLayer/SceneSwitchers" unique_id=217423170]
 self_modulate = Color(1, 1, 1, 0)
