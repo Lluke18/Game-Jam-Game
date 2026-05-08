@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://dikfl5gk47ugd"]
+
+[ext_resource type="VideoStream" uid="uid://d3iqqwkmxbc40" path="res://Videos/Arcana-Reflect_intro.ogv" id="1_apckq"]
+[ext_resource type="Script" uid="uid://biq2pisv2spek" path="res://Scripts/UI scripts/cinematic_player.gd" id="1_tvui3"]
+[ext_resource type="VideoStream" uid="uid://dx23wdjhxkm1g" path="res://Videos/Arcana-Reflect_outro.ogv" id="3_r5lw3"]
+
+[sub_resource type="Animation" id="Animation_apckq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackScreen:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlackScreen:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_r5lw3"]
+resource_name = "fade_to_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackScreen:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlackScreen:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_8sdtd"]
+resource_name = "fade_to_normal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlackScreen:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlackScreen:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8sdtd"]
+_data = {
+&"RESET": SubResource("Animation_apckq"),
+&"fade_to_black": SubResource("Animation_r5lw3"),
+&"fade_to_normal": SubResource("Animation_8sdtd")
+}
+
+[node name="CinematicPlayer" type="VideoStreamPlayer" unique_id=333442951]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tvui3")
+intro_video = ExtResource("1_apckq")
+outro_video = ExtResource("3_r5lw3")
+
+[node name="BlackScreen" type="ColorRect" parent="." unique_id=1291619043]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Skip" type="Button" parent="." unique_id=341727657]
+layout_mode = 0
+offset_left = 1681.0
+offset_top = 922.0
+offset_right = 1844.0
+offset_bottom = 968.0
+text = "SKIP"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1050254303]
+libraries/ = SubResource("AnimationLibrary_8sdtd")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
+[connection signal="pressed" from="Skip" to="." method="_on_skip_pressed"]

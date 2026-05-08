@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://c1poe3shrtvbk" path="res://Scripts/room.gd" id="1_wt6t0"]
 [ext_resource type="PackedScene" uid="uid://47ig0ed5mepy" path="res://UI/InventoryUI.tscn" id="3_vy55m"]
-[ext_resource type="PackedScene" uid="uid://dwv575pukbv8s" path="res://UI/ItemDropArea.tscn" id="4_ouduj"]
 [ext_resource type="Texture2D" uid="uid://cmh5dqwaqc86c" path="res://Sprites/Background/Desk.png" id="4_vppcs"]
 [ext_resource type="PackedScene" uid="uid://roet0qnciil5" path="res://UI/CardsDisplay.tscn" id="5_gxi2d"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="5_lsdnl"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://chp128bx0kugn" path="res://Sprites/Background/pisi.png" id="9_jk8e2"]
 [ext_resource type="Texture2D" uid="uid://cnx5eop323exp" path="res://Sprites/SceneSwitchers/Laptop.png" id="9_x05e3"]
 [ext_resource type="Texture2D" uid="uid://catwiuebv55f2" path="res://Sprites/Background/Wall.png" id="10_a1vuc"]
+[ext_resource type="PackedScene" uid="uid://dikfl5gk47ugd" path="res://UI/CinematicPlayer.tscn" id="11_3cfrt"]
 [ext_resource type="Texture2D" uid="uid://ck5no70bq1i2k" path="res://Sprites/Background/Floor.png" id="11_diejy"]
 [ext_resource type="Script" uid="uid://demfdhxe224qk" path="res://Rooms/pisi.gd" id="16_8thjb"]
 [ext_resource type="AudioStream" uid="uid://b8gxxiq2gk0j1" path="res://Audio/SFX/ZA WARUDO - Dio's The World Sound Effect.mp3" id="16_nnmqw"]
@@ -64,7 +64,8 @@ texture = ExtResource("8_nnmqw")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=765953715]
 
-[node name="ItemDropArea" parent="CanvasLayer" unique_id=748105193 instance=ExtResource("4_ouduj")]
+[node name="CinematicPlayer" parent="CanvasLayer" unique_id=333442951 instance=ExtResource("11_3cfrt")]
+z_index = 10
 
 [node name="SceneSwitchers" type="Control" parent="CanvasLayer" unique_id=2131005199]
 layout_mode = 3

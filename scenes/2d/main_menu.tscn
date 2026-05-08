@@ -6,9 +6,9 @@
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="3_7b3b2"]
 [ext_resource type="PackedScene" uid="uid://bhm5xkhsb3n7c" path="res://scenes/2d/options_panel.tscn" id="3_k62s8"]
 [ext_resource type="Texture2D" uid="uid://ci775yrl2aklw" path="res://UI/Menus/continue.png" id="4_7b3b2"]
-[ext_resource type="PackedScene" uid="uid://dep2x6ri76qqs" path="res://UI/cutscene.tscn" id="4_d3yhd"]
 [ext_resource type="Texture2D" uid="uid://dcvsuerlm3bxq" path="res://UI/Menus/settings.png" id="5_cjo4x"]
 [ext_resource type="Texture2D" uid="uid://cs1xgmrvsqp06" path="res://UI/Menus/quit.png" id="6_welr4"]
+[ext_resource type="PackedScene" uid="uid://dikfl5gk47ugd" path="res://UI/CinematicPlayer.tscn" id="9_7b3b2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d3yhd"]
 
@@ -39,6 +39,7 @@
 [node name="MainMenu" type="CanvasLayer" unique_id=1780196516]
 script = ExtResource("1_uvd46")
 start_scene_path = "res://Rooms/Room1.tscn"
+options_menu_path = "res://scenes/2d/options_panel.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1303395207]
 anchors_preset = -1
@@ -145,24 +146,10 @@ stretch_mode = 5
 [node name="OptionsPanel" parent="." unique_id=355889237 instance=ExtResource("3_k62s8")]
 visible = false
 
-[node name="Cutscene" parent="." unique_id=1860893096 instance=ExtResource("4_d3yhd")]
-visible = false
-
-[node name="Control" parent="Cutscene/CanvasLayer" parent_id_path=PackedInt32Array(1860893096, 615334443) index="1" unique_id=1387650501]
-offset_left = 84.0
-offset_top = 30.0
-offset_right = 84.0
-offset_bottom = 30.0
-
-[node name="Button" parent="Cutscene/CanvasLayer/Control" index="5" unique_id=261315579]
-offset_left = 1441.0
-offset_top = 795.0
-offset_right = 1727.0
-offset_bottom = 895.0
+[node name="CinematicPlayer" parent="." unique_id=333442951 instance=ExtResource("9_7b3b2")]
+z_index = 1
 
 [connection signal="pressed" from="TextureRect/ButtonManager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonManager/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonManager/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="TextureRect/ButtonManager/Quit Game" to="." method="_on_quit_game_pressed"]
-
-[editable path="Cutscene"]
