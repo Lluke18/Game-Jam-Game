@@ -6,6 +6,7 @@ extends Node
 func _ready() -> void:
 	if PuzzleManager.moon_symbol_picked_up == true:
 		moon_shape.queue_free()
+		#PuzzleManager.moon_symbol_picked_up = false
 	else:
 		moon_shape.interact = Callable(self, "_on_moon_pickup")
 

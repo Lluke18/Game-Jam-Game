@@ -12,7 +12,7 @@ _data = {
 &"fade_out": SubResource("Animation_joyuf")
 }
 
-[node name="ColorRect" type="ColorRect" unique_id=1069470540]
+[node name="Transition" type="ColorRect" unique_id=1069470540]
 offset_right = 1921.0
 offset_bottom = 1079.0
 color = Color(0.011764706, 0.011764706, 0.011764706, 0)

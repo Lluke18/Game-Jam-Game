@@ -17,10 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://dikfl5gk47ugd" path="res://UI/CinematicPlayer.tscn" id="11_3cfrt"]
 [ext_resource type="Texture2D" uid="uid://ck5no70bq1i2k" path="res://Sprites/Background/Floor.png" id="11_diejy"]
 [ext_resource type="Script" uid="uid://demfdhxe224qk" path="res://Rooms/pisi.gd" id="16_8thjb"]
-[ext_resource type="AudioStream" uid="uid://b8gxxiq2gk0j1" path="res://Audio/SFX/ZA WARUDO - Dio's The World Sound Effect.mp3" id="16_nnmqw"]
-[ext_resource type="AudioStream" uid="uid://fr6qhv05l1pv" path="res://Audio/SFX/mirror-break.mp3" id="17_3lhxu"]
 [ext_resource type="AudioStream" uid="uid://v6expysct4fh" path="res://Audio/SFX/purr.mp3" id="19_3cfrt"]
 [ext_resource type="AudioStream" uid="uid://cnyl21bqw7ifp" path="res://Audio/SFX/pisi-miau.mp3" id="19_8thjb"]
+[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/SFX/holy_arcana.ogg" id="20_3cfrt"]
 
 [node name="Room3" type="Node2D" unique_id=664680839]
 script = ExtResource("1_wt6t0")
@@ -166,11 +165,8 @@ volume_db = 24.0
 bus = &"Sfx"
 
 [node name="SfxPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1162345648]
-stream = ExtResource("16_nnmqw")
+stream = ExtResource("20_3cfrt")
 volume_db = 9.295
-
-[node name="SfxPlayer2" type="AudioStreamPlayer2D" parent="." unique_id=1429730742]
-stream = ExtResource("17_3lhxu")
 
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/Grimoire" to="CanvasLayer/SceneSwitchers" method="_on_grimoire_pressed"]
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/Death" to="CanvasLayer/SceneSwitchers/Death" method="_on_pressed"]

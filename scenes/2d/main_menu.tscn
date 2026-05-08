@@ -41,7 +41,7 @@ script = ExtResource("1_uvd46")
 start_scene_path = "res://Rooms/Room1.tscn"
 options_menu_path = "res://scenes/2d/options_panel.tscn"
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1303395207]
+[node name="MenuScreen" type="TextureRect" parent="." unique_id=1303395207]
 anchors_preset = -1
 anchor_right = 1.0040001
 anchor_bottom = 1.0
@@ -51,12 +51,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_d3yhd")
 
-[node name="ButtonManager" type="Control" parent="TextureRect" unique_id=789897466]
+[node name="ButtonManager" type="Control" parent="MenuScreen" unique_id=789897466]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Start" type="Button" parent="TextureRect/ButtonManager" unique_id=715291358]
+[node name="Start" type="Button" parent="MenuScreen/ButtonManager" unique_id=715291358]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 32.525
@@ -70,7 +70,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_u77uy")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_2qbj5")
 script = ExtResource("3_7b3b2")
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/ButtonManager/Start" unique_id=1245656591]
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/ButtonManager/Start" unique_id=1245656591]
 layout_mode = 0
 offset_right = 156.0
 offset_bottom = 77.66669
@@ -78,7 +78,7 @@ texture = ExtResource("3_4m701")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Continue" type="Button" parent="TextureRect/ButtonManager" unique_id=1065800829]
+[node name="Continue" type="Button" parent="MenuScreen/ButtonManager" unique_id=1065800829]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 31.925001
@@ -92,7 +92,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_7b3b2")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_oxbk4")
 script = ExtResource("3_7b3b2")
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/ButtonManager/Continue" unique_id=650207959]
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/ButtonManager/Continue" unique_id=650207959]
 layout_mode = 0
 offset_right = 223.0
 offset_bottom = 56.0
@@ -100,7 +100,7 @@ texture = ExtResource("4_7b3b2")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Options" type="Button" parent="TextureRect/ButtonManager" unique_id=625525947]
+[node name="Options" type="Button" parent="MenuScreen/ButtonManager" unique_id=625525947]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 32.15
@@ -113,7 +113,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_welr4")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_nd5kf")
 script = ExtResource("3_7b3b2")
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/ButtonManager/Options" unique_id=1212199045]
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/ButtonManager/Options" unique_id=1212199045]
 layout_mode = 0
 offset_right = 212.0
 offset_bottom = 71.0
@@ -121,7 +121,7 @@ texture = ExtResource("5_cjo4x")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Quit Game" type="Button" parent="TextureRect/ButtonManager" unique_id=1816856413]
+[node name="Quit Game" type="Button" parent="MenuScreen/ButtonManager" unique_id=1816856413]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 33.4
@@ -135,7 +135,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_vb5xx")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_y04ss")
 script = ExtResource("3_7b3b2")
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect/ButtonManager/Quit Game" unique_id=1326380573]
+[node name="TextureRect" type="TextureRect" parent="MenuScreen/ButtonManager/Quit Game" unique_id=1326380573]
 layout_mode = 0
 offset_right = 118.0
 offset_bottom = 69.0
@@ -149,7 +149,7 @@ visible = false
 [node name="CinematicPlayer" parent="." unique_id=333442951 instance=ExtResource("9_7b3b2")]
 z_index = 1
 
-[connection signal="pressed" from="TextureRect/ButtonManager/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="TextureRect/ButtonManager/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="TextureRect/ButtonManager/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="TextureRect/ButtonManager/Quit Game" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="MenuScreen/ButtonManager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MenuScreen/ButtonManager/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MenuScreen/ButtonManager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MenuScreen/ButtonManager/Quit Game" to="." method="_on_quit_game_pressed"]

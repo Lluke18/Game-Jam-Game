@@ -132,10 +132,6 @@ stretch_mode = 5
 [node name="InventoryUI" parent="CanvasLayer" unique_id=629547533 instance=ExtResource("11_pqupb")]
 
 [node name="CardsDisplay" parent="CanvasLayer" unique_id=2004390668 instance=ExtResource("12_ijtto")]
-offset_left = 21.0
-offset_top = 6.0
-offset_right = 21.0
-offset_bottom = 6.0
 
 [connection signal="pressed" from="CanvasLayer/SceneSwitchers/Star" to="CanvasLayer/SceneSwitchers/Star" method="_on_pressed"]
 [connection signal="mouse_entered" from="CanvasLayer/SceneSwitchers/Books" to="CanvasLayer/SceneSwitchers" method="_on_books_mouse_entered"]

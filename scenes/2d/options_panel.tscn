@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://d13u5xijln554" path="res://UI/Menus/sfx.png" id="6_cxsir"]
 [ext_resource type="Script" uid="uid://cyvw16ono1awq" path="res://Scripts/scene_switcher_button.gd" id="7_4t73e"]
 [ext_resource type="Texture2D" uid="uid://cfhagcvx3g70l" path="res://UI/Menus/close.png" id="8_32usx"]
-[ext_resource type="Texture2D" uid="uid://b1ee8sef1y688" path="res://UI/Menus/resolution.png" id="9_cxsir"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dn7tq"]
 
@@ -90,21 +89,6 @@ offset_bottom = -11.0
 position = Vector2(692.00006, -7.0000052)
 scale = Vector2(0.46913955, 0.49904573)
 texture = ExtResource("3_dn7tq")
-
-[node name="Resolutions" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1742658819]
-layout_mode = 0
-offset_left = 721.0
-offset_top = 61.0
-offset_right = 901.0
-offset_bottom = 92.0
-selected = 0
-item_count = 3
-popup/item_0/text = "1920x1080"
-popup/item_0/id = 0
-popup/item_1/text = "1600x900"
-popup/item_1/id = 1
-popup/item_2/text = "1280x720"
-popup/item_2/id = 2
 
 [node name="MasterLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=735976144]
 self_modulate = Color(1, 1, 1, 0)
@@ -257,31 +241,6 @@ texture = ExtResource("8_32usx")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1638141368]
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 465.0
-offset_top = 72.0
-offset_right = 553.0
-offset_bottom = 95.0
-text = "Resolution"
-
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/Label" unique_id=1292942340]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.22700001
-anchor_top = -0.609
-anchor_right = 1.58
-anchor_bottom = 1.478
-offset_left = 8.976002
-offset_top = 2.007001
-offset_right = 8.959991
-offset_bottom = 2.0060005
-texture = ExtResource("9_cxsir")
-expand_mode = 1
-stretch_mode = 5
-
-[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/SfxSlider" to="." method="_on_sfx_slider_value_changed"]
