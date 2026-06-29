@@ -23,9 +23,10 @@
 [ext_resource type="PackedScene" uid="uid://crxgl2qpr267" path="res://3D assets/Particles/blue_fire.tscn" id="18_h22pd"]
 [ext_resource type="PackedScene" uid="uid://ds2x63yagqssb" path="res://3D assets/Objects/pavilionstuff/4petal.glb" id="18_vs4jp"]
 [ext_resource type="PackedScene" uid="uid://b81hvydkrb78h" path="res://3D assets/Objects/pavilionstuff/suncenter.glb" id="23_gm1ln"]
-[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/SFX/holy_arcana.ogg" id="24_n7dl6"]
+[ext_resource type="PackedScene" uid="uid://dq4kax18ip075" path="res://3D assets/ivy/Ivy_wide.tscn" id="24_n7dl6"]
 [ext_resource type="PackedScene" uid="uid://dyj6i7r810rod" path="res://3D assets/ivy/ivy_tall.tscn" id="25_c1umg"]
 [ext_resource type="PackedScene" uid="uid://ia4rca60sayj" path="res://3D assets/ivy/ivy_corner.tscn" id="26_dsreb"]
+[ext_resource type="AudioStream" uid="uid://bcug6xi8ndqtn" path="res://Audio/SFX/holy_arcana.ogg" id="24_n7dl6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yxx7e"]
 
@@ -914,6 +915,15 @@ material = SubResource("FogMaterial_13qdw")
 
 [node name="ivys" type="Node3D" parent="." unique_id=1502568308]
 
+[node name="IvyWide" parent="ivys" unique_id=1085334945 instance=ExtResource("24_n7dl6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -20.762827, 6.127003, 0)
+
+[node name="IvyWide3" parent="ivys" unique_id=1433481062 instance=ExtResource("24_n7dl6")]
+transform = Transform3D(-2.999394e-08, 0, 1, 0, 1, 0, -0.68618137, 0, -4.371139e-08, -20.756895, 6.0236616, 9.140202)
+
+[node name="IvyWide2" parent="ivys" unique_id=5835928 instance=ExtResource("24_n7dl6")]
+transform = Transform3D(-6.226934e-08, 0, 1, 0, 1, 0, -1.4245565, 0, -4.371139e-08, -20.762827, 6.2119937, -12.515071)
+
 [node name="IvyTall" parent="ivys" unique_id=1111389719 instance=ExtResource("25_c1umg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.86189, 17.042446, -6.5161757)
 
@@ -937,7 +947,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -8.6
 
 [node name="IvyTall4" parent="ivys" unique_id=626884157 instance=ExtResource("25_c1umg")]
 transform = Transform3D(-0.6449848, 0, 0.22961333, 0, 1, 0, -0.32573938, 0, -0.45464903, 22.171503, 11.222642, 17.461302)
-
 [node name="holy" type="AudioStreamPlayer2D" parent="." unique_id=1570423330]
 stream = ExtResource("24_n7dl6")
 

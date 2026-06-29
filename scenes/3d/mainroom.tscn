@@ -1005,13 +1005,12 @@ omni_range = 6.5356345
 [node name="OmniLight3D5" type="OmniLight3D" parent="FirstRoom/OmniLights" unique_id=1825110667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.949963, 1.8886423, -4.0002904)
 light_color = Color(0.99352354, 0.532938, 0.57480246, 1)
-light_energy = 4.212
 light_size = 1.0
 omni_attenuation = 2.756
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="FirstRoom/OmniLights" unique_id=766418882]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.802017, 5.942438, -5.6060057)
-light_energy = 6.609
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.502017, 5.942438, -6.006006)
+light_energy = 4.916
 omni_range = 5.86
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="FirstRoom/OmniLights" unique_id=1409851885]
@@ -1029,13 +1028,12 @@ omni_range = 5.86
 [node name="OmniLight3D9" type="OmniLight3D" parent="FirstRoom/OmniLights" unique_id=1736961323]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2754512, 3.2834775, 7.1451693)
 light_color = Color(0.65236986, 0.5193592, 0.4905631, 1)
-light_energy = 1.526
 omni_range = 0.8843135
 
 [node name="OmniLight3D15" type="OmniLight3D" parent="FirstRoom/OmniLights" unique_id=2014703879]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.935876, 5.118528, 7.1802745)
 light_color = Color(0.65236986, 0.5193592, 0.4905631, 1)
-light_energy = 11.66
+light_energy = 9.616
 omni_range = 1.112485
 
 [node name="OmniLight3D11" type="OmniLight3D" parent="FirstRoom/OmniLights" unique_id=766243665]
