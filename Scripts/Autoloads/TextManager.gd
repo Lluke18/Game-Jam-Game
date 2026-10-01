@@ -32,3 +32,6 @@ func show_once(id: String, texts: Array[String]) -> void:
 func cancel() -> void:
 	active = false
 	DialogueBox.clear()
+	
+func reset_data():
+	shown_dialogues.clear()

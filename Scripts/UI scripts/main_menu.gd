@@ -24,6 +24,7 @@ func _on_start_pressed() -> void:
 	DirAccess.remove_absolute("user://SaveFile.tres")
 	InventoryManager.reset_data()
 	PuzzleManager.reset_data()
+	TextManager.reset_data()
 	   
 	cinematic_player.show()
 	cinematic_player.play_intro()
