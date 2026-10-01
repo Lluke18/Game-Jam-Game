@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bnstsym7hep34"]
 
-[ext_resource type="Script" uid="uid://bfes0ylyio7xf" path="res://Scripts/Autoloads/audio_manager.gd" id="1_jymlb"]
+[ext_resource type="Script" uid="uid://bfes0ylyio7xf" path="res://Scripts/Autoloads/Audio_manager.gd" id="1_jymlb"]
 [ext_resource type="AudioStream" uid="uid://by7serhcsuqfc" path="res://Audio/Music/Mind's Eye Full.wav" id="2_jymlb"]
 [ext_resource type="AudioStream" uid="uid://bxlxanaeysd4v" path="res://Audio/Music/Music3D.mp3" id="3_vyl8t"]
 [ext_resource type="AudioStream" uid="uid://dtb2q3mbrwdww" path="res://Audio/Music/choices.wav" id="4_rq3m3"]

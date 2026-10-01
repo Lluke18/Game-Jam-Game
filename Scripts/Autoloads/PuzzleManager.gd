@@ -59,8 +59,8 @@ signal all_puzzles_completed
 func _ready() -> void:
 	
 	# For testing purposes ONLY
-	reset_data()
-	complete_puzzles[puzzles.MAGICIAN] = true
+	#reset_data()
+	#complete_puzzles[puzzles.MAGICIAN] = true
 	
 	SignalBus.connect("magician_completed", check_cards)
 	SignalBus.connect("death_completed", check_cards)
@@ -97,6 +97,22 @@ func reset_data():
 	big_sack_picked_up = false
 	
 	all_sacks_picked_up = false
+	
+	_2_petal_placed = false
+	_3_petal_placed = false
+	_4_petal_placed = false
+	suncenter_placed = false
+	
+	has_gate_key = false
+	gate_opened = false
+	has_worm = false
+	worm_placed = false
+	sunflower_picked = false
+	came_from_greenhouse = false
+
+	verses_discovered.fill(false)
+
+	candles_lit.fill(false)
 	
 	complete_puzzles = []
 	complete_puzzles.resize(number_of_puzzles)

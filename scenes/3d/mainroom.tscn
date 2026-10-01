@@ -1382,6 +1382,9 @@ light_volumetric_fog_energy = 10.383
 light_size = 0.485
 omni_range = 1.6018165
 
+[node name="TorchFire" parent="FirstRoom" unique_id=1961308349 instance=ExtResource("41_nq443")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.754746, 1.6197579, -5.4858694)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1343459481]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
@@ -1930,9 +1933,6 @@ z_index = 1
 offset_left = -5.0
 offset_top = -6.0
 intro_video = ExtResource("55_fugsj")
-
-[node name="TorchFire" parent="." unique_id=1961308349 instance=ExtResource("41_nq443")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.754746, 1.6197579, -5.4858694)
 
 [node name="Concrete2" type="AudioStreamPlayer" parent="." unique_id=1468056974]
 stream = ExtResource("57_pktji")
